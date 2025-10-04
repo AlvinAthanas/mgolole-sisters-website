@@ -21,6 +21,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({
     useEffect(() => {
         const fetchUser = async () => {
             try {
+                console.log("bearer token", bearer_token)
                 const response = await fetchData(
                     `${BASE_URL}/user-data`,
                     bearer_token,
@@ -42,8 +43,10 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({
                     const body = (data).body;
 
                     setUser({
+                        id: body.id,
                         username: body.username,
                         email: body.email,
+                        permissions: body.permissions,
                     });
                 }
             } catch (error) {

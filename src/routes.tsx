@@ -9,6 +9,7 @@ const Login = lazy(() => import("./pages/Login.tsx"));
 const Register = lazy(() => import("./pages/Register.tsx"));
 const Dashboard = lazy(() => import("./components/Home/Dashboard.tsx"));
 const PasswdRst = lazy(() => import("./pages/PasswdRst.tsx"));
+const Groups = lazy(() => import("./pages/Groups.tsx"));
 
 export const routes = createRoutesFromElements(
     <Route path="/" element={<AppWrapper/>}>
@@ -60,6 +61,16 @@ export const routes = createRoutesFromElements(
                 <AuthWrapper requireAuth={false}>
                     <Suspense fallback={<ProgressLoader/>}>
                         <PasswdRst/>
+                    </Suspense>
+                </AuthWrapper>
+            }
+        />
+        <Route
+            path="/groups"
+            element={
+                <AuthWrapper requireAuth={true}>
+                    <Suspense fallback={<ProgressLoader/>}>
+                        <Groups/>
                     </Suspense>
                 </AuthWrapper>
             }

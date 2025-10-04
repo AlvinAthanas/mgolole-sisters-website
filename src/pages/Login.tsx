@@ -65,6 +65,8 @@ const Login: React.FC = () => {
             showSnackbar("Login failed: Wrong username or password!", "error");
         } else {
             showSnackbar("Welcome back!", "success");
+            setBearerToken(response.response.access);
+            console.log("access: ",response.response.access)
         }
 
         setLoginInfo({
