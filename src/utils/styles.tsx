@@ -55,7 +55,7 @@ export const UserProfile = styled("div")(({ theme }) => ({
     padding: theme.spacing(2, 1.5),
     gap: theme.spacing(1.5),
     background: alpha(theme.palette.primary.dark, 0.2),
-    margin: theme.spacing(1.5, 1.5, 0),
+    margin: theme.spacing(9.5, 1.5, 0),
     borderRadius: "12px",
     border: `1px solid ${alpha("#fff", 0.1)}`,
 }));
