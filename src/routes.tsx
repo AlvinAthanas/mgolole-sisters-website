@@ -75,5 +75,15 @@ export const routes = createRoutesFromElements(
                 </AuthWrapper>
             }
         />
+        <Route
+            path="/signup"
+            element={
+                <AuthWrapper requireAuth={false}>
+                    <Suspense fallback={<ProgressLoader/>}>
+                        <Register/>
+                    </Suspense>
+                </AuthWrapper>
+            }
+        />
     </Route>
 )

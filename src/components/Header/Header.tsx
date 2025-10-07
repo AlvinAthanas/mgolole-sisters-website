@@ -37,6 +37,7 @@ import { TuneOutlined } from "@mui/icons-material";
 import { useTheme as useCustomTheme } from "../../contexts/ThemeContext";
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import {BASE_URL} from "../../utils/BaseUrl.ts";
 
 interface HeaderProps {
   open: boolean;
@@ -103,7 +104,7 @@ export const Header = ({
   const handleLogout = async () => {
     try {
       const response = await postData(
-        `${window.location.protocol}//api.kanban.beytech.co.tz/api/logout`,
+        `${BASE_URL}/logout`,
         {},
         token,
         null,
@@ -117,7 +118,7 @@ export const Header = ({
       setAuthenticated(false);
       setUser(null);
       setBearerToken("");
-    } catch (error) {
+    } catch (e) {
       showSnackbar("Logout failed", "error");
     }
   };
