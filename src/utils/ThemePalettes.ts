@@ -1,96 +1,125 @@
-import type {PaletteOptions} from "@mui/material/styles";
+import type { PaletteOptions } from "@mui/material/styles";
 
+/* =========================
+   LIGHT MODE PALETTE
+========================= */
 export const lightPalette: PaletteOptions = {
     mode: "light",
+
     primary: {
-        main: "#2e7d32",
-        light: "#4caf50",
-        dark: "#1b5e20",
-        contrastText: "#ffffff",
+        main: "#D4AF37",      // Gold – prestige & excellence
+        light: "#E6C866",
+        dark: "#B8962E",
+        contrastText: "#063C5A", // Dark blue for readability
     },
+
     secondary: {
-        main: "#66bb6a",
-        light: "#81c784",
-        dark: "#388e3c",
+        main: "#063C5A",      // Deep Ocean Blue – authority & trust
+        light: "#0A567F",
+        dark: "#042B41",
         contrastText: "#ffffff",
     },
+
     success: {
-        main: "#4caf50",
-        light: "#81c784",
-        dark: "#388e3c",
+        main: "#2E7D32",
+        light: "#60AD5E",
+        dark: "#1B5E20",
     },
+
     error: {
-        main: "#d32f2f",
-        light: "#ef5350",
-        dark: "#c62828",
+        main: "#C62828",
+        light: "#EF5350",
+        dark: "#8E0000",
     },
+
     warning: {
-        main: "#ff9800",
-        light: "#ffb74d",
-        dark: "#f57c00",
+        main: "#ED6C02",
+        light: "#FF9800",
+        dark: "#E65100",
     },
+
     info: {
-        main: "#0288d1",
-        light: "#03a9f4",
-        dark: "#01579b",
+        main: "#0288D1",
+        light: "#4FC3F7",
+        dark: "#01579B",
     },
+
     background: {
-        default: "#f1f8f4",
-        paper: "#ffffff",
+        default: "#F9FAFB",   // Soft neutral, keeps gold clean
+        paper: "#FFFFFF",
     },
+
     text: {
-        primary: "#212121",
-        secondary: "#555555",
-        disabled: "#9e9e9e",
+        primary: "#063C5A",   // Brand-consistent text color
+        secondary: "#475569",
+        disabled: "#94A3B8",
     },
-    divider: "rgba(46, 125, 50, 0.12)",
+
+    divider: "rgba(6, 60, 90, 0.12)",
 };
 
+/* =========================
+   DARK MODE PALETTE
+========================= */
 export const darkPalette: PaletteOptions = {
     mode: "dark",
+
     primary: {
-        main: "#66bb6a",
-        light: "#81c784",
-        dark: "#4caf50",
-        contrastText: "#000000",
+        main: "#E6C866",      // Softer gold for dark mode
+        light: "#F1DA8A",
+        dark: "#D4AF37",
+        contrastText: "#020617",
     },
+
     secondary: {
-        main: "#81c784",
-        light: "#a5d6a7",
-        dark: "#66bb6a",
-        contrastText: "#000000",
+        main: "#0A567F",      // Lifted ocean blue for dark UI
+        light: "#1377A8",
+        dark: "#063C5A",
+        contrastText: "#F8FAFC",
     },
+
     success: {
-        main: "#66bb6a",
-        light: "#81c784",
-        dark: "#4caf50",
+        main: "#66BB6A",
+        light: "#81C784",
+        dark: "#388E3C",
     },
+
     error: {
-        main: "#ef5350",
-        light: "#e57373",
-        dark: "#d32f2f",
+        main: "#EF5350",
+        light: "#E57373",
+        dark: "#C62828",
     },
+
     warning: {
-        main: "#ffb74d",
-        light: "#ffd54f",
-        dark: "#ff9800",
+        main: "#FFB74D",
+        light: "#FFD54F",
+        dark: "#F57C00",
     },
+
     info: {
-        main: "#29b6f6",
-        light: "#4fc3f7",
-        dark: "#0288d1",
+        main: "#4FC3F7",
+        light: "#81D4FA",
+        dark: "#0288D1",
     },
+
     background: {
-        default: "#0a0a0a",
-        paper: "#1e1e1e",
+        default: "#020617",   // Near-black navy
+        paper: "#071F2F",     // Blue-tinted surface (brand aligned)
     },
+
     text: {
-        primary: "#ffffff",
-        secondary: "#b0b0b0",
-        disabled: "#666666",
+        primary: "#F8FAFC",
+        secondary: "#CBD5E1",
+        disabled: "#64748B",
     },
-    divider: "rgba(102, 187, 106, 0.12)",
+
+    divider: "rgba(203, 213, 225, 0.14)",
 };
+
+
+/* =========================
+   PALETTE SWITCHER
+========================= */
 export const getThemePalette = (mode: "light" | "dark") => {
     return mode === "light" ? lightPalette : darkPalette;
 };

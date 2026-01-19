@@ -1,25 +1,26 @@
 import React, { createContext, useEffect, useState, useContext } from "react";
 import { createTheme, ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
-import {getThemePalette} from "../utils/ThemePalettes";
-import type {Theme as MuiTheme} from "@mui/material";
+import { getThemePalette } from "../utils/ThemePalettes";
+import type { Theme as MuiTheme } from "@mui/material";
+import { responsiveTypography } from "../utils/TypographyConf";
 
-
-export type Theme = "light" | "dark" ;
+export type Theme = "light" | "dark";
 export interface ThemeContextType {
-    theme : Theme;
+    theme: Theme;
     toggleTheme: () => void;
     setTheme: (theme: Theme) => void;
     muiTheme: MuiTheme;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+interface ThemeProviderProps {
+    children: React.ReactNode;
+    // Optional: specify if this is for admin portal (more compact) or website
+    variant?: "website" | "admin";
+}
 
-
-
-
-export const ThemeProvider:React.FC<{children:React.ReactNode}> = ({children}) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, variant = "website" }) => {
     const [theme, setTheme] = useState<Theme>("light");
 
     const toggleTheme = () => {
@@ -28,25 +29,29 @@ export const ThemeProvider:React.FC<{children:React.ReactNode}> = ({children}) =
         localStorage.setItem("theme", newTheme);
     };
 
-
     useEffect(() => {
         const stored = localStorage.getItem("theme");
-        if (stored === "light" || stored === "dark" ) {
+        if (stored === "light" || stored === "dark") {
             setTheme(stored);
         }
     }, []);
 
+    // Choose typography based on variant
+    const typography = responsiveTypography; // Use responsiveTypography for all
 
     const muiTheme = createTheme({
-        palette:  getThemePalette(theme),
+        palette: getThemePalette(theme),
+        typography,
     });
 
-    return <ThemeContext.Provider value={{theme, toggleTheme, setTheme, muiTheme}}>
-        <MuiThemeProvider theme={muiTheme}>
-            {children}
-        </MuiThemeProvider>
-    </ThemeContext.Provider>
-}
+    return (
+        <ThemeContext.Provider value={{ theme, toggleTheme, setTheme, muiTheme }}>
+            <MuiThemeProvider theme={muiTheme}>
+                {children}
+            </MuiThemeProvider>
+        </ThemeContext.Provider>
+    );
+};
 
 export const useTheme = (): ThemeContextType => {
     const ctx = useContext(ThemeContext);
@@ -54,4 +59,4 @@ export const useTheme = (): ThemeContextType => {
         throw new Error("useTheme must be used within a ThemeProvider");
     }
     return ctx;
-}
+};

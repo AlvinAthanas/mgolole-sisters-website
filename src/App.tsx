@@ -2,7 +2,7 @@
 import React, {useEffect} from "react";
 
 // Router
-import {Outlet, useLocation} from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
 
 // MUI
 import {
@@ -43,9 +43,11 @@ import ProgressLoader from "./Reusables/ProgressLoader.tsx";
 import {Main, StyledDrawer, UserProfile} from "./utils/styles.tsx";
 import Groups3Icon from '@mui/icons-material/Groups3';
 import {PermissionProvider} from "./contexts/PermissionContext.tsx";
+import WebsiteLayout from "./components/Website/WebsiteLayout.tsx";
 
+// Website Layout
 
-function App() {
+function AdminPortal() {
     const theme = useTheme();
     const {isAuthenticated} = useAuthentication();
     const [isMobile, setIsMobile] = React.useState(true);
@@ -54,7 +56,7 @@ function App() {
     const {user} = useUser();
     const location = useLocation();
 
-    const drawerWidthValue = 280; // fixed constant
+    const drawerWidthValue = 280;
 
     const handleDrawerOpen = () => setOpen(true);
     const handleDrawerClose = () => setOpen(false);
@@ -70,66 +72,71 @@ function App() {
 
     useEffect(() => {
         if (isAuthenticated && !isMobile) {
-            setOpen(true); // auto-open on desktop after login
+            setOpen(true);
         } else {
-            setOpen(false); // keep closed on mobile/login
+            setOpen(false);
         }
     }, [isAuthenticated, isMobile]);
 
     const handleOverlayClick = () => {
         if (isMobile) handleDrawerClose();
     };
+
     type NavItem = {
         text: string;
         icon: React.ReactNode;
         path: string;
-        roles?: string[]; // Array of roles that can access this item
+        roles?: string[];
     }
-
 
     const navItems: NavItem[] = [
         {
             text: 'Dashboard',
             icon: <HomeIcon/>,
-            path: '/dashboard',
+            path: '/admin/dashboard',
             roles: ['admin', 'user']
         },
         {
-            text: 'categories',
+            text: 'Website Settings',
+            icon: <SettingsIcon/>,
+            path: '/admin/website',
+            roles: ['admin', 'user']
+        },
+        {
+            text: 'Content Management',
             icon: <CategoryIcon/>,
-            path: '/categories',
-            roles: ['admin', 'user']
+            path: '/admin/content',
+            roles: ['admin']
         },
         {
-            text: 'transactions',
-            icon: <PaidIcon/>,
-            path: '/transactions',
-            roles: ['admin', 'user']
-        },
-        {
-            text: 'Groups',
+            text: 'Media Library',
             icon: <Groups3Icon/>,
-            path: '/groups',
-            roles: ['admin', 'user']
+            path: '/admin/media',
+            roles: ['admin']
+        },
+        {
+            text: 'Appearance',
+            icon: <PaidIcon/>,
+            path: '/admin/appearance',
+            roles: ['admin']
         }
-    ]
+    ];
+    
     const secondaryNavItems: NavItem[] = [
         {
-            text: 'Settings',
+            text: 'Account Settings',
             icon: <SettingsIcon/>,
-            path: '/settings',
+            path: '/admin/account',
         },
         {
             text: 'Help & Support',
             icon: <HelpIcon/>,
-            path: '/help',
+            path: '/admin/help',
         },
-    ]
+    ];
 
-    const filteredNavItems = navItems.filter(() => {
+    const filteredNavItems = navItems.filter(() => true);
 
-        return true;
-    });
     return (
         <Box sx={{display: "flex", flexDirection: "column", minHeight: "100vh", m: 0, p: 0}}>
             <CssBaseline/>
@@ -169,12 +176,8 @@ function App() {
                             >
                                 {user?.username?.[0]?.toUpperCase()}
                             </Avatar>
-                            <Box
-                                sx={{display: "flex", flexDirection: "column", minWidth: 0}}
-                            >
-                                <Box
-                                    sx={{display: "flex", flexDirection: "column", gap: 1}}
-                                >
+                            <Box sx={{display: "flex", flexDirection: "column", minWidth: 0}}>
+                                <Box sx={{display: "flex", flexDirection: "column", gap: 1}}>
                                     <Typography
                                         variant="subtitle1"
                                         sx={{fontWeight: 600, lineHeight: 1.2, color: "white"}}
@@ -190,11 +193,9 @@ function App() {
                                         {user?.email}
                                     </Typography>
                                 </Box>
-
                             </Box>
                         </UserProfile>
 
-                        {/* Main Navigation */}
                         <List sx={{mt: 2}}>
                             {filteredNavItems.map((item) => (
                                 <NavItem
@@ -208,7 +209,6 @@ function App() {
 
                         <Divider sx={{borderColor: alpha("#fff", 0.1), my: 2, mx: 2}}/>
 
-                        {/* Secondary Navigation */}
                         <List>
                             {secondaryNavItems.map((item) => (
                                 <SecondaryNavItem
@@ -222,30 +222,57 @@ function App() {
                 </>
             )}
 
-            <Box sx={{display: "flex", flex: 1}}> <Main
-                open={open}
-                drawerWidth={drawerWidthValue}
-                onClick={isMobile && open ? handleOverlayClick : undefined}
-            >
-                {isMounted ? <Outlet/> : <ProgressLoader/>}
-            </Main>
+            <Box sx={{display: "flex", flex: 1}}>
+                <Main
+                    open={open}
+                    drawerWidth={drawerWidthValue}
+                    onClick={isMobile && open ? handleOverlayClick : undefined}
+                >
+                    {isMounted ? <Outlet/> : <ProgressLoader/>}
+                </Main>
             </Box>
         </Box>
-    )
+    );
+}
+
+function App() {
+    const { isAuthenticated } = useAuthentication();
+    const location = useLocation();
+    const navigate = useNavigate();
+    
+    // Check if we're on an admin route
+    const isAdminRoute = location.pathname.startsWith('/admin');
+    
+    // Redirect authenticated users trying to access public pages to admin dashboard
+    useEffect(() => {
+        if (isAuthenticated && !isAdminRoute && location.pathname !== '/') {
+            navigate('/admin/dashboard');
+        }
+    }, [isAuthenticated, isAdminRoute, location.pathname, navigate]);
+    
+    // Show admin portal for authenticated users on admin routes
+    if (isAuthenticated && isAdminRoute) {
+        return <AdminPortal />;
+    }
+    
+    // Show public website for everyone else
+    return <WebsiteLayout />;
 }
 
 export function AppWrapper() {
-    return <AuthenticationProvider>
-        <TokenProvider>
-            <UserProvider>
-                <PermissionProvider>
-                    <ThemeProvider>
-                        <SnackbarProvider>
-                            <App/>
-                        </SnackbarProvider>
-                    </ThemeProvider>
-                </PermissionProvider>
-            </UserProvider>
-        </TokenProvider>
-    </AuthenticationProvider>;
+    return (
+        <AuthenticationProvider>
+            <TokenProvider>
+                <UserProvider>
+                    <PermissionProvider>
+                        <ThemeProvider>
+                            <SnackbarProvider>
+                                <App/>
+                            </SnackbarProvider>
+                        </ThemeProvider>
+                    </PermissionProvider>
+                </UserProvider>
+            </TokenProvider>
+        </AuthenticationProvider>
+    );
 }
