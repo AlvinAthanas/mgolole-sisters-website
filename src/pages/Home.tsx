@@ -1,530 +1,305 @@
+import React, { useState } from 'react';
 import {
-  Box,
+  AppBar,
+  Toolbar,
   Container,
   Typography,
   Button,
-  Grid,
-  Stack,
+  Box,
   Card,
   CardContent,
-  alpha,
-} from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext.tsx";
+  Grid,
+  IconButton,
+  Menu,
+  MenuItem,
+  useScrollTrigger,
+  Slide,
+  Paper,
+  Divider,
+  Link as MuiLink
+} from '@mui/material';
 import {
-  TrendingUp,
-  MessageSquare,
-  Users,
-  Globe,
-  Award,
-  BarChart,
-  ArrowRight,
-  PlayCircle,
-  Quote,
-  Sparkles,
-} from "lucide-react";
+  Menu as MenuIcon,
+  Church,
+  School,
+  Heart,
+  Activity,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react';
 
-function Home() {
-  const navigate = useNavigate();
-  const { theme, muiTheme } = useTheme();
-  const primaryColor = muiTheme.palette.primary.main;
-  const secondaryColor = muiTheme.palette.secondary.main;
-  const backgroundColor = muiTheme.palette.background.default;
-  const paperColor = muiTheme.palette.background.paper;
-  const textPrimary = muiTheme.palette.text.primary;
-  const textSecondary = muiTheme.palette.text.secondary;
 
-  const services = [
+
+export default function CICMHomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [anchorEl, setAnchorEl] = useState<null | { el: HTMLButtonElement; menu: string }>(null);
+  const [mobileMenuAnchor, setMobileMenuAnchor] = useState<null | HTMLElement>(null);
+
+  const heroSlides = [
     {
-      icon: <MessageSquare size={32} />,
-      title: "Media Relations",
-      description:
-        "Strategic media outreach and press release distribution to amplify your message",
+      image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&h=600&fit=crop',
+      title: 'Welcome to the Immaculate Heart of Mary Sisters',
+      subtitle: 'Serving with Faith, Hope, and Love since 1937'
     },
     {
-      icon: <Globe size={32} />,
-      title: "Digital PR",
-      description:
-        "Online reputation management and compelling digital storytelling",
+      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&h=600&fit=crop',
+      title: 'Called to Serve',
+      subtitle: 'Evangelization • Education • Healthcare • Orphan Care'
     },
     {
-      icon: <Users size={32} />,
-      title: "Crisis Management",
-      description:
-        "24/7 crisis communication and proactive reputation protection",
-    },
-    {
-      icon: <BarChart size={32} />,
-      title: "Brand Strategy",
-      description:
-        "Data-driven brand positioning and comprehensive market analysis",
-    },
+      image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=600&fit=crop',
+      title: 'Join Our Mission',
+      subtitle: 'Discover your vocation with the CICM Sisters'
+    }
   ];
 
-  const clients = [
-    { name: "TechCorp", logo: "TC", industry: "Technology" },
-    { name: "GreenLife", logo: "GL", industry: "Sustainability" },
-    { name: "Fashionista", logo: "FS", industry: "Retail" },
-    { name: "HealthFirst", logo: "HF", industry: "Healthcare" },
-    { name: "EduFuture", logo: "EF", industry: "Education" },
-    { name: "FinSecure", logo: "FN", industry: "Finance" },
+  const ministries = [
+    {
+      icon: <Church size={48} />,
+      title: 'Evangelization',
+      description: 'Teaching catechism, providing baptism teachings, and preparing faithful for first communion and confirmation in parishes across Tanzania.',
+      color: '#1976d2'
+    },
+    {
+      icon: <Heart size={48} />,
+      title: 'Orphanage',
+      description: 'Caring for orphaned children with love and compassion at our Mgolole Orphanage Centre in Morogoro.',
+      color: '#d32f2f'
+    },
+    {
+      icon: <School size={48} />,
+      title: 'Education',
+      description: 'Providing quality education through four schools including Bernard Hilhorst Secondary School and St. Peter Clavery Primary School.',
+      color: '#388e3c'
+    },
+    {
+      icon: <Activity size={48} />,
+      title: 'Health Care',
+      description: 'Operating health centers and dispensaries across Morogoro and Mwanza, bringing healing to communities in need.',
+      color: '#f57c00'
+    }
   ];
+
+  const events = [
+    {
+      date: '2-27 June 2025',
+      title: 'Annual Retreat',
+      description: 'Join us for our annual spiritual retreat'
+    },
+    {
+      date: '22 August 2025',
+      title: 'Perpetual Vows & Jubilee',
+      description: 'Celebration of perpetual vows and jubilee'
+    },
+    {
+      date: '12 September 2025',
+      title: 'First Vows Ceremony',
+      description: 'Witness our novices take their first vows'
+    }
+  ];
+
+  const navItems = [
+    { label: 'Home', href: '#home' },
+    { label: 'About Us', submenu: ['History', 'Mission & Vows', 'Leadership', 'Where We Serve'] },
+    { label: 'Vocations', href: '#vocations' },
+    { label: 'Ministries', href: '#ministries' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Media', submenu: ['Photo Gallery', 'Videos', 'Publications'] },
+    { label: 'Events', href: '#events' },
+    { label: 'Contact', href: '#contact' }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  React.useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <Box
-      sx={{
-        pt: 10,
-        bgcolor: backgroundColor, // Ensure page uses theme background
-      }}
-    >
-      {/* Hero Section */}
-      <Box
-        sx={{
-          background: `linear-gradient(135deg, ${alpha(backgroundColor, 1)} 0%, ${alpha(paperColor, 0.8)} 100%)`,
-          position: "relative",
-          overflow: "hidden",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: `radial-gradient(circle at 20% 50%, ${alpha(primaryColor, 0.08)} 0%, transparent 50%),
-                                   radial-gradient(circle at 80% 80%, ${alpha(secondaryColor, 0.08)} 0%, transparent 50%)`,
-            pointerEvents: "none",
-          },
-        }}
+    <Box sx={{ bgcolor: '#f5f5f5' }}>
+
+      {/* Dropdown Menus */}
+      <Menu
+        anchorEl={anchorEl?.el}
+        open={Boolean(anchorEl)}
+        onClose={() => setAnchorEl(null)}
       >
-        <Container
-          maxWidth="lg"
-          sx={{ py: { xs: 10, md: 14 }, position: "relative", zIndex: 1 }}
-        >
-          <Grid container spacing={6} alignItems="center">
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Stack spacing={3}>
-                <Box
-                  sx={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 1,
-                    mb: 1,
-                  }}
-                >
-                  <Sparkles size={20} style={{ color: primaryColor }} />
-                  <Typography
-                    variant="overline"
-                    sx={{
-                      color: primaryColor,
-                      fontWeight: 700,
-                      letterSpacing: 1.5,
-                    }}
-                  >
-                    STRATEGIC PR SOLUTIONS
-                  </Typography>
-                </Box>
+        {anchorEl && navItems.find(i => i.label === anchorEl.menu)?.submenu?.map((sub) => (
+          <MenuItem key={sub} onClick={() => setAnchorEl(null)}>
+            {sub}
+          </MenuItem>
+        ))}
+      </Menu>
 
-                <Typography
-                  variant="h1"
-                  sx={{
-                    fontWeight: 800,
-                    lineHeight: 1.1,
-                    fontSize: { xs: "2.5rem", md: "3.5rem" },
-                    mb: 2,
-                    color: textPrimary,
-                  }}
-                >
-                  <Box
-                    component="span"
-                    sx={{
-                      background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      display: "inline",
-                    }}
-                  >
-                    Amplify
-                  </Box>{" "}
-                  Your Message,
-                  <br />
-                  <Box
-                    component="span"
-                    sx={{
-                      background: `linear-gradient(135deg, ${secondaryColor} 0%, ${primaryColor} 100%)`,
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      display: "inline",
-                    }}
-                  >
-                    Elevate
-                  </Box>{" "}
-                  Your Brand
-                </Typography>
+      <Menu
+        anchorEl={mobileMenuAnchor}
+        open={Boolean(mobileMenuAnchor)}
+        onClose={() => setMobileMenuAnchor(null)}
+      >
+        {navItems.map((item) => (
+          <MenuItem key={item.label} onClick={() => setMobileMenuAnchor(null)}>
+            {item.label}
+          </MenuItem>
+        ))}
+      </Menu>
 
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: textSecondary,
-                    fontWeight: 400,
-                    lineHeight: 1.7,
-                    mb: 3,
-                    maxWidth: "90%",
-                  }}
-                >
-                  We craft compelling narratives that resonate with your
-                  audience and drive meaningful results. Strategic PR solutions
-                  for modern brands.
-                </Typography>
-
-                <Stack
-                  direction={{ xs: "column", sm: "row" }}
-                  spacing={2}
-                  sx={{ mt: 2 }}
-                >
-                  <Button
-                    variant="contained"
-                    size="large"
-                    endIcon={<ArrowRight />}
-                    onClick={() => navigate("/contact")}
-                    sx={{
-                      background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                      color: "white",
-                      px: 4,
-                      py: 1.8,
-                      borderRadius: 3,
-                      textTransform: "none",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      boxShadow: `0 8px 32px ${alpha(primaryColor, 0.25)}`,
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        boxShadow: `0 12px 40px ${alpha(primaryColor, 0.35)}`,
-                        transform: "translateY(-3px)",
-                      },
-                    }}
-                  >
-                    Start Your Campaign
-                  </Button>
-
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    startIcon={<PlayCircle />}
-                    onClick={() => navigate("/case-studies")}
-                    sx={{
-                      borderWidth: 2,
-                      borderColor: primaryColor,
-                      color: primaryColor,
-                      px: 4,
-                      py: 1.8,
-                      borderRadius: 3,
-                      textTransform: "none",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        borderWidth: 2,
-                        backgroundColor: alpha(primaryColor, 0.08),
-                        borderColor: secondaryColor,
-                        transform: "translateY(-3px)",
-                      },
-                    }}
-                  >
-                    View Case Studies
-                  </Button>
-                </Stack>
-
-                <Stack direction="row" spacing={4} sx={{ mt: 5 }}>
-                  <Box>
-                    <Typography
-                      variant="h3"
-                      fontWeight={800}
-                      sx={{
-                        background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      150+
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color={textSecondary}
-                      fontWeight={500}
-                    >
-                      Successful Campaigns
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography
-                      variant="h3"
-                      fontWeight={800}
-                      sx={{
-                        background: `linear-gradient(135deg, ${secondaryColor} 0%, ${primaryColor} 100%)`,
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      98%
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color={textSecondary}
-                      fontWeight={500}
-                    >
-                      Client Retention
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography
-                      variant="h3"
-                      fontWeight={800}
-                      sx={{
-                        background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      500M+
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color={textSecondary}
-                      fontWeight={500}
-                    >
-                      Media Reach
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Stack>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Box
+      {/* Hero Section with Image Slider */}
+      <Box sx={{ position: 'relative', height: { xs: '400px', md: '600px' }, overflow: 'hidden' }}>
+        {heroSlides.map((slide, index) => (
+          <Box
+            key={index}
+            sx={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              opacity: currentSlide === index ? 1 : 0,
+              transition: 'opacity 1s ease-in-out',
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${slide.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <Container maxWidth="md">
+              <Typography
+                variant="h2"
+                align="center"
                 sx={{
-                  position: "relative",
-                  height: 500,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  color: 'white',
+                  fontWeight: 700,
+                  mb: 2,
+                  fontSize: { xs: '2rem', md: '3.5rem' },
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
                 }}
               >
-                {/* Animated Background Elements */}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    width: "350px",
-                    height: "350px",
-                    background: `radial-gradient(circle, ${alpha(primaryColor, 0.15)} 0%, transparent 70%)`,
-                    borderRadius: "50%",
-                    top: "5%",
-                    right: "5%",
-                    animation: "float 8s ease-in-out infinite",
-                    "@keyframes float": {
-                      "0%, 100%": { transform: "translateY(0px) scale(1)" },
-                      "50%": { transform: "translateY(-30px) scale(1.05)" },
-                    },
-                  }}
-                />
-                <Box
-                  sx={{
-                    position: "absolute",
-                    width: "250px",
-                    height: "250px",
-                    background: `radial-gradient(circle, ${alpha(secondaryColor, 0.12)} 0%, transparent 70%)`,
-                    borderRadius: "50%",
-                    bottom: "15%",
-                    left: "5%",
-                    animation: "float 6s ease-in-out infinite reverse",
-                  }}
-                />
-
-                {/* Hero Card */}
-                <Card
-                  sx={{
-                    width: "100%",
-                    maxWidth: 420,
-                    borderRadius: 5,
-                    overflow: "hidden",
-                    position: "relative",
-                    bgcolor: paperColor,
-                    boxShadow: `0 30px 60px ${theme === "light" ? alpha(primaryColor, 0.15) : alpha("#000", 0.5)}`,
-                    border: `1px solid ${alpha(primaryColor, 0.15)}`,
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-8px)",
-                    },
-                  }}
-                >
-                  <Box
-                    sx={{
-                      height: 140,
-                      background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      position: "relative",
-                      overflow: "hidden",
-                      "&::before": {
-                        content: '""',
-                        position: "absolute",
-                        top: "-50%",
-                        right: "-50%",
-                        width: "200%",
-                        height: "200%",
-                        background: `radial-gradient(circle, ${alpha("#fff", 0.1)} 0%, transparent 70%)`,
-                        animation: "pulse 4s ease-in-out infinite",
-                      },
-                      "@keyframes pulse": {
-                        "0%, 100%": { transform: "scale(1)" },
-                        "50%": { transform: "scale(1.1)" },
-                      },
-                    }}
-                  >
-                    <TrendingUp size={56} color="white" strokeWidth={2.5} />
-                  </Box>
-                  <CardContent sx={{ p: 4 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                      <Quote size={24} style={{ color: primaryColor }} />
-                      <Typography
-                        variant="h6"
-                        sx={{ ml: 1, fontWeight: 700, color: textPrimary }}
-                      >
-                        Client Success Story
-                      </Typography>
-                    </Box>
-                    <Typography
-                      variant="body1"
-                      color={textSecondary}
-                      paragraph
-                      sx={{ lineHeight: 1.7 }}
-                    >
-                      "mezos transformed our brand perception, resulting in a
-                      300% increase in positive media coverage and a 40% boost
-                      in customer engagement."
-                    </Typography>
-                    <Typography
-                      variant="subtitle2"
-                      fontWeight={700}
-                      sx={{
-                        background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      - Sarah Chen, CMO at TechCorp
-                    </Typography>
-                  </CardContent>
-                </Card>
+                {slide.title}
+              </Typography>
+              <Typography
+                variant="h5"
+                align="center"
+                sx={{
+                  color: 'white',
+                  mb: 4,
+                  fontSize: { xs: '1rem', md: '1.5rem' },
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+                }}
+              >
+                {slide.subtitle}
+              </Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+                <Button variant="contained" size="large" color="primary">
+                  Learn More
+                </Button>
+                <Button variant="outlined" size="large" sx={{ color: 'white', borderColor: 'white' }}>
+                  Contact Us
+                </Button>
               </Box>
-            </Grid>
-          </Grid>
-        </Container>
+            </Container>
+          </Box>
+        ))}
+
+        {/* Slider Controls */}
+        <IconButton
+          onClick={prevSlide}
+          sx={{
+            position: 'absolute',
+            left: 16,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            bgcolor: 'rgba(255,255,255,0.3)',
+            color: 'white',
+            '&:hover': { bgcolor: 'rgba(255,255,255,0.5)' }
+          }}
+        >
+          <ChevronLeft />
+        </IconButton>
+        <IconButton
+          onClick={nextSlide}
+          sx={{
+            position: 'absolute',
+            right: 16,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            bgcolor: 'rgba(255,255,255,0.3)',
+            color: 'white',
+            '&:hover': { bgcolor: 'rgba(255,255,255,0.5)' }
+          }}
+        >
+          <ChevronRight />
+        </IconButton>
+
+        {/* Slide Indicators */}
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: 20,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            gap: 1
+          }}
+        >
+          {heroSlides.map((_, index) => (
+            <Box
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              sx={{
+                width: 12,
+                height: 12,
+                borderRadius: '50%',
+                bgcolor: currentSlide === index ? 'white' : 'rgba(255,255,255,0.5)',
+                cursor: 'pointer',
+                transition: 'all 0.3s'
+              }}
+            />
+          ))}
+        </Box>
       </Box>
 
-      {/* Services Section */}
-      <Container maxWidth="lg" sx={{ py: 10, bgcolor: backgroundColor }}>
-        <Box sx={{ textAlign: "center", mb: 8 }}>
-          <Typography
-            variant="overline"
-            sx={{
-              color: secondaryColor,
-              fontWeight: 700,
-              letterSpacing: 1.5,
-              mb: 2,
-              display: "block",
-            }}
-          >
-            WHAT WE DO
-          </Typography>
-          <Typography
-            variant="h2"
-            fontWeight={800}
-            sx={{
-              mb: 2,
-              fontSize: { xs: "2rem", md: "2.75rem" },
-              color: textPrimary,
-            }}
-          >
-            Our{" "}
-            <Box
-              component="span"
-              sx={{
-                background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                display: "inline",
-              }}
-            >
-              Expertise
-            </Box>
-          </Typography>
-          <Typography
-            variant="h6"
-            color={textSecondary}
-            sx={{ maxWidth: 700, mx: "auto", fontWeight: 400 }}
-          >
-            Comprehensive PR solutions tailored to your brand's unique needs and
-            objectives
-          </Typography>
-        </Box>
+      {/* Ministries Section */}
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Typography variant="h3" align="center" sx={{ mb: 1, fontWeight: 700 }}>
+          Our Ministries
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="text.secondary" sx={{ mb: 6 }}>
+          Serving God's people through evangelization, education, healthcare, and compassion
+        </Typography>
 
         <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+          {ministries.map((ministry, index) => (
+            <Grid size={{xs:12, sm:6, md:3}} key={index}>
               <Card
                 sx={{
-                  height: "100%",
-                  backgroundColor: paperColor,
-                  border: `1px solid ${alpha(primaryColor, 0.1)}`,
-                  borderRadius: 4,
-                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                  cursor: "pointer",
-                  "&:hover": {
-                    transform: "translateY(-12px)",
-                    boxShadow: `0 20px 50px ${alpha(primaryColor, 0.18)}`,
-                    borderColor: alpha(primaryColor, 0.4),
-                    "& .service-icon": {
-                      background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                      color: "white",
-                      transform: "scale(1.1) rotate(5deg)",
-                    },
-                  },
+                  height: '100%',
+                  transition: 'transform 0.3s, box-shadow 0.3s',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: 6
+                  }
                 }}
               >
-                <CardContent sx={{ p: 4, textAlign: "center" }}>
-                  <Box
-                    className="service-icon"
-                    sx={{
-                      width: 90,
-                      height: 90,
-                      borderRadius: "20px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: `linear-gradient(135deg, ${alpha(primaryColor, 0.1)} 0%, ${alpha(secondaryColor, 0.1)} 100%)`,
-                      color: primaryColor,
-                      mx: "auto",
-                      mb: 3,
-                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    }}
-                  >
-                    {service.icon}
+                <CardContent sx={{ textAlign: 'center', p: 3 }}>
+                  <Box sx={{ color: ministry.color, mb: 2, display: 'flex', justifyContent: 'center' }}>
+                    {ministry.icon}
                   </Box>
-                  <Typography
-                    variant="h6"
-                    fontWeight={700}
-                    sx={{ mb: 1.5, color: textPrimary }}
-                  >
-                    {service.title}
+                  <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+                    {ministry.title}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color={textSecondary}
-                    sx={{ lineHeight: 1.6 }}
-                  >
-                    {service.description}
+                  <Typography variant="body2" color="text.secondary">
+                    {ministry.description}
                   </Typography>
+                  <Button size="small" sx={{ mt: 2 }} color="primary">
+                    Learn More →
+                  </Button>
                 </CardContent>
               </Card>
             </Grid>
@@ -532,251 +307,110 @@ function Home() {
         </Grid>
       </Container>
 
-      {/* Client Showcase */}
+      {/* Upcoming Events Section */}
+      <Box sx={{ bgcolor: 'white', py: 8 }}>
+        <Container maxWidth="lg">
+          <Typography variant="h3" align="center" sx={{ mb: 1, fontWeight: 700 }}>
+            Upcoming Events
+          </Typography>
+          <Typography variant="subtitle1" align="center" color="text.secondary" sx={{ mb: 6 }}>
+            Join us in celebrating our faith and community
+          </Typography>
+
+          <Grid container spacing={3}>
+            {events.map((event, index) => (
+              <Grid size={{xs:12, md:4}} key={index}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 3,
+                    height: '100%',
+                    transition: 'all 0.3s',
+                    borderLeft: '4px solid #1976d2',
+                    '&:hover': { 
+                      boxShadow: 4, 
+                      bgcolor: '#f5f5f5',
+                      transform: 'translateX(4px)'
+                    }
+                  }}
+                >
+                  <Typography variant="overline" color="primary" sx={{ fontWeight: 700, fontSize: '0.875rem' }}>
+                    {event.date}
+                  </Typography>
+                  <Typography variant="h6" sx={{ mt: 1, mb: 1, fontWeight: 600 }}>
+                    {event.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {event.description}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+          
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
+            <Button variant="outlined" size="large">
+              View All Events
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+
+      {/* Call-to-Action Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${alpha(primaryColor, 0.04)} 0%, ${alpha(secondaryColor, 0.04)} 100%)`,
-          py: 10,
-          bgcolor: backgroundColor,
+          backgroundImage: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
+          color: 'white',
+          py: 8
         }}
       >
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", mb: 8 }}>
-            <Typography
-              variant="overline"
-              sx={{
-                color: secondaryColor,
-                fontWeight: 700,
-                letterSpacing: 1.5,
-                mb: 2,
-                display: "block",
-              }}
-            >
-              OUR CLIENTS
-            </Typography>
-            <Typography
-              variant="h2"
-              fontWeight={800}
-              sx={{
-                mb: 2,
-                fontSize: { xs: "2rem", md: "2.75rem" },
-                color: textPrimary,
-              }}
-            >
-              Trusted by{" "}
-              <Box
-                component="span"
+          <Grid container spacing={4} alignItems="center">
+            <Grid size={{xs:12, md:6}}>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 700 }}>
+                Support Our Mission
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 3, opacity: 0.95 }}>
+                Your generous donation helps us continue serving communities through education, healthcare, and spiritual guidance. Every contribution makes a difference in the lives of those we serve.
+              </Typography>
+              <Button
+                variant="contained"
+                size="large"
                 sx={{
-                  background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  display: "inline",
+                  bgcolor: 'white',
+                  color: 'primary.main',
+                  fontWeight: 600,
+                  '&:hover': { bgcolor: '#f5f5f5' }
                 }}
               >
-                Industry Leaders
-              </Box>
-            </Typography>
-            <Typography
-              variant="h6"
-              color={textSecondary}
-              sx={{ maxWidth: 700, mx: "auto", fontWeight: 400 }}
-            >
-              We partner with innovative brands across diverse sectors
-            </Typography>
-          </Box>
-
-          <Grid container spacing={3} justifyContent="center">
-            {clients.map((client, index) => (
-              <Grid size={{ xs: 6, sm: 4, md: 2 }} key={index}>
-                <Card
-                  sx={{
-                    height: 140,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backgroundColor: paperColor,
-                    border: `1px solid ${alpha(primaryColor, 0.1)}`,
-                    borderRadius: 4,
-                    transition: "all 0.3s ease",
-                    cursor: "pointer",
-                    "&:hover": {
-                      borderColor: primaryColor,
-                      transform: "translateY(-8px)",
-                      boxShadow: `0 12px 30px ${alpha(primaryColor, 0.15)}`,
-                      "& .client-logo": {
-                        background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                        color: "white",
-                        transform: "scale(1.15)",
-                      },
-                    },
-                  }}
-                >
-                  <Box
-                    className="client-logo"
-                    sx={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: "16px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: `linear-gradient(135deg, ${alpha(primaryColor, 0.1)} 0%, ${alpha(secondaryColor, 0.1)} 100%)`,
-                      color: primaryColor,
-                      fontWeight: "bold",
-                      fontSize: "1.3rem",
-                      mb: 1.5,
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    {client.logo}
-                  </Box>
-                  <Typography
-                    variant="subtitle2"
-                    fontWeight={700}
-                    color={textPrimary}
-                  >
-                    {client.name}
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    color={textSecondary}
-                    fontWeight={500}
-                  >
-                    {client.industry}
-                  </Typography>
-                </Card>
-              </Grid>
-            ))}
+                Donate Now
+              </Button>
+            </Grid>
+            <Grid size={{xs:12, md:6}}>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: 700 }}>
+                Discover Your Calling
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 3, opacity: 0.95 }}>
+                Are you called to serve? Learn about religious life with the Immaculate Heart of Mary Sisters and discover if this is your vocation. We welcome young women ages 17-20.
+              </Typography>
+              <Button
+                variant="outlined"
+                size="large"
+                sx={{
+                  color: 'white',
+                  borderColor: 'white',
+                  fontWeight: 600,
+                  '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' }
+                }}
+              >
+                Learn About Vocations
+              </Button>
+            </Grid>
           </Grid>
         </Container>
       </Box>
 
-      {/* CTA Section */}
-      <Container maxWidth="lg" sx={{ py: 10, bgcolor: backgroundColor }}>
-        <Card
-          sx={{
-            p: { xs: 5, md: 8 },
-            textAlign: "center",
-            borderRadius: 5,
-            background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-            color: "white",
-            boxShadow: `0 30px 70px ${alpha(primaryColor, 0.3)}`,
-            position: "relative",
-            overflow: "hidden",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              top: "-50%",
-              right: "-50%",
-              width: "200%",
-              height: "200%",
-              background: `radial-gradient(circle, ${alpha("#fff", 0.1)} 0%, transparent 70%)`,
-              animation: "rotate 20s linear infinite",
-            },
-            "@keyframes rotate": {
-              "0%": { transform: "rotate(0deg)" },
-              "100%": { transform: "rotate(360deg)" },
-            },
-          }}
-        >
-          <Award
-            size={90}
-            style={{
-              position: "absolute",
-              top: "30px",
-              right: "30px",
-              opacity: 0.08,
-            }}
-          />
 
-          <Typography
-            variant="h2"
-            fontWeight={900}
-            sx={{
-              mb: 2,
-              position: "relative",
-              zIndex: 1,
-              fontSize: { xs: "2rem", md: "3rem" },
-            }}
-          >
-            Ready to Transform Your Brand Story?
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              mb: 5,
-              opacity: 0.95,
-              position: "relative",
-              zIndex: 1,
-              fontWeight: 400,
-              maxWidth: 700,
-              mx: "auto",
-            }}
-          >
-            Let's create something extraordinary together. Schedule a free
-            consultation today.
-          </Typography>
-
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={3}
-            justifyContent="center"
-            sx={{ position: "relative", zIndex: 1 }}
-          >
-            <Button
-              variant="contained"
-              size="large"
-              onClick={() => navigate("/contact")}
-              sx={{
-                backgroundColor: "white",
-                color: primaryColor,
-                px: 5,
-                py: 2,
-                borderRadius: 3,
-                textTransform: "none",
-                fontSize: "1.1rem",
-                fontWeight: 700,
-                boxShadow: `0 8px 25px ${alpha("#000", 0.2)}`,
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.95)",
-                  transform: "translateY(-3px)",
-                  boxShadow: `0 12px 35px ${alpha("#000", 0.3)}`,
-                },
-              }}
-            >
-              Schedule a Consultation
-            </Button>
-
-            <Button
-              variant="outlined"
-              size="large"
-              onClick={() => navigate("/services")}
-              sx={{
-                borderWidth: 2,
-                borderColor: "white",
-                color: "white",
-                px: 5,
-                py: 2,
-                borderRadius: 3,
-                textTransform: "none",
-                fontSize: "1.1rem",
-                fontWeight: 700,
-                "&:hover": {
-                  borderWidth: 2,
-                  backgroundColor: "rgba(255, 255, 255, 0.15)",
-                  borderColor: "rgba(255, 255, 255, 0.9)",
-                  transform: "translateY(-3px)",
-                },
-              }}
-            >
-              Explore Services
-            </Button>
-          </Stack>
-        </Card>
-      </Container>
     </Box>
   );
 }
-
-export default Home;
