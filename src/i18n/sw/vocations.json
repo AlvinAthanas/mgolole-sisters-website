@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "title": "Gundua Wito Wako",
+    "subtitle": "Jiunge na Masista wa Moyo Safi wa Maria katika Utumishi kwa Mungu na Watu Wake",
+    "tag1": "Umri 17-20",
+    "tag2": "Shirika la Dayosisi",
+    "tag3": "Tangu 1937"
+  },
+  "discernment": {
+    "title": "Mchakato wa Kutambua",
+    "subtitle": "Mungu ana madhumuni kwa maisha yako",
+    "content1": "Labda hii ndio mara ya kwanza unafikiria kuhusu wito wako - Mungu anakuita ufanye nini na maisha yako.",
+    "content2": "Habari njema ni kwamba, Amepanga wito wako tangu milele! Mungu huchagua kufunua wito wa kila mtu kupitia hali maalum. Haufanyi uchaguzi, unajaribu kugundua, kwa neema, siri yake nzuri kwa maisha yako.",
+    "quote": "Shirika letu linawakaribisha wasichana wenye umri wa miaka 17-20 ambao wanahisi wameitwa kumtumikia Mungu kupitia shirika hili.",
+    "stepsTitle": "Jinsi ya Kuanza Safari Yako",
+    "step1": {
+      "title": "Sali na Fikiri",
+      "description": "Anza kwa sala ya kila siku na kutafakari. Muombe Mungu afunue mapenzi yake kwa maisha yako."
+    },
+    "step2": {
+      "title": "Wasiliana Nasi",
+      "description": "Wasiliana na Mkurugenzi wetu wa Wito kujadili wito wako na kuuliza maswali."
+    },
+    "step3": {
+      "title": "Tembelea Jamii Yetu",
+      "description": "Panga ziara ya kujionea maisha ya jamii yetu na kushiriki katika programu yetu ya 'Njoo na Uone'."
+    },
+    "step4": {
+      "title": "Anza Maendeleo",
+      "description": "Ikiwa unahisi umeitwa, anza mchakato rasmi wa kutambua kama mtafutaji."
+    }
+  },
+  "contactForm": {
+    "title": "Wasiliana na Mkurugenzi Wetu wa Wito",
+    "subtitle": "Ikiwa unahisi umeitwa kumtumikia Mungu kupitia shirika letu, andika barua kwa Paroko wako hadi anwani ifuatayo:",
+    "mailTitle": "Tuma kwa:",
+    "addressLine1": "Mkurugenzi wa Wito,",
+    "addressLine2": "Masista wa Moyo Safi wa Maria,",
+    "addressLine3": "S.L.P 1049,",
+    "addressLine4": "Morogoro, Tanzania",
+    "name": "Jina Kamili",
+    "age": "Umri",
+    "email": "Barua Pepe",
+    "phone": "Nambari ya Simu",
+    "location": "Mahala/Parokia",
+    "heardAbout": "Uligundua vipi kuhusu sisi?",
+    "message": "Ujumbe Wako/Hadithi ya Wito",
+    "submit": "Wasilisha Uchunguzi"
+  },
+  "formation": {
+    "title": "Safari ya Maendeleo",
+    "duration": "Muda:",
+    "location": "Mahali:"
+  },
+  "stages": {
+    "aspirant": {
+      "stage": "Mtafutaji",
+      "duration": "Mwaka 1",
+      "location": "Parokia ya Nyumbani",
+      "description": "Kipindi cha awali cha kutambua ambapo wasichana wachanga wanaichunguza maisha ya kimataifa wakiwa wanaishi katika parokia yao ya nyumbani chini ya uongozi wa kiroho.",
+      "requirements": "Umri 17-20, imani ya Kikatoliki, mapendekezo kutoka kwa kasisi wa parokia"
+    },
+    "candidate": {
+      "stage": "Mgombea",
+      "duration": "Mwaka 1",
+      "location": "Kituo cha Maendeleo cha CICM",
+      "description": "Kipindi kikali cha maendeleo ya kiroho na maisha ya jamii katika kituo chetu cha maendeleo. Lengo kuu ni sala, masomo, na maisha ya jamii.",
+      "requirements": "Ukamilifu wa mtafutaji, ukaguzi wa matibabu, tathmini ya kisaikolojia"
+    },
+    "postulant": {
+      "stage": "Mwanachama",
+      "duration": "Miaka 2",
+      "location": "Kituo cha Maendeleo cha CICM",
+      "description": "Kuzama zaidi katika maisha ya kiroho na ufahamu wa nadhiri za kimataifa. Masomo makali ya maandiko, theolojia, na karama ya CICM.",
+      "requirements": "Ukaribisho rasmi katika shirika, ahadi ya kushiriki katika programu ya maendeleo"
+    },
+    "novitiate": {
+      "stage": "Mwanamapokezi",
+      "duration": "Miaka 2",
+      "location": "Kituo cha Maendeleo cha CICM",
+      "description": "Mwaka wa kanoni uliotolewa kwa sala, masomo, na maandalizi ya nadhiri za kimataifa. Lengo kuu ni ukuzaji wa kiroho na kutambua.",
+      "requirements": "Ukamilifu wa uwanachama, ukomavu wa kuanza mwaka wa kanoni"
+    },
+    "firstVows": {
+      "stage": "Nadhiri za Kwanza",
+      "duration": "Muda",
+      "location": "Nyumba ya Mama ya CICM Mgolole",
+      "description": "Kutoa nadhiri za muda za usafi, umaskini, na utii. Kuanza kwa kazi ya kiapostoli katika jamii.",
+      "requirements": "Ukamilifu wa uwanamapokezi, idhini na timu ya maendeleo na uongozi wa shirika"
+    }
+  },
+  "table": {
+    "stage": "Hatua",
+    "duration": "Muda",
+    "location": "Mahali",
+    "description": "Maelezo",
+    "requirements": "Mahitaji"
+  },
+  "faq": {
+    "title": "Maswali Yanayoulizwa Mara kwa Mara",
+    "q1": {
+      "question": "Ni umri gani unaofaa kuzingatia maisha ya kimataifa?",
+      "answer": "Shirika letu linawakaribisha wasichana wenye umri wa miaka 17-20 ambao wanahisi wameitwa kumtumikia Mungu. Huu ndio umri unaofaa kuanza kutambua kwani unaruhusu maendeleo sahihi na ukuaji wa kiroho."
+    },
+    "q2": {
+      "question": "Ni mahitaji gani ya elimu yanahitajika?",
+      "answer": "Kiwango cha chini cha elimu ni ukamilifu wa elimu ya sekondari (Kidato cha 4). Elimu ya juu ni faida lakini si lazima. Kinachohitajika zaidi ni hamu ya kweli ya kumtumikia Mungu na watu wake."
+    },
+    "q3": {
+      "question": "Naweza kutembelea monasteri kabla ya kufanya uamuzi?",
+      "answer": "Ndio! Tunahimiza wanaotafuta wito kutembelea nyumba yetu ya mama huko Mgolole. Unaweza kushiriki katika wikendi zetu za 'Njoo na Uone' ili kujionea maisha ya jamii. Wasiliana na Mkurugenzi wa Wito kupanga ziara."
+    },
+    "q4": {
+      "question": "Muda wa maendeleo ni muda gani?",
+      "answer": "Mchakato kamili wa maendeleo huchukua takriban miaka 6-7: mwaka 1 kama mtafutaji, mwaka 1 kama mgombea, miaka 2 kama mwanachama, na miaka 2 kama mwanamapokezi kabla ya nadhiri za kwanza. Hii inahakikisha maandalizi kamili ya kiroho na vitendo."
+    },
+    "q5": {
+      "question": "Ni aina gani ya usaidizi hutolewa wakati wa maendeleo?",
+      "answer": "Maendeleo yanajumuisha mwelekeo wa kiroho, masomo ya kitaaluma, usaidizi wa kisaikolojia, huduma ya matibabu, na mahitaji yote ya kimwili. Shirika hutoa usaidizi kamili ili uweze kuzingatia ukuaji wako wa kiroho."
+    },
+    "q6": {
+      "question": "Naweza kuendelea na elimu yangu wakati wa maendeleo?",
+      "answer": "Ndio, programu yetu ya maendeleo inajumuisha fursa za kuendelea na elimu. Masista wengi hufuata digrii za theolojia, elimu, afya, au kazi ya kijamii wakiwa katika maendeleo, kulingana na masilahi yao na mahitaji ya jamii."
+    }
+  },
+  "contactInfo": {
+    "title": "Wasiliana na Mkurugenzi Wetu wa Wito",
+    "director": "Mkurugenzi wa Wito",
+    "directorName": "Sr. Flora Chuma (CICM)",
+    "phone": "+255 XXX XXX XXX",
+    "email": "wito@cicm.or.tz",
+    "address": "Masista wa Moyo Safi wa Maria, S.L.P 1049, Morogoro, Tanzania",
+    "contactButton": "Tuma Barua Pepe",
+    "callButton": "Piga Sasa"
+  },
+  "cta": {
+    "title": "Chukua Hatua ya Kwanza",
+    "description": "Ikiwa unahisi Mungu anaweza kukuita kwenye maisha ya kimataifa, usisite kuwasiliana. Timu yetu ya wito iko tayari kutembea nawe katika safari hii ya kugundua.",
+    "button1": "Pakua Mwongozo wa Wito",
+    "button2": "Panga Ziara"
+  }
+}

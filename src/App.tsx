@@ -44,6 +44,7 @@ import {Main, StyledDrawer, UserProfile} from "./utils/styles.tsx";
 import Groups3Icon from '@mui/icons-material/Groups3';
 import {PermissionProvider} from "./contexts/PermissionContext.tsx";
 import WebsiteLayout from "./components/Website/WebsiteLayout.tsx";
+import { LanguageProvider } from "./contexts/LanguageContext.tsx";
 
 // Website Layout
 
@@ -266,9 +267,11 @@ export function AppWrapper() {
                 <UserProvider>
                     <PermissionProvider>
                         <ThemeProvider>
-                            <SnackbarProvider>
-                                <App/>
-                            </SnackbarProvider>
+                            <LanguageProvider>
+                                <SnackbarProvider>
+                                    <App/>
+                                </SnackbarProvider>
+                            </LanguageProvider>
                         </ThemeProvider>
                     </PermissionProvider>
                 </UserProvider>

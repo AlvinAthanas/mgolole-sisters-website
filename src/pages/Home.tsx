@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {
-  AppBar,
-  Toolbar,
   Container,
   Typography,
   Button,
@@ -12,14 +10,10 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  useScrollTrigger,
-  Slide,
   Paper,
-  Divider,
-  Link as MuiLink
+  useTheme,
 } from '@mui/material';
 import {
-  Menu as MenuIcon,
   Church,
   School,
   Heart,
@@ -27,13 +21,15 @@ import {
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
-
-
+import { useTheme as useAppTheme } from '../contexts/ThemeContext'; // Adjust import path
 
 export default function CICMHomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [anchorEl, setAnchorEl] = useState<null | { el: HTMLButtonElement; menu: string }>(null);
   const [mobileMenuAnchor, setMobileMenuAnchor] = useState<null | HTMLElement>(null);
+  
+  const muiTheme = useTheme();
+  const { theme: appTheme } = useAppTheme();
 
   const heroSlides = [
     {
@@ -58,25 +54,25 @@ export default function CICMHomePage() {
       icon: <Church size={48} />,
       title: 'Evangelization',
       description: 'Teaching catechism, providing baptism teachings, and preparing faithful for first communion and confirmation in parishes across Tanzania.',
-      color: '#1976d2'
+      color: 'primary.main' // Changed from hardcoded #1976d2
     },
     {
       icon: <Heart size={48} />,
       title: 'Orphanage',
       description: 'Caring for orphaned children with love and compassion at our Mgolole Orphanage Centre in Morogoro.',
-      color: '#d32f2f'
+      color: 'secondary.main' // Changed from hardcoded #d32f2f
     },
     {
       icon: <School size={48} />,
       title: 'Education',
       description: 'Providing quality education through four schools including Bernard Hilhorst Secondary School and St. Peter Clavery Primary School.',
-      color: '#388e3c'
+      color: 'success.main' // Changed from hardcoded #388e3c
     },
     {
       icon: <Activity size={48} />,
       title: 'Health Care',
       description: 'Operating health centers and dispensaries across Morogoro and Mwanza, bringing healing to communities in need.',
-      color: '#f57c00'
+      color: 'warning.main' // Changed from hardcoded #f57c00
     }
   ];
 
@@ -123,16 +119,31 @@ export default function CICMHomePage() {
   }, []);
 
   return (
-    <Box sx={{ bgcolor: '#f5f5f5' }}>
+    <Box sx={{ bgcolor: 'background.default' }}>
 
       {/* Dropdown Menus */}
       <Menu
         anchorEl={anchorEl?.el}
         open={Boolean(anchorEl)}
         onClose={() => setAnchorEl(null)}
+        PaperProps={{
+          sx: {
+            mt: 1,
+            bgcolor: 'background.paper',
+            boxShadow: 3
+          }
+        }}
       >
         {anchorEl && navItems.find(i => i.label === anchorEl.menu)?.submenu?.map((sub) => (
-          <MenuItem key={sub} onClick={() => setAnchorEl(null)}>
+          <MenuItem 
+            key={sub} 
+            onClick={() => setAnchorEl(null)}
+            sx={{
+              '&:hover': {
+                bgcolor: 'action.hover'
+              }
+            }}
+          >
             {sub}
           </MenuItem>
         ))}
@@ -142,9 +153,24 @@ export default function CICMHomePage() {
         anchorEl={mobileMenuAnchor}
         open={Boolean(mobileMenuAnchor)}
         onClose={() => setMobileMenuAnchor(null)}
+        PaperProps={{
+          sx: {
+            mt: 1,
+            bgcolor: 'background.paper',
+            boxShadow: 3
+          }
+        }}
       >
         {navItems.map((item) => (
-          <MenuItem key={item.label} onClick={() => setMobileMenuAnchor(null)}>
+          <MenuItem 
+            key={item.label} 
+            onClick={() => setMobileMenuAnchor(null)}
+            sx={{
+              '&:hover': {
+                bgcolor: 'action.hover'
+              }
+            }}
+          >
             {item.label}
           </MenuItem>
         ))}
@@ -196,10 +222,30 @@ export default function CICMHomePage() {
                 {slide.subtitle}
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
-                <Button variant="contained" size="large" color="primary">
+                <Button 
+                  variant="contained" 
+                  size="large" 
+                  color="primary"
+                  sx={{
+                    '&:hover': {
+                      bgcolor: 'primary.dark'
+                    }
+                  }}
+                >
                   Learn More
                 </Button>
-                <Button variant="outlined" size="large" sx={{ color: 'white', borderColor: 'white' }}>
+                <Button 
+                  variant="outlined" 
+                  size="large" 
+                  sx={{ 
+                    color: 'white', 
+                    borderColor: 'white',
+                    '&:hover': { 
+                      borderColor: 'white', 
+                      bgcolor: 'rgba(255,255,255,0.1)' 
+                    }
+                  }}
+                >
                   Contact Us
                 </Button>
               </Box>
@@ -217,7 +263,10 @@ export default function CICMHomePage() {
             transform: 'translateY(-50%)',
             bgcolor: 'rgba(255,255,255,0.3)',
             color: 'white',
-            '&:hover': { bgcolor: 'rgba(255,255,255,0.5)' }
+            '&:hover': { 
+              bgcolor: 'rgba(255,255,255,0.5)',
+              color: 'white'
+            }
           }}
         >
           <ChevronLeft />
@@ -231,7 +280,10 @@ export default function CICMHomePage() {
             transform: 'translateY(-50%)',
             bgcolor: 'rgba(255,255,255,0.3)',
             color: 'white',
-            '&:hover': { bgcolor: 'rgba(255,255,255,0.5)' }
+            '&:hover': { 
+              bgcolor: 'rgba(255,255,255,0.5)',
+              color: 'white'
+            }
           }}
         >
           <ChevronRight />
@@ -258,7 +310,10 @@ export default function CICMHomePage() {
                 borderRadius: '50%',
                 bgcolor: currentSlide === index ? 'white' : 'rgba(255,255,255,0.5)',
                 cursor: 'pointer',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                '&:hover': {
+                  bgcolor: currentSlide === index ? 'white' : 'rgba(255,255,255,0.7)'
+                }
               }}
             />
           ))}
@@ -267,7 +322,7 @@ export default function CICMHomePage() {
 
       {/* Ministries Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Typography variant="h3" align="center" sx={{ mb: 1, fontWeight: 700 }}>
+        <Typography variant="h3" align="center" sx={{ mb: 1, fontWeight: 700, color: 'text.primary' }}>
           Our Ministries
         </Typography>
         <Typography variant="subtitle1" align="center" color="text.secondary" sx={{ mb: 6 }}>
@@ -281,6 +336,7 @@ export default function CICMHomePage() {
                 sx={{
                   height: '100%',
                   transition: 'transform 0.3s, box-shadow 0.3s',
+                  bgcolor: 'background.paper',
                   '&:hover': {
                     transform: 'translateY(-8px)',
                     boxShadow: 6
@@ -288,7 +344,14 @@ export default function CICMHomePage() {
                 }}
               >
                 <CardContent sx={{ textAlign: 'center', p: 3 }}>
-                  <Box sx={{ color: ministry.color, mb: 2, display: 'flex', justifyContent: 'center' }}>
+                  <Box 
+                    sx={{ 
+                      color: ministry.color, 
+                      mb: 2, 
+                      display: 'flex', 
+                      justifyContent: 'center' 
+                    }}
+                  >
                     {ministry.icon}
                   </Box>
                   <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
@@ -297,7 +360,16 @@ export default function CICMHomePage() {
                   <Typography variant="body2" color="text.secondary">
                     {ministry.description}
                   </Typography>
-                  <Button size="small" sx={{ mt: 2 }} color="primary">
+                  <Button 
+                    size="small" 
+                    sx={{ 
+                      mt: 2,
+                      color: ministry.color,
+                      '&:hover': {
+                        bgcolor: 'action.hover'
+                      }
+                    }}
+                  >
                     Learn More →
                   </Button>
                 </CardContent>
@@ -308,7 +380,7 @@ export default function CICMHomePage() {
       </Container>
 
       {/* Upcoming Events Section */}
-      <Box sx={{ bgcolor: 'white', py: 8 }}>
+      <Box sx={{ bgcolor: 'background.paper', py: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="h3" align="center" sx={{ mb: 1, fontWeight: 700 }}>
             Upcoming Events
@@ -326,15 +398,24 @@ export default function CICMHomePage() {
                     p: 3,
                     height: '100%',
                     transition: 'all 0.3s',
-                    borderLeft: '4px solid #1976d2',
+                    borderLeft: '4px solid',
+                    borderColor: 'primary.main',
+                    bgcolor: 'background.paper',
                     '&:hover': { 
                       boxShadow: 4, 
-                      bgcolor: '#f5f5f5',
+                      bgcolor: 'action.hover',
                       transform: 'translateX(4px)'
                     }
                   }}
                 >
-                  <Typography variant="overline" color="primary" sx={{ fontWeight: 700, fontSize: '0.875rem' }}>
+                  <Typography 
+                    variant="overline" 
+                    color="primary" 
+                    sx={{ 
+                      fontWeight: 700, 
+                      fontSize: '0.875rem' 
+                    }}
+                  >
                     {event.date}
                   </Typography>
                   <Typography variant="h6" sx={{ mt: 1, mb: 1, fontWeight: 600 }}>
@@ -349,7 +430,16 @@ export default function CICMHomePage() {
           </Grid>
           
           <Box sx={{ textAlign: 'center', mt: 4 }}>
-            <Button variant="outlined" size="large">
+            <Button 
+              variant="outlined" 
+              size="large"
+              color="primary"
+              sx={{
+                '&:hover': {
+                  bgcolor: 'action.hover'
+                }
+              }}
+            >
               View All Events
             </Button>
           </Box>
@@ -359,7 +449,7 @@ export default function CICMHomePage() {
       {/* Call-to-Action Section */}
       <Box
         sx={{
-          backgroundImage: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
+          backgroundImage: `linear-gradient(135deg, ${muiTheme.palette.primary.main} 0%, ${muiTheme.palette.primary.light} 100%)`,
           color: 'white',
           py: 8
         }}
@@ -380,7 +470,10 @@ export default function CICMHomePage() {
                   bgcolor: 'white',
                   color: 'primary.main',
                   fontWeight: 600,
-                  '&:hover': { bgcolor: '#f5f5f5' }
+                  '&:hover': { 
+                    bgcolor: 'grey.100',
+                    color: 'primary.dark'
+                  }
                 }}
               >
                 Donate Now
@@ -400,7 +493,10 @@ export default function CICMHomePage() {
                   color: 'white',
                   borderColor: 'white',
                   fontWeight: 600,
-                  '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' }
+                  '&:hover': { 
+                    borderColor: 'white', 
+                    bgcolor: 'rgba(255,255,255,0.1)' 
+                  }
                 }}
               >
                 Learn About Vocations
@@ -409,8 +505,6 @@ export default function CICMHomePage() {
           </Grid>
         </Container>
       </Box>
-
-
     </Box>
   );
 }

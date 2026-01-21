@@ -1,0 +1,163 @@
+{
+  "hero": {
+    "title": "Kuhusu Sisi",
+    "subtitle": "Masista wa Moyo Safi wa Maria Mgolole, Morogoro",
+    "tagline": "Tumikia kwa Imani, Tumaini na Upendo tangu 1937"
+  },
+  "history": {
+    "title": "Historia Yetu",
+    "content": [
+      "Shirika la Masista wa Moyo Safi wa Maria Mgolole, Morogoro (C.I.C.M) ni shirika la kimataifa lilianzishwa mwaka 1937 na marehemu Askofu Mheshimiwa Bernard Hilhorst wa Wababa wa Roho Mtakatifu, akiambatana na marehemu Sr. Amabilis wa Masista wa Damu Takatifu ambaye pia alikuwa Mama Mkuu wa kwanza wa C.I.C.M. Ni shirika la dayosisi.",
+      "Nyumba ya Mama ya shirika iko katika wilaya ya Morogoro katika kijiji kinachoitwa Mgolole. Watahiniwa wa kwanza walitoka Milima ya Sandawe katika Dayosisi ya Dodoma, Milima ya Uluguru katika Dayosisi ya Morogoro.",
+      "Tarehe 15 Agosti 1939, watawa wanne walifanya Nadhiri zao za kwanza katika nyumba ya mama ya Mgolole, Morogoro Tanzania."
+    ],
+    "footnote": "Ilianzishwa: 1937 • Nadhiri za Kwanza: Agosti 15, 1939 • Nyumba ya Mama: Mgolole, Morogoro"
+  },
+  "vows": {
+    "title": "Nadhiri Zetu Takatifu",
+    "chastity": {
+      "title": "Usafi",
+      "description": "Nadhiri yetu ya usafi inaturuhusu kuishi maisha kwa Mungu, kwa Upendo pekee. Kila siku, Yesu ndiye kiini cha kazi yetu na mbele ya akili zetu. Tunajitoa kwa Mungu, tukiacha ndoa ya kidunia, na tunaanza kuishi karamu ya ndoa ya milele hapa na sasa."
+    },
+    "poverty": {
+      "title": "Umaskini",
+      "description": "Kwa kutoa nadhiri ya kuishi maisha ya umaskini tunatoa nafasi katika mioyo yetu kwa watoto wote wa Mungu. Kadri tunavyokuwa huru kutoka kwa vipingamizi vya ulimwengu, ndivyo tunavyokuwa huru kuishi kama Yesu alivyofanya. Tukifuata mfano wa maisha maskini ya Kristo duniani, tunarahisisha maisha yetu kwa matumaini ya kubadilika, zaidi na zaidi, kuwa kama yeye."
+    },
+    "obedience": {
+      "title": "Utii",
+      "description": "Tunapotoa nadhiri ya utii tunatoa nadhiri ya kuishi kwa mapenzi ya Mungu kama inavyofahamika kwetu kupitia wakuu wetu wenye upendo. Kama Maria alivyofanya, bila wasiwasi au kuuliza, tunasema tu 'ndiyo'. Kwa 'ndiyo' yetu tunaachiliwa huru kupenda Mungu kwa ujasiri kwa njia yoyote anayotuita tumpende."
+    }
+  },
+  "mission": {
+    "title": "Dhamira Yetu",
+    "statement": "Kama Masista wa Moyo Safi wa Maria, tunaishikilia kwa uaminifu usafi wetu, utii na umaskini wa hiari. Tunatumai kuishi maisha yaliyozingatiwa katika Injili, tukifuata mfano wa Maria-mama wa Bwana wetu, tukionyesha kwa sala, huruma, na kujitolea mwenyewe. Tunajitolea kuwahudumia wengine kupitia huduma za utunzaji wa yatima, elimu, huduma za afya na kuwatunza wazee wenye uhitaji.",
+    "tagline": "Kuongozwa na Injili, Kuhamasishwa na Maria"
+  },
+  "charisms": {
+    "title": "Karama Zetu",
+    "evangelization": "Uinjilisti",
+    "orphansCare": "Utunzaji wa Yatima",
+    "education": "Elimu",
+    "healthServices": "Huduma za Afya"
+  },
+  "leadershipHistory": {
+    "title": "Historia ya Uongozi",
+    "subtitle": "Mama Wakuu Kuanzia 1937 Hadi Sasa",
+    "generals": [
+      {
+        "name": "Sr. Maria Amabilis Kern (CPS)",
+        "period": "1937-1948"
+      },
+      {
+        "name": "Sr. Maria Adjuta Neumar (CPS)",
+        "period": "1948-1951"
+      },
+      {
+        "name": "Sr. Maria Majellina (CPS)",
+        "period": "1951-1966"
+      },
+      {
+        "name": "Sr. Maria Nikoletha (CICM)",
+        "period": "1967-1977"
+      },
+      {
+        "name": "Sr. Constansia Nyagatwa (CICM)",
+        "period": "1977-1987"
+      },
+      {
+        "name": "Sr. Veronica Petri (CICM)",
+        "period": "1987-2000"
+      },
+      {
+        "name": "Sr. Pudensiana Kibena (CICM)",
+        "period": "2000-2012"
+      },
+      {
+        "name": "Sr. Flora Chuma (CICM)",
+        "period": "2012-2018"
+      },
+      {
+        "name": "Sr. Pudensiana Kibena (CICM)",
+        "period": "2018-hadi sasa"
+      }
+    ]
+  },
+  "currentLeadership": {
+    "title": "Uongozi wa Sasa",
+    "leaders": [
+      {
+        "role": "Mama Mkuu",
+        "name": "Sr. Pudensiana Kibena"
+      },
+      {
+        "role": "Naibu Mama Mkuu",
+        "name": "Sr. Genorosa Mkwama"
+      },
+      {
+        "role": "Mshauri",
+        "name": "Sr. Julieth Makonde"
+      },
+      {
+        "role": "Mshauri",
+        "name": "Sr. Florensia Mkwizu"
+      },
+      {
+        "role": "Mshauri",
+        "name": "Sr. Violet Lengeju"
+      },
+      {
+        "role": "Mhasibu",
+        "name": "Sr. Caroline Nguzo"
+      },
+      {
+        "role": "Katibu Mkuu",
+        "name": "Sr. Queenbeth Berege"
+      }
+    ]
+  },
+  "adminStructure": {
+    "title": "Muundo wa Utawala",
+    "subtitle": "MUUNDO WA UTAWALA WA C.I.C.M - MOROGORO",
+    "items": [
+      "Askofu",
+      "Wakala (Parokia)",
+      "Waandaaji",
+      "Katibu Mkuu",
+      "Kashona",
+      "Mama Mkuu",
+      "Naibu Mama Mkuu",
+      "Baraza la Mawaziri",
+      "Mhasibu Mkuu",
+      "Wahisabu",
+      "Mkuu wa Nyumba ya Mama (Mgolole)",
+      "Mkuu wa Miradi",
+      "Mkuu wa Kila Jamii (Parokia)",
+      "Wakala wa Miradi (Miradi)",
+      "Wanachote Wote wa Jamii"
+    ]
+  },
+  "serviceLocations": {
+    "title": "Tunahudumia Wapi",
+    "description": "Kama shirika la dayosisi eneo kuu la huduma ni Dayosisi ya Morogoro. Hata hivyo, kutokana na mahitaji shirika linahudumia katika dayosisi nyingine ndani ya Tanzania na kimataifa.",
+    "regions": [
+      {
+        "region": "Eneo Kuu la Huduma",
+        "locations": ["Dayosisi ya Morogoro"]
+      },
+      {
+        "region": "Dayosisi Nyingine Tanzania",
+        "locations": ["Dar es Salaam", "Bagamoyo", "Mwanza", "Mbeya", "Mtwara", "Arusha"]
+      },
+      {
+        "region": "Kimataifa",
+        "locations": ["Verona, Italia"]
+      }
+    ],
+    "scripture": "Enendeni ulimwenguni mwote mkawafundishe watu wote.",
+    "scriptureReference": "Marko 16:15"
+  },
+  "callToAction": {
+    "title": "Jiunge Nasi Katika Dhamira Yetu",
+    "description": "Gundua jinsi unavyoweza kusaidia dhamira yetu kupitia sala, kujitolea, au michango."
+  }
+}

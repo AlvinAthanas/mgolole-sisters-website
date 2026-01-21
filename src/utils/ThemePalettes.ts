@@ -1,28 +1,28 @@
 import type { PaletteOptions } from "@mui/material/styles";
 
 /* =========================
-   LIGHT MODE PALETTE
+   LIGHT MODE PALETTE (Updated to match your website)
 ========================= */
 export const lightPalette: PaletteOptions = {
     mode: "light",
 
     primary: {
-        main: "#D4AF37",      // Gold – prestige & excellence
-        light: "#E6C866",
-        dark: "#B8962E",
-        contrastText: "#063C5A", // Dark blue for readability
+        main: "#1976d2",      // Blue from your header/buttons
+        light: "#42a5f5",     // Lighter blue from CTA section
+        dark: "#1565c0",      // Darker blue for hover states
+        contrastText: "#ffffff", // White text on blue buttons
     },
 
     secondary: {
-        main: "#063C5A",      // Deep Ocean Blue – authority & trust
-        light: "#0A567F",
-        dark: "#042B41",
+        main: "#d32f2f",      // Red from your "Donate" button
+        light: "#ef5350",
+        dark: "#c62828",
         contrastText: "#ffffff",
     },
 
     success: {
         main: "#2E7D32",
-        light: "#60AD5E",
+        light: "#4CAF50",
         dark: "#1B5E20",
     },
 
@@ -45,37 +45,37 @@ export const lightPalette: PaletteOptions = {
     },
 
     background: {
-        default: "#F9FAFB",   // Soft neutral, keeps gold clean
-        paper: "#FFFFFF",
+        default: "#f5f5f5",   // Light gray from page background
+        paper: "#FFFFFF",     // White for cards/paper components
     },
 
     text: {
-        primary: "#063C5A",   // Brand-consistent text color
-        secondary: "#475569",
-        disabled: "#94A3B8",
+        primary: "#212121",   // Dark gray from footer background
+        secondary: "#666666", // Gray for secondary text
+        disabled: "#9e9e9e",
     },
 
-    divider: "rgba(6, 60, 90, 0.12)",
+    divider: "rgba(0, 0, 0, 0.12)",
 };
 
 /* =========================
-   DARK MODE PALETTE
+   DARK MODE PALETTE (Updated to match your website's dark footer)
 ========================= */
 export const darkPalette: PaletteOptions = {
     mode: "dark",
 
     primary: {
-        main: "#E6C866",      // Softer gold for dark mode
-        light: "#F1DA8A",
-        dark: "#D4AF37",
-        contrastText: "#020617",
+        main: "#42a5f5",      // Lighter blue for dark mode
+        light: "#64b5f6",
+        dark: "#1976d2",
+        contrastText: "#ffffff",
     },
 
     secondary: {
-        main: "#0A567F",      // Lifted ocean blue for dark UI
-        light: "#1377A8",
-        dark: "#063C5A",
-        contrastText: "#F8FAFC",
+        main: "#ef5350",      // Lighter red for dark mode
+        light: "#ff8a80",
+        dark: "#d32f2f",
+        contrastText: "#ffffff",
     },
 
     success: {
@@ -103,19 +103,18 @@ export const darkPalette: PaletteOptions = {
     },
 
     background: {
-        default: "#020617",   // Near-black navy
-        paper: "#071F2F",     // Blue-tinted surface (brand aligned)
+        default: "#121212",   // Dark background
+        paper: "#212121",     // Matches your footer dark color
     },
 
     text: {
-        primary: "#F8FAFC",
-        secondary: "#CBD5E1",
-        disabled: "#64748B",
+        primary: "#ffffff",   // White text for dark mode
+        secondary: "#b0b0b0", // Light gray for secondary text
+        disabled: "#666666",
     },
 
-    divider: "rgba(203, 213, 225, 0.14)",
+    divider: "rgba(255, 255, 255, 0.12)",
 };
-
 
 /* =========================
    PALETTE SWITCHER

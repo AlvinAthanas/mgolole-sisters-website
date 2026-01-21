@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Nyumbani",
+    "about": "Kuhusu Sisi",
+    "vocations": "Wito",
+    "ministries": "Huduma",
+    "projects": "Miradi",
+    "media": "Vyombo vya Habari",
+    "events": "Matukio",
+    "contact": "Wasiliana",
+    "donate": "Toa Michango"
+  },
+  "buttons": {
+    "learnMore": "Jifunze Zaidi",
+    "readMore": "Soma Zaidi",
+    "viewAll": "Tazama Zote",
+    "contactUs": "Wasiliana Nasi",
+    "donateNow": "Toa Sasa",
+    "backToTop": "Rudi Juu"
+  },
+  "footer": {
+    "copyright": "© {{year}} Masista wa Moyo Safi wa Maria (CICM). Haki zote zimehifadhiwa.",
+    "privacy": "Sera ya Faragha",
+    "terms": "Masharti ya Matumizi"
+  }
+}

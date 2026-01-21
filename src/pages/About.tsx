@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Container,
@@ -5,812 +6,653 @@ import {
   Grid,
   Card,
   CardContent,
-  Avatar,
-  Stack,
-  alpha,
-  Button,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Paper,
   Divider,
   Chip,
-} from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext.tsx";
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  useTheme,
+  alpha,
+} from '@mui/material';
 import {
-  Award,
-  Users,
-  Target,
-  Heart,
-  Globe,
-  TrendingUp,
-  ArrowRight,
-  Quote,
+  ExpandMore,
+  History,
+  Gavel,
+  Flag,
+  People,
+  LocationOn,
+  School,
+  Favorite,
+  Church,
+  MedicalServices,
+  Business,
+  Timeline,
   Star,
-  Building,
-  Clock,
-} from "lucide-react";
+  Home,
+  Group,
+  AccountBalance,
+  SupervisorAccount,
+} from '@mui/icons-material';
+import { useTheme as useAppTheme } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
+
+// Type definitions
+interface Vow {
+  title: string;
+  description: string;
+  icon: React.ReactElement;
+}
+
+interface Charism {
+  name: string;
+  icon: React.ReactElement;
+  color: string;
+}
+
+interface MotherGeneral {
+  name: string;
+  period: string;
+}
+
+interface CurrentLeader {
+  role: string;
+  name: string;
+  icon: React.ReactElement;
+}
+
+interface ServiceLocationRegion {
+  region: string;
+  locations: string[];
+}
 
 const About = () => {
-  const navigate = useNavigate();
-  const { theme, muiTheme } = useTheme();
-  const primaryColor = muiTheme.palette.primary.main;
-  const secondaryColor = muiTheme.palette.secondary.main;
-  const backgroundColor = muiTheme.palette.background.default;
-  const paperColor = muiTheme.palette.background.paper;
-  const textPrimary = muiTheme.palette.text.primary;
-  const textSecondary = muiTheme.palette.text.secondary;
+  const muiTheme = useTheme();
+  const { theme: appTheme } = useAppTheme();
+  const { t } = useTranslation();
 
-  const teamMembers = [
+  // History data - using translations with fallback
+  const historyContent = {
+    title: t('about.history.title', 'Our History'),
+    content: t('about.history.content', { returnObjects: true }) || [
+      "The Immaculate Heart of Mary sisters of Mgolole, Morogoro (C.I.C.M) is a religious congregation founded in 1937 by the late His Lordship Rt.Rev.Bishop Bernard Hilhorst of Holy Ghost Fathers, accompanied with the late Rev.Sr.Amabilis of the Precious Blood Sisters who was also the first Mother General of C.I.C.M. It is a diocesan congregation.",
+      "The Mother House of the congregation is located in Morogoro district at village called Mgolole. The first candidates came from Sandawe Mountain in Dodoma Diocese, Uluguru Mountains in Morogoro Diocese.",
+      "On 15 August 1939 four novices made their first Vows at Mgolole mother house, Morogoro Tanzania."
+    ],
+    footnote: t('about.history.footnote', 'Founded: 1937 • First Vows: August 15, 1939 • Mother House: Mgolole, Morogoro')
+  };
+
+  // Vows data - using translations with fallback
+  const vows: Vow[] = [
     {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      bio: "Former journalist with 15+ years in media relations",
-      avatar: "SJ",
-      expertise: ["Media Strategy", "Crisis Comms"],
+      title: t('about.vows.chastity.title', 'Chastity'),
+      description: t('about.vows.chastity.description', "Our vow of chastity allows us to live a life for God, for Love alone. Each day, Jesus is at the heart of our work and at the forefront of our minds. We espouse ourselves to God, foregoing an earthly marriage, and begin living the eternal marriage feast here and now."),
+      icon: <Favorite />
     },
     {
-      name: "Michael Chen",
-      role: "Creative Director",
-      bio: "Brand storytelling expert and former agency creative lead",
-      avatar: "MC",
-      expertise: ["Brand Strategy", "Content"],
+      title: t('about.vows.poverty.title', 'Poverty'),
+      description: t('about.vows.poverty.description', "By vowing to live a life of poverty we make room in our hearts for all God's children. The freer we are from the distractions of the world, the freer we are to live as Jesus did. In imitation of Christ's poor life on earth, we simplify our lives with hopes of being transformed, more and more, into His likeness."),
+      icon: <Home />
     },
     {
-      name: "Elena Rodriguez",
-      role: "Digital PR Director",
-      bio: "Specializes in digital campaigns and social media influence",
-      avatar: "ER",
-      expertise: ["Digital PR", "Social Media"],
-    },
-    {
-      name: "David Kim",
-      role: "Head of Strategy",
-      bio: "Data-driven strategist with MBA from Stanford",
-      avatar: "DK",
-      expertise: ["Analytics", "Planning"],
-    },
+      title: t('about.vows.obedience.title', 'Obedience'),
+      description: t('about.vows.obedience.description', "When we profess a vow of obedience we vow to live by God's will as it is made known to us by our loving Superiors. As Mary did, without worry or questioning, we simply say 'yes'. By our 'yes' we are set free to confidently love God in whatever way He calls us to love Him."),
+      icon: <Gavel />
+    }
   ];
 
-  const values = [
-    {
-      icon: <Target size={32} />,
-      title: "Strategic Excellence",
-      description: "Data-driven approaches that deliver measurable results",
+  // Mission statement
+  const missionStatement = t('about.mission.statement', "As Sisters of Immaculate Heart of Mary, we faithfully hold our devotion to chastity, obedience and voluntary poverty. We aspire to live a life rooted in the Gospel, in imitation of Mary-mother of our LORD, expressed by prayer, compassion, and self sacrifice. We devote ourselves to serve others through the apostolates of orphans' care, education, health care and caring for the elderly in need.");
+  const missionTagline = t('about.mission.tagline', 'Guided by the Gospel, Inspired by Mary');
+
+  // Charisms - using translations with fallback
+  const charisms: Charism[] = [
+    { 
+      name: t('about.charisms.evangelization', 'Evangelization'), 
+      icon: <Church />, 
+      color: "primary" 
     },
-    {
-      icon: <Heart size={32} />,
-      title: "Client Partnership",
-      description: "We work as an extension of your team, not just a vendor",
+    { 
+      name: t('about.charisms.orphansCare', 'Orphans Care'), 
+      icon: <Favorite />, 
+      color: "secondary" 
     },
-    {
-      icon: <Globe size={32} />,
-      title: "Global Perspective",
-      description: "International experience with local market expertise",
+    { 
+      name: t('about.charisms.education', 'Education'), 
+      icon: <School />, 
+      color: "success" 
     },
-    {
-      icon: <TrendingUp size={32} />,
-      title: "Continuous Innovation",
-      description: "Always evolving with media trends and technology",
-    },
+    { 
+      name: t('about.charisms.healthServices', 'Health Services'), 
+      icon: <MedicalServices />, 
+      color: "error" 
+    }
   ];
 
-  const milestones = [
-    { year: "2018", event: "Founded in New York City", highlight: true },
-    { year: "2019", event: "First Fortune 500 client partnership" },
-    { year: "2020", event: "Expanded to London office", highlight: true },
-    { year: "2021", event: "Won PR Industry Innovation Award" },
-    { year: "2022", event: "Launched digital transformation division" },
-    { year: "2023", event: "Reached 150+ successful campaigns" },
-  ];
+  // Leadership History - Mother Generals
+  const motherGeneralsData = t('about.leadershipHistory.generals', { returnObjects: true });
+  const motherGenerals: MotherGeneral[] = Array.isArray(motherGeneralsData) 
+    ? motherGeneralsData.map((general: any) => ({
+        name: general.name || general,
+        period: general.period || ''
+      }))
+    : [
+        { name: "Sr. Maria Amabilis Kern (CPS)", period: "1937-1948" },
+        { name: "Sr. Maria Adjuta Neumar (CPS)", period: "1948-1951" },
+        { name: "Sr. Maria Majellina (CPS)", period: "1951-1966" },
+        { name: "Sr. Maria Nikoletha (CICM)", period: "1967-1977" },
+        { name: "Sr. Constansia Nyagatwa (CICM)", period: "1977-1987" },
+        { name: "Sr. Veronica Petri (CICM)", period: "1987-2000" },
+        { name: "Sr. Pudensiana Kibena (CICM)", period: "2000-2012" },
+        { name: "Sr. Flora Chuma (CICM)", period: "2012-2018" },
+        { name: "Sr. Pudensiana Kibena (CICM)", period: "2018-present" }
+      ];
+
+  // Current Leadership
+  const currentLeadershipData = t('about.currentLeadership.leaders', { returnObjects: true });
+  const currentLeadership: CurrentLeader[] = Array.isArray(currentLeadershipData)
+    ? currentLeadershipData.map((leader: any) => ({
+        role: leader.role || '',
+        name: leader.name || leader,
+        icon: leader.icon || <Star />
+      }))
+    : [
+        { role: "Mother General", name: "Sr. Pudensiana Kibena", icon: <Star /> },
+        { role: "Deputy Mother General", name: "Sr. Genorosa Mkwama", icon: <SupervisorAccount /> },
+        { role: "Counciler", name: "Sr. Julieth Makonde", icon: <Group /> },
+        { role: "Counciler", name: "Sr. Florensia Mkwizu", icon: <Group /> },
+        { role: "Counciler", name: "Sr. Violet Lengeju", icon: <Group /> },
+        { role: "Accountant", name: "Sr. Caroline Nguzo", icon: <AccountBalance /> },
+        { role: "General Secretary", name: "Sr. Queenbeth Berege", icon: <Business /> }
+      ];
+
+  // Administration Structure
+  const adminStructureData = t('about.adminStructure.items', { returnObjects: true });
+  const adminStructure: string[] = Array.isArray(adminStructureData) 
+    ? adminStructureData 
+    : [
+        "Bishop",
+        "Cashears (Parishes)",
+        "Formaters",
+        "Secretary General",
+        "Chaplain",
+        "Mother General",
+        "Depute Mother General",
+        "Councils",
+        "Chief Accountant",
+        "Accountants",
+        "Superior of Mother House (Mgolole)",
+        "Head of Projects",
+        "Superior of Each Community (Parishes)",
+        "Cashears of the Projects (Projects)",
+        "All Members of the Community"
+      ];
+
+  // Service Locations
+  const serviceLocationsData = t('about.serviceLocations.regions', { returnObjects: true });
+  const serviceLocationsRaw = Array.isArray(serviceLocationsData) 
+    ? serviceLocationsData 
+    : [
+        { region: "Main Service Area", locations: ["Morogoro Diocese"] },
+        { region: "Other Dioceses in Tanzania", locations: ["Dar es Salaam", "Bagamoyo", "Mwanza", "Mbeya", "Mtwara", "Arusha"] },
+        { region: "International", locations: ["Verona, Italy"] }
+      ];
+
+  // Process service locations to ensure we always have arrays with proper typing
+  const serviceLocations: ServiceLocationRegion[] = serviceLocationsRaw.map((region: any) => ({
+    region: typeof region === 'object' ? (region.region || region) : String(region),
+    locations: Array.isArray(region.locations) 
+      ? region.locations.map((loc: any) => String(loc))
+      : [String(region.locations || region)]
+  }));
 
   return (
-    <Box
-      sx={{
-        pt: 10,
-        bgcolor: backgroundColor,
-      }}
-    >
+    <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pt: 2 }}>
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${alpha(primaryColor, 0.05)} 0%, ${alpha(secondaryColor, 0.05)} 100%)`,
+          bgcolor: 'primary.main',
+          color: 'white',
           py: { xs: 8, md: 12 },
-          position: "relative",
-          overflow: "hidden",
-          bgcolor: backgroundColor,
+          position: 'relative',
+          overflow: 'hidden',
+          mb: 6
         }}
       >
         <Container maxWidth="lg">
-          <Grid container spacing={6} alignItems="center">
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Stack spacing={3}>
-                <Chip
-                  icon={<Building size={16} />}
-                  label="About Us"
-                  sx={{
-                    backgroundColor: alpha(primaryColor, 0.1),
-                    color: primaryColor,
-                    fontWeight: 600,
-                    alignSelf: "flex-start",
-                  }}
-                />
-
-                <Typography
-                  variant="h1"
-                  fontWeight={800}
-                  sx={{
-                    lineHeight: 1.1,
-                    mb: 2,
-                    color: textPrimary,
-                  }}
-                >
-                  We Shape{" "}
-                  <Box component="span" sx={{ color: primaryColor }}>
-                    Narratives
-                  </Box>{" "}
-                  That{" "}
-                  <Box component="span" sx={{ color: secondaryColor }}>
-                    Define
-                  </Box>{" "}
-                  Brands
-                </Typography>
-
-                <Typography
-                  variant="h5"
-                  sx={{
-                    color: textSecondary,
-                    fontWeight: 400,
-                    lineHeight: 1.6,
-                    mb: 3,
-                  }}
-                >
-                  mezos transforms how brands communicate in today's complex
-                  media landscape. We blend strategic thinking with creative
-                  execution to build meaningful connections.
-                </Typography>
-
-                <Stack direction="row" spacing={2}>
-                  <Button
-                    variant="contained"
-                    size="large"
-                    onClick={() => navigate("/contact")}
-                    sx={{
-                      background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                      color: "white",
-                      px: 4,
-                      py: 1.5,
-                      borderRadius: 3,
-                      textTransform: "none",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      boxShadow: `0 8px 25px ${alpha(primaryColor, 0.3)}`,
-                      "&:hover": {
-                        boxShadow: `0 12px 35px ${alpha(primaryColor, 0.4)}`,
-                        transform: "translateY(-2px)",
-                      },
-                    }}
-                  >
-                    Work With Us
-                  </Button>
-
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    onClick={() => navigate("/team")}
-                    sx={{
-                      borderColor: primaryColor,
-                      color: primaryColor,
-                      px: 4,
-                      py: 1.5,
-                      borderRadius: 3,
-                      textTransform: "none",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      "&:hover": {
-                        backgroundColor: alpha(primaryColor, 0.08),
-                        borderColor: secondaryColor,
-                      },
-                    }}
-                  >
-                    Meet Our Team
-                  </Button>
-                </Stack>
-              </Stack>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Box
-                sx={{
-                  position: "relative",
-                  height: 400,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {/* Decorative Elements */}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    width: "200px",
-                    height: "200px",
-                    background: `radial-gradient(circle, ${alpha(primaryColor, 0.1)} 0%, transparent 70%)`,
-                    borderRadius: "50%",
-                    top: "10%",
-                    right: "10%",
-                    animation: "pulse 3s ease-in-out infinite",
-                    "@keyframes pulse": {
-                      "0%, 100%": { transform: "scale(1)" },
-                      "50%": { transform: "scale(1.05)" },
-                    },
-                  }}
-                />
-
-                {/* Quote Card */}
-                <Card
-                  sx={{
-                    width: "100%",
-                    maxWidth: 400,
-                    borderRadius: 4,
-                    backgroundColor: paperColor,
-                    border: `2px solid ${alpha(primaryColor, 0.2)}`,
-                    boxShadow: `0 20px 60px ${alpha(primaryColor, 0.15)}`,
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  <CardContent sx={{ p: 4 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                      <Quote size={32} color={primaryColor} />
-                      <Typography
-                        variant="h6"
-                        sx={{ ml: 2, fontWeight: 700, color: textPrimary }}
-                      >
-                        Our Philosophy
-                      </Typography>
-                    </Box>
-                    <Typography variant="body1" color={textSecondary} paragraph>
-                      "Great PR isn't about making noise—it's about making an
-                      impact. We believe in stories that matter, relationships
-                      that last, and results that speak for themselves."
-                    </Typography>
-                    <Box sx={{ display: "flex", alignItems: "center", mt: 3 }}>
-                      <Avatar
-                        sx={{
-                          width: 40,
-                          height: 40,
-                          backgroundColor: primaryColor,
-                          color: "white",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        SJ
-                      </Avatar>
-                      <Box sx={{ ml: 2 }}>
-                        <Typography
-                          variant="subtitle2"
-                          fontWeight={600}
-                          color={textPrimary}
-                        >
-                          Sarah Johnson
-                        </Typography>
-                        <Typography variant="caption" color={textSecondary}>
-                          CEO & Founder
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Box>
-            </Grid>
-          </Grid>
+          <Typography
+            variant="h1"
+            sx={{
+              fontWeight: 900,
+              fontSize: { xs: '2.5rem', md: '4rem' },
+              mb: 2,
+              textAlign: 'center'
+            }}
+          >
+            {t('about.hero.title', 'About Us')}
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 400,
+              textAlign: 'center',
+              maxWidth: '800px',
+              mx: 'auto',
+              opacity: 0.9
+            }}
+          >
+            {t('about.hero.subtitle', 'Immaculate Heart of Mary Sisters of Mgolole, Morogoro')}
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={{
+              textAlign: 'center',
+              mt: 2,
+              opacity: 0.8,
+              fontStyle: 'italic'
+            }}
+          >
+            {t('about.hero.tagline', 'Serving with Faith, Hope, and Love since 1937')}
+          </Typography>
         </Container>
       </Box>
 
-      {/* Mission & Vision */}
-      <Container maxWidth="lg" sx={{ py: 8, bgcolor: backgroundColor }}>
-        <Grid container spacing={6}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card
-              sx={{
-                height: "100%",
-                borderRadius: 4,
-                backgroundColor: paperColor,
-                border: `2px solid ${alpha(primaryColor, 0.1)}`,
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  borderColor: primaryColor,
-                  transform: "translateY(-4px)",
-                },
-              }}
-            >
-              <CardContent sx={{ p: 4 }}>
-                <Box
-                  sx={{
-                    width: 60,
-                    height: 60,
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: `linear-gradient(135deg, ${alpha(primaryColor, 0.1)} 0%, ${alpha(secondaryColor, 0.1)} 100%)`,
-                    color: primaryColor,
-                    mb: 3,
-                  }}
-                >
-                  <Target size={28} />
-                </Box>
-                <Typography
-                  variant="h4"
-                  fontWeight={700}
-                  sx={{ mb: 2, color: textPrimary }}
-                >
-                  Our Mission
-                </Typography>
-                <Typography variant="body1" color={textSecondary} paragraph>
-                  To empower brands with strategic communication that builds
-                  trust, drives engagement, and creates lasting impact in an
-                  ever-evolving media landscape.
-                </Typography>
-                <Typography variant="body1" color={textSecondary}>
-                  We combine data-driven insights with creative storytelling to
-                  deliver measurable results that align with your business
-                  objectives.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+      <Container maxWidth="lg">
+        {/* History Section */}
+        <Card sx={{ mb: 6, borderRadius: 2, overflow: 'hidden' }}>
+          <CardContent sx={{ p: { xs: 3, md: 5 } }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+              <History sx={{ fontSize: 40, color: 'primary.main', mr: 2 }} />
+              <Typography variant="h4" sx={{ fontWeight: 700 }}>
+                {historyContent.title}
+              </Typography>
+            </Box>
+            {Array.isArray(historyContent.content) ? (historyContent.content as string[]).map((paragraph: string, index: number) => (
+              <Typography
+                key={index}
+                variant="body1"
+                sx={{
+                  mb: 3,
+                  lineHeight: 1.8,
+                  color: 'text.secondary',
+                  fontSize: '1.1rem'
+                }}
+              >
+                {paragraph}
+              </Typography>
+            )) : (
+              <Typography
+                variant="body1"
+                sx={{
+                  mb: 3,
+                  lineHeight: 1.8,
+                  color: 'text.secondary',
+                  fontSize: '1.1rem'
+                }}
+              >
+                {String(historyContent.content)}
+              </Typography>
+            )}
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 4, pt: 3, borderTop: 1, borderColor: 'divider' }}>
+              <Timeline sx={{ color: 'primary.main', mr: 2 }} />
+              <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
+                {historyContent.footnote}
+              </Typography>
+            </Box>
+          </CardContent>
+        </Card>
 
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card
+        {/* Vows Section */}
+        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
+          {t('about.vows.title', 'Our Sacred Vows')}
+        </Typography>
+        <Grid container spacing={4} sx={{ mb: 8 }}>
+          {vows.map((vow: Vow, index: number) => (
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  height: '100%',
+                  transition: 'all 0.3s ease',
+                  borderRadius: 2,
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: 6,
+                    bgcolor: alpha(muiTheme.palette.primary.main, 0.02)
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                  <Box
+                    sx={{
+                      width: 60,
+                      height: 60,
+                      borderRadius: '50%',
+                      bgcolor: alpha(muiTheme.palette.primary.main, 0.1),
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mr: 2
+                    }}
+                  >
+                    {React.cloneElement(vow.icon as React.ReactElement<any>, { sx: { fontSize: 30, color: 'primary.main' } })}
+                  </Box>
+                  <Typography variant="h5" sx={{ fontWeight: 600, color: 'primary.main' }}>
+                    {vow.title}
+                  </Typography>
+                </Box>
+                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                  {vow.description}
+                </Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+
+        {/* Mission & Charisms Section */}
+        <Grid container spacing={6} sx={{ mb: 8 }}>
+          <Grid size={{ xs: 12, md: 8 }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 3, color: 'text.primary' }}>
+              {t('about.mission.title', 'Our Mission')}
+            </Typography>
+            <Paper
+              elevation={1}
               sx={{
-                height: "100%",
-                borderRadius: 4,
-                backgroundColor: paperColor,
-                border: `2px solid ${alpha(secondaryColor, 0.1)}`,
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  borderColor: secondaryColor,
-                  transform: "translateY(-4px)",
-                },
+                p: 4,
+                borderRadius: 2,
+                borderLeft: '4px solid',
+                borderColor: 'primary.main',
+                bgcolor: 'background.paper'
               }}
             >
-              <CardContent sx={{ p: 4 }}>
-                <Box
-                  sx={{
-                    width: 60,
-                    height: 60,
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: `linear-gradient(135deg, ${alpha(secondaryColor, 0.1)} 0%, ${alpha(primaryColor, 0.1)} 100%)`,
-                    color: secondaryColor,
-                    mb: 3,
-                  }}
-                >
-                  <Globe size={28} />
-                </Box>
-                <Typography
-                  variant="h4"
-                  fontWeight={700}
-                  sx={{ mb: 2, color: textPrimary }}
-                >
-                  Our Vision
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: '1.2rem',
+                  lineHeight: 1.8,
+                  color: 'text.primary',
+                  fontStyle: 'italic',
+                  mb: 3
+                }}
+              >
+                "{missionStatement}"
+              </Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Flag sx={{ color: 'primary.main', mr: 1 }} />
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  {missionTagline}
                 </Typography>
-                <Typography variant="body1" color={textSecondary} paragraph>
-                  To be the most trusted partner for brands navigating the
-                  future of communication, setting new standards for excellence
-                  in public relations worldwide.
-                </Typography>
-                <Typography variant="body1" color={textSecondary}>
-                  We envision a world where authentic storytelling drives
-                  meaningful connections between brands and their audiences.
-                </Typography>
-              </CardContent>
-            </Card>
+              </Box>
+            </Paper>
+          </Grid>
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 3, color: 'text.primary' }}>
+              {t('about.charisms.title', 'Our Charisms')}
+            </Typography>
+            <Grid container spacing={2}>
+              {charisms.map((charism: Charism, index: number) => (
+                <Grid size={{ xs: 6 }} key={index}>
+                  <Paper
+                    elevation={1}
+                    sx={{
+                      p: 3,
+                      borderRadius: 2,
+                      textAlign: 'center',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      bgcolor: 'background.paper'
+                    }}
+                  >
+                    <Box sx={{ mb: 2, color: `${charism.color}.main` }}>
+                      {React.cloneElement(charism.icon as React.ReactElement<any>, { sx: { fontSize: 40 } })}
+                    </Box>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                      {charism.name}
+                    </Typography>
+                  </Paper>
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
-      </Container>
 
-      {/* Our Values */}
-      <Box
-        sx={{
-          backgroundColor: alpha(primaryColor, 0.03),
-          py: 8,
-          bgcolor: backgroundColor,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", mb: 6 }}>
-            <Typography
-              variant="h2"
-              fontWeight={800}
-              sx={{ mb: 2, color: textPrimary }}
-            >
-              Our{" "}
-              <Box component="span" sx={{ color: primaryColor }}>
-                Core Values
-              </Box>
-            </Typography>
-            <Typography
-              variant="h6"
-              color={textSecondary}
-              sx={{ maxWidth: 700, mx: "auto" }}
-            >
-              The principles that guide every decision and action we take
-            </Typography>
-          </Box>
-
-          <Grid container spacing={4}>
-            {values.map((value, index) => (
-              <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={index}>
+        {/* Leadership History */}
+        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
+          {t('about.leadershipHistory.title', 'Leadership History')}
+        </Typography>
+        <Typography variant="subtitle1" sx={{ mb: 4, color: 'text.secondary' }}>
+          {t('about.leadershipHistory.subtitle', 'Mother Generals From 1937 to Present')}
+        </Typography>
+        
+        <Box sx={{ mb: 8 }}>
+          <Grid container spacing={3}>
+            {motherGenerals.map((general: MotherGeneral, index: number) => (
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                 <Card
                   sx={{
-                    height: "100%",
-                    backgroundColor: paperColor,
-                    border: `1px solid ${alpha(primaryColor, 0.1)}`,
-                    borderRadius: 3,
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-8px)",
-                      borderColor: primaryColor,
-                      boxShadow: `0 15px 40px ${alpha(primaryColor, 0.1)}`,
-                    },
+                    height: '100%',
+                    borderRadius: 2,
+                    transition: 'all 0.3s',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      boxShadow: 4
+                    }
                   }}
                 >
-                  <CardContent sx={{ p: 4, textAlign: "center" }}>
+                  <CardContent sx={{ p: 3, textAlign: 'center' }}>
                     <Box
                       sx={{
                         width: 80,
                         height: 80,
-                        borderRadius: "50%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: `linear-gradient(135deg, ${alpha(primaryColor, 0.1)} 0%, ${alpha(secondaryColor, 0.1)} 100%)`,
-                        color: primaryColor,
-                        mx: "auto",
-                        mb: 3,
+                        borderRadius: '50%',
+                        bgcolor: 'primary.light',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mx: 'auto',
+                        mb: 2,
+                        color: 'white'
                       }}
                     >
-                      {value.icon}
+                      <People sx={{ fontSize: 40 }} />
                     </Box>
-                    <Typography
-                      variant="h5"
-                      fontWeight={600}
-                      sx={{ mb: 2, color: textPrimary }}
-                    >
-                      {value.title}
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                      {general.name}
                     </Typography>
-                    <Typography variant="body2" color={textSecondary}>
-                      {value.description}
-                    </Typography>
+                    {general.period && (
+                      <Chip
+                        label={general.period}
+                        size="small"
+                        sx={{
+                          bgcolor: index === motherGenerals.length - 1 ? 'success.light' : 'primary.light',
+                          color: 'white',
+                          fontWeight: 600
+                        }}
+                      />
+                    )}
                   </CardContent>
                 </Card>
               </Grid>
             ))}
           </Grid>
-        </Container>
-      </Box>
-
-      {/* Our Team */}
-      <Container maxWidth="lg" sx={{ py: 8, bgcolor: backgroundColor }}>
-        <Box sx={{ textAlign: "center", mb: 6 }}>
-          <Typography
-            variant="h2"
-            fontWeight={800}
-            sx={{ mb: 2, color: textPrimary }}
-          >
-            Meet Our{" "}
-            <Box component="span" sx={{ color: primaryColor }}>
-              Leadership
-            </Box>
-          </Typography>
-          <Typography
-            variant="h6"
-            color={textSecondary}
-            sx={{ maxWidth: 700, mx: "auto", mb: 4 }}
-          >
-            A diverse team of experts with decades of combined experience in PR,
-            media, and brand strategy
-          </Typography>
-          <Button
-            variant="outlined"
-            endIcon={<ArrowRight />}
-            onClick={() => navigate("/team")}
-            sx={{
-              borderColor: primaryColor,
-              color: primaryColor,
-              borderRadius: 2,
-              textTransform: "none",
-              fontWeight: 600,
-              "&:hover": {
-                backgroundColor: alpha(primaryColor, 0.08),
-                borderColor: secondaryColor,
-              },
-            }}
-          >
-            View Full Team
-          </Button>
         </Box>
 
-        <Grid container spacing={4} sx={{ mt: 2 }}>
-          {teamMembers.map((member, index) => (
-            <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={index}>
-              <Card
+        {/* Current Leadership */}
+        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
+          {t('about.currentLeadership.title', 'Current Leadership')}
+        </Typography>
+        <Grid container spacing={3} sx={{ mb: 8 }}>
+          {currentLeadership.map((leader: CurrentLeader, index: number) => (
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+              <Paper
+                elevation={1}
                 sx={{
-                  height: "100%",
-                  backgroundColor: paperColor,
-                  border: `1px solid ${alpha(primaryColor, 0.1)}`,
-                  borderRadius: 3,
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    transform: "translateY(-4px)",
-                    borderColor: primaryColor,
-                  },
+                  p: 3,
+                  borderRadius: 2,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  bgcolor: 'background.paper'
                 }}
               >
-                <CardContent sx={{ p: 3, textAlign: "center" }}>
-                  <Avatar
-                    sx={{
-                      width: 80,
-                      height: 80,
-                      margin: "0 auto 16px",
-                      backgroundColor: alpha(primaryColor, 0.1),
-                      color: primaryColor,
-                      fontSize: "1.5rem",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    {member.avatar}
-                  </Avatar>
-
-                  <Typography
-                    variant="h6"
-                    fontWeight={600}
-                    sx={{ mb: 0.5, color: textPrimary }}
-                  >
-                    {member.name}
+                <Box
+                  sx={{
+                    width: 70,
+                    height: 70,
+                    borderRadius: '50%',
+                    bgcolor: alpha(muiTheme.palette.primary.main, 0.1),
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    mb: 2
+                  }}
+                >
+                  {React.cloneElement(leader.icon as React.ReactElement<any>, { sx: { fontSize: 35, color: 'primary.main' } })}
+                </Box>
+                {leader.role && (
+                  <Typography variant="subtitle2" sx={{ color: 'text.secondary', mb: 1 }}>
+                    {leader.role}
                   </Typography>
-
-                  <Typography
-                    variant="body2"
-                    color={secondaryColor}
-                    sx={{ mb: 2, fontWeight: 500 }}
-                  >
-                    {member.role}
-                  </Typography>
-
-                  <Typography
-                    variant="body2"
-                    color={textSecondary}
-                    sx={{ mb: 3 }}
-                  >
-                    {member.bio}
-                  </Typography>
-
-                  <Stack
-                    direction="row"
-                    spacing={1}
-                    justifyContent="center"
-                    flexWrap="wrap"
-                    gap={1}
-                  >
-                    {member.expertise.map((exp, idx) => (
-                      <Chip
-                        key={idx}
-                        label={exp}
-                        size="small"
-                        sx={{
-                          backgroundColor: alpha(primaryColor, 0.1),
-                          color: primaryColor,
-                          fontWeight: 500,
-                        }}
-                      />
-                    ))}
-                  </Stack>
-                </CardContent>
-              </Card>
+                )}
+                <Typography variant="h6" sx={{ fontWeight: 600, textAlign: 'center' }}>
+                  {leader.name}
+                </Typography>
+              </Paper>
             </Grid>
           ))}
         </Grid>
-      </Container>
 
-      {/* Timeline */}
-      <Box
-        sx={{
-          backgroundColor: alpha(secondaryColor, 0.03),
-          py: 8,
-          bgcolor: backgroundColor,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", mb: 6 }}>
-            <Typography
-              variant="h2"
-              fontWeight={800}
-              sx={{ mb: 2, color: textPrimary }}
-            >
-              Our{" "}
-              <Box component="span" sx={{ color: secondaryColor }}>
-                Journey
-              </Box>
+        {/* Administration Structure */}
+        <Accordion
+          defaultExpanded
+          sx={{
+            mb: 8,
+            borderRadius: '8px !important',
+            overflow: 'hidden',
+            bgcolor: 'background.paper'
+          }}
+        >
+          <AccordionSummary expandIcon={<ExpandMore />}>
+            <Typography variant="h5" sx={{ fontWeight: 600 }}>
+              {t('about.adminStructure.title', 'Administration Structure')}
             </Typography>
-            <Typography
-              variant="h6"
-              color={textSecondary}
-              sx={{ maxWidth: 700, mx: "auto" }}
-            >
-              Key milestones in our growth and evolution as a leading PR agency
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2" sx={{ mb: 3, color: 'text.secondary' }}>
+              {t('about.adminStructure.subtitle', 'ADMINISTRATION STRUCTURE OF THE C.I.C.M - MOROGORO')}
             </Typography>
-          </Box>
+            <Grid container spacing={2}>
+              {adminStructure.map((item: string, index: number) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                  <Paper
+                    elevation={0}
+                    sx={{
+                      p: 2,
+                      borderRadius: 1,
+                      bgcolor: alpha(muiTheme.palette.primary.main, 0.05),
+                      borderLeft: '3px solid',
+                      borderColor: 'primary.main'
+                    }}
+                  >
+                    <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                      {item}
+                    </Typography>
+                  </Paper>
+                </Grid>
+              ))}
+            </Grid>
+          </AccordionDetails>
+        </Accordion>
 
-          <Box sx={{ position: "relative", maxWidth: 800, mx: "auto" }}>
-            {/* Timeline Line */}
-            <Box
-              sx={{
-                position: "absolute",
-                left: { xs: "40px", md: "50%" },
-                top: 0,
-                bottom: 0,
-                width: "3px",
-                backgroundColor: alpha(primaryColor, 0.2),
-                transform: { xs: "none", md: "translateX(-1.5px)" },
-              }}
-            />
-
-            {milestones.map((milestone, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mb: 4,
-                  position: "relative",
-                  flexDirection: {
-                    xs: "row",
-                    md: index % 2 === 0 ? "row" : "row-reverse",
-                  },
-                }}
-              >
-                {/* Timeline Dot */}
-                <Box
-                  sx={{
-                    width: "20px",
-                    height: "20px",
-                    borderRadius: "50%",
-                    backgroundColor: milestone.highlight
-                      ? primaryColor
-                      : secondaryColor,
-                    border: `3px solid ${paperColor}`,
-                    zIndex: 1,
-                    flexShrink: 0,
-                    margin: {
-                      xs: "0 16px 0 0",
-                      md: index % 2 === 0 ? "0 32px 0 0" : "0 0 0 32px",
-                    },
-                  }}
-                />
-
-                {/* Content */}
+        {/* Where We Serve */}
+        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
+          {t('about.serviceLocations.title', 'Where We Serve')}
+        </Typography>
+        <Paper
+          elevation={2}
+          sx={{
+            p: 4,
+            borderRadius: 2,
+            mb: 8,
+            bgcolor: 'background.paper'
+          }}
+        >
+          <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
+            {t('about.serviceLocations.description', 'As a Diocesan congregation the main service area is Morogoro Diocese. However, based on needs the congregation serves in other dioceses within Tanzania and internationally.')}
+          </Typography>
+          
+          <Grid container spacing={4}>
+            {serviceLocations.map((region: ServiceLocationRegion, index: number) => (
+              <Grid size={{ xs: 12, md: 4 }} key={index}>
                 <Card
                   sx={{
-                    flex: 1,
-                    backgroundColor: paperColor,
-                    border: `1px solid ${alpha(primaryColor, 0.1)}`,
-                    borderRadius: 3,
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      borderColor: milestone.highlight
-                        ? primaryColor
-                        : secondaryColor,
-                      transform: "translateX(4px)",
-                    },
+                    height: '100%',
+                    borderRadius: 2,
+                    border: '1px solid',
+                    borderColor: 'divider'
                   }}
                 >
                   <CardContent sx={{ p: 3 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                      <Clock
-                        size={18}
-                        color={
-                          milestone.highlight ? primaryColor : secondaryColor
-                        }
-                      />
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          ml: 1,
-                          color: milestone.highlight
-                            ? primaryColor
-                            : secondaryColor,
-                          fontWeight: 700,
-                        }}
-                      >
-                        {milestone.year}
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                      <LocationOn sx={{ color: 'primary.main', mr: 1 }} />
+                      <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                        {region.region}
                       </Typography>
                     </Box>
-                    <Typography variant="body1" color={textPrimary}>
-                      {milestone.event}
-                    </Typography>
+                    <Divider sx={{ mb: 2 }} />
+                    <List dense>
+                      {region.locations.map((location: string, locIndex: number) => (
+                        <ListItem key={locIndex} sx={{ px: 0 }}>
+                          <ListItemIcon sx={{ minWidth: 36 }}>
+                            <LocationOn sx={{ fontSize: 16, color: 'text.secondary' }} />
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={location}
+                            primaryTypographyProps={{ variant: 'body2' }}
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
                   </CardContent>
                 </Card>
-              </Box>
+              </Grid>
             ))}
+          </Grid>
+          
+          <Box sx={{ mt: 4, textAlign: 'center' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
+              "{t('about.serviceLocations.scripture', 'Go into the whole world and proclaim the gospel to every creature.')}" - {t('about.serviceLocations.scriptureReference', 'Mark 16:15')}
+            </Typography>
           </Box>
-        </Container>
-      </Box>
+        </Paper>
 
-      {/* CTA */}
-      <Container maxWidth="lg" sx={{ py: 8, bgcolor: backgroundColor }}>
-        <Card
+        {/* Call to Action */}
+        <Paper
           sx={{
-            p: { xs: 4, md: 6 },
-            textAlign: "center",
-            borderRadius: 4,
-            background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-            color: "white",
-            boxShadow: `0 20px 60px ${alpha(primaryColor, 0.3)}`,
+            p: 4,
+            borderRadius: 2,
+            bgcolor: alpha(muiTheme.palette.primary.main, 0.1),
+            border: '1px solid',
+            borderColor: 'primary.light',
+            textAlign: 'center'
           }}
         >
-          <Award size={48} style={{ marginBottom: 16 }} />
-
-          <Typography variant="h3" fontWeight={800} sx={{ mb: 2 }}>
-            Ready to Write Your Success Story?
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2, color: 'primary.main' }}>
+            {t('about.callToAction.title', 'Join Us in Our Mission')}
           </Typography>
-          <Typography variant="h6" sx={{ mb: 4, opacity: 0.95 }}>
-            Let's work together to amplify your message and achieve
-            extraordinary results
+          <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', maxWidth: '800px', mx: 'auto' }}>
+            {t('about.callToAction.description', 'Discover how you can support our mission through prayer, volunteering, or donations.')}
           </Typography>
-
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={2}
-            justifyContent="center"
-          >
-            <Button
-              variant="contained"
-              size="large"
-              onClick={() => navigate("/contact")}
-              sx={{
-                backgroundColor: "white",
-                color: primaryColor,
-                px: 5,
-                py: 1.5,
-                borderRadius: 3,
-                textTransform: "none",
-                fontSize: "1.1rem",
-                fontWeight: 600,
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.9)",
-                  transform: "translateY(-2px)",
-                },
-              }}
-            >
-              Get in Touch
-            </Button>
-
-            <Button
-              variant="outlined"
-              size="large"
-              onClick={() => navigate("/case-studies")}
-              sx={{
-                borderColor: "white",
-                color: "white",
-                px: 5,
-                py: 1.5,
-                borderRadius: 3,
-                textTransform: "none",
-                fontSize: "1.1rem",
-                fontWeight: 600,
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  borderColor: "rgba(255, 255, 255, 0.8)",
-                },
-              }}
-            >
-              View Case Studies
-            </Button>
-          </Stack>
-        </Card>
+        </Paper>
       </Container>
     </Box>
   );

@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "title": "Discover Your Calling",
+    "subtitle": "Join the Immaculate Heart of Mary Sisters in Service to God and His People",
+    "tag1": "Ages 17-20",
+    "tag2": "Diocesan Congregation",
+    "tag3": "Since 1937"
+  },
+  "discernment": {
+    "title": "Discernment Process",
+    "subtitle": "God has a purpose for your life",
+    "content1": "Maybe this is the first time you've thought about what your vocation is - What is God calling you to do with your life.",
+    "content2": "The good news is, He has planned your vocation from all eternity! God chooses to reveal each person's vocation through specific circumstances. You are not choosing, you're trying to discover, with grace, His beautiful mystery for your life.",
+    "quote": "Our congregation welcomes young girls from the age of 17-20 years who feel called to serve God through this congregation.",
+    "stepsTitle": "How to Begin Your Journey",
+    "step1": {
+      "title": "Pray and Reflect",
+      "description": "Begin with daily prayer and reflection. Ask God to reveal His will for your life."
+    },
+    "step2": {
+      "title": "Contact Us",
+      "description": "Reach out to our Vocation Director to discuss your calling and ask questions."
+    },
+    "step3": {
+      "title": "Visit Our Community",
+      "description": "Arrange a visit to experience our community life and participate in our 'Come and See' program."
+    },
+    "step4": {
+      "title": "Begin Formation",
+      "description": "If you feel called, begin the formal discernment process as an aspirant."
+    }
+  },
+  "contactForm": {
+    "title": "Contact Our Vocation Director",
+    "subtitle": "If you feel called to serve God through our congregation, write a letter to your Parish Priest to the following address:",
+    "mailTitle": "Mail to:",
+    "addressLine1": "Vocation Directress,",
+    "addressLine2": "Immaculate Heart of Mary Sisters,",
+    "addressLine3": "P. O. Box 1049,",
+    "addressLine4": "Morogoro, Tanzania",
+    "name": "Full Name",
+    "age": "Age",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "location": "Location/Parish",
+    "heardAbout": "How did you hear about us?",
+    "message": "Your Message/Call Story",
+    "submit": "Submit Inquiry"
+  },
+  "formation": {
+    "title": "Formation Journey",
+    "duration": "Duration:",
+    "location": "Location:"
+  },
+  "stages": {
+    "aspirant": {
+      "stage": "Aspirant",
+      "duration": "1 year",
+      "location": "Home Parish",
+      "description": "Initial discernment period where young women explore religious life while living in their home parish under spiritual guidance.",
+      "requirements": "Age 17-20, Catholic faith, recommendation from parish priest"
+    },
+    "candidate": {
+      "stage": "Candidate",
+      "duration": "1 year",
+      "location": "CICM Formation Centre",
+      "description": "Intensive period of spiritual formation and community life at our formation center. Focus on prayer, study, and community living.",
+      "requirements": "Successful completion of aspirancy, medical clearance, psychological assessment"
+    },
+    "postulant": {
+      "stage": "Postulant",
+      "duration": "2 years",
+      "location": "CICM Formation Centre",
+      "description": "Deepening of spiritual life and understanding of religious vows. Intensive study of scripture, theology, and CICM charism.",
+      "requirements": "Formal acceptance into the congregation, commitment to formation program"
+    },
+    "novitiate": {
+      "stage": "Novitiate",
+      "duration": "2 years",
+      "location": "CICM Formation Centre",
+      "description": "Canonical year dedicated to prayer, study, and preparation for religious vows. Focus on spiritual maturation and discernment.",
+      "requirements": "Completion of postulancy, readiness for canonical year"
+    },
+    "firstVows": {
+      "stage": "First Vows",
+      "duration": "Temporary",
+      "location": "CICM Mgolole Mother House",
+      "description": "Profession of temporary vows of chastity, poverty, and obedience. Beginning of active apostolic work in community.",
+      "requirements": "Successful completion of novitiate, approval by formation team and congregation leadership"
+    }
+  },
+  "table": {
+    "stage": "Stage",
+    "duration": "Duration",
+    "location": "Location",
+    "description": "Description",
+    "requirements": "Requirements"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "What age is appropriate to consider religious life?",
+      "answer": "Our congregation welcomes young women ages 17-20 who feel called to serve God. This is the ideal age to begin discernment as it allows for proper formation and spiritual growth."
+    },
+    "q2": {
+      "question": "What educational requirements are needed?",
+      "answer": "Minimum educational requirement is completion of secondary education (Form 4). Higher education is beneficial but not mandatory. What matters most is a sincere desire to serve God and His people."
+    },
+    "q3": {
+      "question": "Can I visit the convent before making a decision?",
+      "answer": "Yes! We encourage vocation inquiries to visit our mother house in Mgolole. You can participate in our 'Come and See' weekends to experience community life firsthand. Contact the Vocation Director to arrange a visit."
+    },
+    "q4": {
+      "question": "What is the duration of formation?",
+      "answer": "The complete formation process takes approximately 6-7 years: 1 year as aspirant, 1 year as candidate, 2 years as postulant, and 2 years as novice before first vows. This ensures thorough spiritual and practical preparation."
+    },
+    "q5": {
+      "question": "What kind of support is provided during formation?",
+      "answer": "Formation includes spiritual direction, academic studies, psychological support, medical care, and all material needs. The congregation provides full support so you can focus on your spiritual growth."
+    },
+    "q6": {
+      "question": "Can I continue my education during formation?",
+      "answer": "Yes, our formation program includes continuing education opportunities. Many sisters pursue degrees in theology, education, healthcare, or social work while in formation, depending on their interests and community needs."
+    }
+  },
+  "contactInfo": {
+    "title": "Contact Our Vocation Director",
+    "director": "Vocation Directress",
+    "directorName": "Sr. Flora Chuma (CICM)",
+    "phone": "+255 XXX XXX XXX",
+    "email": "vocations@cicm.or.tz",
+    "address": "Immaculate Heart of Mary Sisters, P.O. Box 1049, Morogoro, Tanzania",
+    "contactButton": "Send Email",
+    "callButton": "Call Now"
+  },
+  "cta": {
+    "title": "Take the First Step",
+    "description": "If you feel God might be calling you to religious life, don't hesitate to reach out. Our vocation team is ready to walk with you on this journey of discovery.",
+    "button1": "Download Vocation Guide",
+    "button2": "Schedule a Visit"
+  }
+}

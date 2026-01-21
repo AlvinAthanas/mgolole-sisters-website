@@ -1,0 +1,163 @@
+{
+  "hero": {
+    "title": "About Us",
+    "subtitle": "Immaculate Heart of Mary Sisters of Mgolole, Morogoro",
+    "tagline": "Serving with Faith, Hope, and Love since 1937"
+  },
+  "history": {
+    "title": "Our History",
+    "content": [
+      "The Immaculate Heart of Mary sisters of Mgolole, Morogoro (C.I.C.M) is a religious congregation founded in 1937 by the late His Lordship Rt.Rev.Bishop Bernard Hilhorst of Holy Ghost Fathers, accompanied with the late Rev.Sr.Amabilis of the Precious Blood Sisters who was also the first Mother General of C.I.C.M. It is a diocesan congregation.",
+      "The Mother House of the congregation is located in Morogoro district at village called Mgolole. The first candidates came from Sandawe Mountain in Dodoma Diocese, Uluguru Mountains in Morogoro Diocese.",
+      "On 15 August 1939 four novices made their first Vows at Mgolole mother house, Morogoro Tanzania."
+    ],
+    "footnote": "Founded: 1937 • First Vows: August 15, 1939 • Mother House: Mgolole, Morogoro"
+  },
+  "vows": {
+    "title": "Our Sacred Vows",
+    "chastity": {
+      "title": "Chastity",
+      "description": "Our vow of chastity allows us to live a life for God, for Love alone. Each day, Jesus is at the heart of our work and at the forefront of our minds. We espouse ourselves to God, foregoing an earthly marriage, and begin living the eternal marriage feast here and now."
+    },
+    "poverty": {
+      "title": "Poverty",
+      "description": "By vowing to live a life of poverty we make room in our hearts for all God's children. The freer we are from the distractions of the world, the freer we are to live as Jesus did. In imitation of Christ's poor life on earth, we simplify our lives with hopes of being transformed, more and more, into His likeness."
+    },
+    "obedience": {
+      "title": "Obedience",
+      "description": "When we profess a vow of obedience we vow to live by God's will as it is made known to us by our loving Superiors. As Mary did, without worry or questioning, we simply say 'yes'. By our 'yes' we are set free to confidently love God in whatever way He calls us to love Him."
+    }
+  },
+  "mission": {
+    "title": "Our Mission",
+    "statement": "As Sisters of Immaculate Heart of Mary, we faithfully hold our devotion to chastity, obedience and voluntary poverty. We aspire to live a life rooted in the Gospel, in imitation of Mary-mother of our LORD, expressed by prayer, compassion, and self sacrifice. We devote ourselves to serve others through the apostolates of orphans' care, education, health care and caring for the elderly in need.",
+    "tagline": "Guided by the Gospel, Inspired by Mary"
+  },
+  "charisms": {
+    "title": "Our Charisms",
+    "evangelization": "Evangelization",
+    "orphansCare": "Orphans Care",
+    "education": "Education",
+    "healthServices": "Health Services"
+  },
+  "leadershipHistory": {
+    "title": "Leadership History",
+    "subtitle": "Mother Generals From 1937 to Present",
+    "generals": [
+      {
+        "name": "Sr. Maria Amabilis Kern (CPS)",
+        "period": "1937-1948"
+      },
+      {
+        "name": "Sr. Maria Adjuta Neumar (CPS)",
+        "period": "1948-1951"
+      },
+      {
+        "name": "Sr. Maria Majellina (CPS)",
+        "period": "1951-1966"
+      },
+      {
+        "name": "Sr. Maria Nikoletha (CICM)",
+        "period": "1967-1977"
+      },
+      {
+        "name": "Sr. Constansia Nyagatwa (CICM)",
+        "period": "1977-1987"
+      },
+      {
+        "name": "Sr. Veronica Petri (CICM)",
+        "period": "1987-2000"
+      },
+      {
+        "name": "Sr. Pudensiana Kibena (CICM)",
+        "period": "2000-2012"
+      },
+      {
+        "name": "Sr. Flora Chuma (CICM)",
+        "period": "2012-2018"
+      },
+      {
+        "name": "Sr. Pudensiana Kibena (CICM)",
+        "period": "2018-present"
+      }
+    ]
+  },
+  "currentLeadership": {
+    "title": "Current Leadership",
+    "leaders": [
+      {
+        "role": "Mother General",
+        "name": "Sr. Pudensiana Kibena"
+      },
+      {
+        "role": "Deputy Mother General",
+        "name": "Sr. Genorosa Mkwama"
+      },
+      {
+        "role": "Counciler",
+        "name": "Sr. Julieth Makonde"
+      },
+      {
+        "role": "Counciler",
+        "name": "Sr. Florensia Mkwizu"
+      },
+      {
+        "role": "Counciler",
+        "name": "Sr. Violet Lengeju"
+      },
+      {
+        "role": "Accountant",
+        "name": "Sr. Caroline Nguzo"
+      },
+      {
+        "role": "General Secretary",
+        "name": "Sr. Queenbeth Berege"
+      }
+    ]
+  },
+  "adminStructure": {
+    "title": "Administration Structure",
+    "subtitle": "ADMINISTRATION STRUCTURE OF THE C.I.C.M - MOROGORO",
+    "items": [
+      "Bishop",
+      "Cashears (Parishes)",
+      "Formaters",
+      "Secretary General",
+      "Chaplain",
+      "Mother General",
+      "Depute Mother General",
+      "Councils",
+      "Chief Accountant",
+      "Accountants",
+      "Superior of Mother House (Mgolole)",
+      "Head of Projects",
+      "Superior of Each Community (Parishes)",
+      "Cashears of the Projects (Projects)",
+      "All Members of the Community"
+    ]
+  },
+  "serviceLocations": {
+    "title": "Where We Serve",
+    "description": "As a Diocesan congregation the main service area is Morogoro Diocese. However, based on needs the congregation serves in other dioceses within Tanzania and internationally.",
+    "regions": [
+      {
+        "region": "Main Service Area",
+        "locations": ["Morogoro Diocese"]
+      },
+      {
+        "region": "Other Dioceses in Tanzania",
+        "locations": ["Dar es Salaam", "Bagamoyo", "Mwanza", "Mbeya", "Mtwara", "Arusha"]
+      },
+      {
+        "region": "International",
+        "locations": ["Verona, Italy"]
+      }
+    ],
+    "scripture": "Go into the whole world and proclaim the gospel to every creature.",
+    "scriptureReference": "Mark 16:15"
+  },
+  "callToAction": {
+    "title": "Join Us in Our Mission",
+    "description": "Discover how you can support our mission through prayer, volunteering, or donations."
+  }
+}
