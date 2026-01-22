@@ -1,0 +1,226 @@
+{
+    "hero": {
+      "title": "Huduma Zetu",
+      "subtitle": "Kutumikia Mungu na Watu Wake Kupitia Elimu, Huduma za Afya, na Uinjilishaji",
+      "tag1": "Shule 4",
+      "tag2": "Vituo vya Afya 6",
+      "tag3": "Malezi ya Yatima",
+      "tag4": "Uinjilishaji"
+    },
+    "tabs": {
+      "evangelization": "Uinjilishaji",
+      "orphanage": "Yatima",
+      "education": "Elimu",
+      "healthcare": "Afya"
+    },
+    "evangelization": {
+      "title": "Huduma ya Uinjilishaji",
+      "description": "Huduma yetu ya uinjilishaji inalenga kusambaza Injili kupitia kufundisha, maandalizi ya sakramenti, na kuhudumia jamii. Tunahudumia parokia na shule kote Tanzania, tukileta nuru ya Kristo kwa wote tunawaingilia.",
+      "stats": {
+        "parishes": "Parokia 15+",
+        "students": "Wanafunzi 2000+",
+        "since": "Tangu 1937"
+      },
+      "activities": {
+        "catechism": {
+          "title": "Kufundisha Katekisimu",
+          "description": "Kufundisha katekisimu ya Kikatoliki kwa wanafunzi wa shule za msingi na sekondari katika shule mbalimbali katika maeneo tunayohudumia.",
+          "detail1": "Mtaala unaolingana na umri",
+          "detail2": "Mbinu za kufundisha zinazoshirikisha",
+          "detail3": "Maandalizi ya sakramenti"
+        },
+        "baptism": {
+          "title": "Maandalizi ya Ubatizo",
+          "description": "Kutoa mafundisho kamili ya ubatizo kwa wale wanaoandaliwa kuwa Wakristo katika parokia, kuwatayarisha kwa sakramenti ya kuanzishwa.",
+          "detail1": "Mafundisho yanayotegemea Maandiko Matakatifu",
+          "detail2": "Theolojia ya Sakramenti",
+          "detail3": "Mwongozo wa vitendo kwa walezi"
+        },
+        "sacraments": {
+          "title": "Maandalizi ya Sakramenti",
+          "description": "Kufundisha maandalizi ya ushirika wa kwanza na sakramenti ya thibitisho katika parokia, kuwaelekeza wale wanaoandaliwa katika safari yao ya kiroho.",
+          "detail1": "Madarasa ya Ushirika wa Kwanza",
+          "detail2": "Mafungo ya Thibitisho",
+          "detail3": "Malezi ya kiroho endelevu"
+        }
+      }
+    },
+    "orphanage": {
+      "title": "Kituo cha Malezi ya Yatima cha Mgolole",
+      "description": "Kituo chetu cha yatima cha Mgolole kinatoa makazi ya upendo, elimu, huduma za afya, na mwongozo wa kiroho kwa watoto yatima na walio katika hatari. Tunaamini kila mtoto anastahili nafasi ya kukua katika mazingira ya Kikristo yenye malezi mazuri.",
+      "services": "Huduma Zetu:",
+      "service1": "Malezi ya Makazi",
+      "service2": "Msaada wa Elimu",
+      "service3": "Huduma za Afya na Lishe",
+      "service4": "Usaidizi wa Kisaikolojia na Ulemavu wa Kiakili",
+      "service5": "Malezi ya Kiroho",
+      "service6": "Mafunzo ya Ujuzi wa Maisha",
+      "contact": "Wasiliana na Kituo cha Yatima:",
+      "location": "Kituo cha Malezi ya Yatima cha Mgolole, Mgolole, Morogoro",
+      "stats": "Takwimu za Kituo cha Yatima",
+      "stat1": {
+        "label": "Watoto Hivi Sasa",
+        "value": "45"
+      },
+      "stat2": {
+        "label": "Miaka ya Huduma",
+        "value": "40+"
+      },
+      "stat3": {
+        "label": "Wafanyakazi",
+        "value": "12"
+      },
+      "stat4": {
+        "label": "Wajitoleaji",
+        "value": "25+"
+      },
+      "supportButton": "Tusaidie Kituo chetu cha Yatima"
+    },
+    "education": {
+      "title": "Huduma za Elimu",
+      "description": "Tunaendesha taasisi nne za elimu zinazotoa elimu bora ya Kikatoliki kutoka chekechea hadi shule ya sekondari. Shule zetu zinalenga ubora wa kimasomo, malezi ya maadili, na ukamilifu wa mtu mzima.",
+      "schools": {
+        "bernardHilhorst": {
+          "name": "Shule ya Sekondari Bernard Hilhorst",
+          "location": "Mgolole, Morogoro",
+          "level": "Shule ya Sekondari",
+          "program1": "Elimu ya Kidato cha 1-6",
+          "program2": "Mikoa ya Sayansi na Sanaa",
+          "program3": "Mafunzo ya Ufundi"
+        },
+        "stPeterClavery": {
+          "name": "Shule ya Chekechea na Msingi St. Peter Clavery",
+          "location": "Mikumi, Morogoro",
+          "level": "Shule ya Chekechea na Msingi",
+          "program1": "Elimu ya Chekechea",
+          "program2": "Darasa la 1-7",
+          "program3": "Programu za Baada ya Shule"
+        },
+        "stTheresa": {
+          "name": "Shule ya Sekondari ya Wasichana St. Theresa wa Mtoto Yesu",
+          "location": "Mgolole, Morogoro",
+          "level": "Shule ya Sekondari ya Wasichana",
+          "program1": "Elimu ya Wasichana Pekee",
+          "program2": "Mwelekeo wa Sayansi",
+          "program3": "Ukuzaji wa Uongozi"
+        },
+        "stAnthony": {
+          "name": "Shule ya Chekechea na Msingi St. Anthonio De Padova",
+          "location": "Mzumbe, Morogoro",
+          "level": "Shule ya Chekechea na Msingi",
+          "program1": "Elimu ya Utotoni",
+          "program2": "Elimu ya Msingi",
+          "program3": "Msaada kwa Wenye Mahitaji Maalum"
+        }
+      },
+      "founded": "Iliyoundwa",
+      "students": "Wanafunzi",
+      "programs": "Programu Zinazotolewa:",
+      "philosophy": "Falsafa Yetu ya Elimu",
+      "philosophyText": "Tunaamini katika kumfundisha mtu mzima - akili, mwili, na roho. Shule zetu zinachanganya malezi ya imani na ubora wa kimasomo, ukuzaji wa tabia, na huduma kwa jamii. Tunakusudia kuunda viongozi wa baadaye ambao ni wenye uwezo wa kimasomo, wenye maadili mazuri, na wenye misingi imara ya kiroho.",
+      "values": {
+        "faith": "Kulingana na Imani",
+        "excellence": "Ubora wa Kimasomo",
+        "character": "Ukuzaji wa Tabia",
+        "service": "Kujifunza Kupitia Huduma",
+        "inclusion": "Elimu Inayojumuisha Wote"
+      }
+    },
+    "healthcare": {
+      "title": "Huduma za Afya",
+      "description": "Vituo vyetu sita vya afya vinahudumia jamii kote Tanzania, kikitoa huduma za matibabu za bei nafuu na ubora kwa huruma na heshima. Tunahudumia watu wote bila kujali uwezo wao wa kulipa, tukifuata mfano wa Kristo wa kuponya na rehema.",
+      "facilities": {
+        "mgolole": {
+          "name": "Kituo cha Afya cha Mgolole",
+          "location": "Mgolole, Morogoro",
+          "type": "Kituo cha Afya",
+          "service1": "Huduma za Nje",
+          "service2": "Afya ya Mama na Mtoto",
+          "service3": "Huduma za Maabara",
+          "service4": "Duka la Dawa",
+          "hours": "Huduma za Dharura 24/7"
+        },
+        "milama": {
+          "name": "Kituo cha Afya cha Milama",
+          "location": "Mvomero, Morogoro",
+          "type": "Kituo cha Afya",
+          "service1": "Matibabu ya Jumla",
+          "service2": "Utunzaji wa UKIMWI",
+          "service3": "Huduma za Lishe",
+          "hours": "Jumatatu-Jumamosi: 8AM-6PM"
+        },
+        "stCarol": {
+          "name": "Dispensari ya St. Carol Lwanga",
+          "location": "Eneo la 5 Kichangani, Morogoro",
+          "type": "Dispensari",
+          "service1": "Matibabu ya Msingi",
+          "service2": "Chanjo",
+          "service3": "Elimu ya Afya",
+          "hours": "Jumatatu-Ijumaa: 8AM-4PM"
+        },
+        "stMathias": {
+          "name": "Dispensari ya St. Mathias",
+          "location": "Kiloka, Morogoro",
+          "type": "Dispensari",
+          "service1": "Matibabu ya Msingi",
+          "service2": "Utunzaji wa Ujauzito",
+          "service3": "Matibabu ya Kifua Kikuu",
+          "hours": "Jumatatu-Ijumaa: 8AM-4PM"
+        },
+        "stAgnes": {
+          "name": "Dispensari ya St. Agnes",
+          "location": "Lugono, Morogoro",
+          "type": "Dispensari",
+          "service1": "Matibabu ya Nje",
+          "service2": "Mipango ya Uzazi",
+          "service3": "Matibabu ya Malaria",
+          "hours": "Jumatatu-Ijumaa: 8AM-4PM"
+        },
+        "stPeterClaveryHC": {
+          "name": "Kituo cha Afya cha St. Peter Clavery",
+          "location": "Kisesa, Magu, Mwanza",
+          "type": "Kituo cha Afya",
+          "service1": "Huduma Kamili za Afya",
+          "service2": "Upasuaji Mdogo",
+          "service3": "Ukarabati wa Jamii",
+          "hours": "Huduma 24/7"
+        }
+      },
+      "services": "Huduma Zinazotolewa:",
+      "mission": "Dhamira Yetu ya Afya",
+      "missionText": "Tunatoa huduma za matibabu zenye huruma zinazostahili heshima ya kila mtu. Vituo vyetu vinatumika kama vituo vya uponyaji ambapo mahitaji ya kimwili, kihemko na kiroho yanashughulikiwa katika roho ya upendo wa Kikristo na huduma.",
+      "mission1": "Kuhudumia watu wote bila kujali imani au hali ya kifedha",
+      "mission2": "Kutoa huduma za matibabu za bei nafuu na ubora",
+      "mission3": "Kuhusika katika elimu ya afya ya jamii na kuzuia magonjwa",
+      "stats": "Ushawishi wa Huduma za Afya",
+      "stat1": {
+        "label": "Wagonjwa Kwa Mwaka",
+        "value": "50,000+"
+      },
+      "stat2": {
+        "label": "Vituo vya Afya",
+        "value": "6"
+      },
+      "stat3": {
+        "label": "Wafanyikazi wa Afya",
+        "value": "85+"
+      },
+      "stat4": {
+        "label": "Jamii Zinazohudumiwa",
+        "value": "25+"
+      },
+      "supportButton": "Tusaidie Huduma ya Afya"
+    },
+    "cta": {
+      "title": "Shirikiana na Huduma Zetu",
+      "description": "Jiunge nasi katika kuhudumia watu wa Mungu kupitia elimu, afya, utunzaji wa yatima, na uinjilishaji. Msaada wako unaleta tofauti katika maisha mengi.",
+      "button1": "Jitolee",
+      "button2": "Changia",
+      "button3": "Wasiliana Nasi"
+    },
+  "common": {
+    "call": "Piga Simu",
+    "directions": "Maelekezo",
+    "callNow": "Piga Simu Sasa"
+  }
+}

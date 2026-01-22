@@ -1,0 +1,296 @@
+{
+    "hero": {
+      "title": "Events & Calendar",
+      "subtitle": "Join Us in Celebration, Prayer, and Community Building",
+      "tag1": "Upcoming Events",
+      "tag2": "Retreats & Workshops",
+      "tag3": "Anniversaries",
+      "tag4": "Community Events"
+    },
+    "tabs": {
+      "calendar": "Calendar",
+      "upcoming": "Upcoming",
+      "retreats": "Retreats",
+      "anniversaries": "Anniversaries",
+      "community": "Community"
+    },
+    "filter": {
+      "title": "Filter Events",
+      "search": "Search events...",
+      "eventType": "Event Type",
+      "status": "Event Status",
+      "upcoming": "Upcoming",
+      "past": "Past Events",
+      "allEvents": "All Events",
+      "apply": "Apply Filters",
+      "all": "All Events",
+      "spiritual": "Spiritual",
+      "celebration": "Celebration",
+      "formation": "Formation",
+      "liturgical": "Liturgical",
+      "community": "Community",
+      "education": "Education",
+      "healthcare": "Healthcare"
+    },
+    "calendar": {
+      "months": {
+        "june": "June 2025"
+      },
+      "days": {
+        "sun": "Sun",
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat"
+      },
+      "today": "Today",
+      "month": "Month",
+      "week": "Week",
+      "upcoming": "Upcoming Events This Month",
+      "viewDetails": "View Details",
+      "juneRetreat": {
+        "title": "Annual Retreat",
+        "date": "June 2-27, 2025",
+        "type": "Spiritual",
+        "location": "Mgolole Mother House",
+        "description": "Annual spiritual retreat for all sisters focusing on prayer, reflection, and renewal.",
+        "capacity": "85 Sisters",
+        "organizer": "Spiritual Formation Office"
+      },
+      "augustVows": {
+        "title": "Perpetual Vows & Jubilee",
+        "date": "August 22, 2025",
+        "type": "Celebration",
+        "location": "St. Joseph Cathedral, Morogoro",
+        "description": "Celebration of perpetual vows and jubilee anniversaries of our sisters.",
+        "capacity": "300 Guests",
+        "organizer": "Vocations Office"
+      },
+      "septemberVows": {
+        "title": "First Vows Ceremony",
+        "date": "September 12, 2025",
+        "type": "Formation",
+        "location": "Mgolole Mother House",
+        "description": "First profession of vows for new sisters entering religious life.",
+        "capacity": "200 Guests",
+        "organizer": "Formation Team"
+      },
+      "octoberMemorial": {
+        "title": "St. Theresa Memorial Day",
+        "date": "October 1, 2025",
+        "type": "Memorial",
+        "location": "St. Theresa School, Mgolole",
+        "description": "Memorial celebration for St. Theresa of the Child Jesus, patron of our school.",
+        "capacity": "500+",
+        "organizer": "Education Ministry"
+      },
+      "decemberChristmas": {
+        "title": "Christmas Celebration",
+        "date": "December 25, 2025",
+        "type": "Holiday",
+        "location": "All Communities",
+        "description": "Christmas celebrations across all our communities with orphans and elderly.",
+        "capacity": "All Welcome",
+        "organizer": "Community Life"
+      },
+      "aprilEaster": {
+        "title": "Easter Triduum",
+        "date": "April 17-20, 2025",
+        "type": "Liturgical",
+        "location": "All Parishes",
+        "description": "Holy Week services and Easter celebrations in our parishes.",
+        "capacity": "All Welcome",
+        "organizer": "Liturgy Office"
+      },
+      "day2": "Retreat Begins",
+      "day22": "Vows & Jubilee",
+      "day27": "Retreat Ends"
+    },
+    "subscribe": {
+      "title": "Stay Updated",
+      "description": "Subscribe to our calendar to get event updates and reminders.",
+      "google": "Add to Google Calendar",
+      "ical": "Download iCal File",
+      "notify": "Get Notifications"
+    },
+    "upcoming": {
+      "title": "Upcoming Events",
+      "registrationOpen": "Registration Open",
+      "organizedBy": "Organized by",
+      "register": "Register Now",
+      "past": {
+        "title": "Past Events",
+        "viewPhotos": "View Photos"
+      }
+    },
+    "retreats": {
+      "title": "Retreats & Workshops",
+      "deadline": "Registration Deadline",
+      "register": "Register Now",
+      "youth": {
+        "title": "Youth Leadership Retreat",
+        "date": "July 15-20, 2025",
+        "location": "Amabilis Conference Centre",
+        "fee": "TZS 50,000",
+        "description": "Leadership development retreat for Catholic youth leaders ages 18-30.",
+        "capacity": "50 participants",
+        "deadline": "July 1, 2025"
+      },
+      "marriage": {
+        "title": "Marriage Enrichment Workshop",
+        "date": "August 5-7, 2025",
+        "location": "Mgolole Mother House",
+        "fee": "TZS 30,000/couple",
+        "description": "Workshop for married couples focusing on communication and spiritual growth.",
+        "capacity": "25 couples",
+        "deadline": "July 25, 2025"
+      },
+      "teachers": {
+        "title": "Teachers' Spiritual Retreat",
+        "date": "September 20-22, 2025",
+        "location": "St. Theresa School",
+        "fee": "TZS 20,000",
+        "description": "Retreat for teachers from Catholic schools focusing on vocation and service.",
+        "capacity": "40 teachers",
+        "deadline": "September 10, 2025"
+      },
+      "facilities": {
+        "title": "Our Retreat Facilities",
+        "description": "We offer excellent facilities for retreats, workshops, and conferences at our Amabilis Conference Centre and other locations.",
+        "accommodation": "Comfortable Accommodation",
+        "accommodationDesc": "Single & double rooms with private bathrooms",
+        "catering": "Full Catering Services",
+        "cateringDesc": "Delicious meals with dietary options available",
+        "amenities": "Modern Amenities",
+        "amenitiesDesc": "WiFi, audio-visual equipment, transportation",
+        "booking": "Book a Retreat",
+        "bookingDesc": "Interested in booking our facilities for your group retreat or workshop? Contact us for availability and rates.",
+        "email": "Email for Booking",
+        "call": "Call for Information"
+      }
+    },
+    "anniversaries": {
+      "title": "Anniversaries & Celebrations",
+      "sendGreeting": "Send Greeting",
+      "share": "Share",
+      "type": {
+        "congregation": "Congregation",
+        "personal": "Personal",
+        "institution": "Institution"
+      },
+      "foundation": {
+        "title": "88th Foundation Anniversary",
+        "date": "December 8, 2025",
+        "years": "88",
+        "description": "Celebrating 88 years since the founding of our congregation in 1937."
+      },
+      "motherGeneral": {
+        "title": "Mother General's Jubilee",
+        "date": "August 22, 2025",
+        "years": "25",
+        "description": "25 years of religious life for our Mother General, Sr. Pudensiana Kibena."
+      },
+      "school": {
+        "title": "50th School Anniversary",
+        "date": "October 15, 2025",
+        "years": "50",
+        "description": "50 years of Bernard Hilhorst Secondary School serving the community."
+      },
+      "healthcentre": {
+        "title": "40th Health Centre Anniversary",
+        "date": "November 3, 2025",
+        "years": "40",
+        "description": "40 years of Mgolole Health Centre providing healthcare services."
+      },
+      "timeline": {
+        "title": "Congregation Milestones",
+        "founding": "Congregation Founded",
+        "firstVows": "First Vows Professed",
+        "firstSchool": "First School Opened",
+        "healthCentre": "First Health Centre",
+        "secondarySchool": "Secondary School Established",
+        "expansion": "Expansion to Other Dioceses",
+        "conference": "Conference Centre Built",
+        "current": "Current Year",
+        "year": "Year"
+      }
+    },
+    "community": {
+      "title": "Community Events",
+      "regular": {
+        "title": "Regular Activities"
+      },
+      "days": {
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday"
+      },
+      "activities": {
+        "mass": "Community Mass & Fellowship",
+        "prayer": "Evening Prayer Group",
+        "bible": "Bible Study Session",
+        "youth": "Youth Gathering",
+        "charity": "Charity Outreach",
+        "adoration": "Eucharistic Adoration",
+        "family": "Family Day Activities"
+      },
+      "volunteer": {
+        "title": "Volunteer Events",
+        "orphanage": "Orphanage Visit Day",
+        "orphanageDate": "Every 2nd Saturday",
+        "orphanageDesc": "Spend time with children at our orphanage",
+        "elderly": "Elderly Care Day",
+        "elderlyDate": "Monthly",
+        "elderlyDesc": "Visit and assist elderly in our care homes",
+        "farming": "Community Farming",
+        "farmingDate": "Seasonal",
+        "farmingDesc": "Help with farming activities at our projects",
+        "cleanup": "Environmental Cleanup",
+        "cleanupDate": "Quarterly",
+        "cleanupDesc": "Community environmental conservation activities",
+        "join": "Join"
+      },
+      "impact": {
+        "title": "Community Impact",
+        "monthly": "Monthly Participants",
+        "events": "Annual Events",
+        "communities": "Communities Served",
+        "volunteers": "Active Volunteers"
+      }
+    },
+    "registration": {
+      "details": "Event Details",
+      "capacity": "Capacity",
+      "fee": "Fee",
+      "contact": "Contact",
+      "getDirections": "Get Directions",
+      "form": "Registration Form",
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "attendees": "Number of Attendees",
+      "dietary": "Dietary Requirements (if any)",
+      "accommodation": "Need Accommodation?",
+      "yes": "Yes",
+      "no": "No",
+      "comments": "Additional Comments",
+      "cancel": "Cancel",
+      "processing": "Processing...",
+      "submit": "Submit Registration",
+      "success": "Registration successful! Confirmation email sent.",
+      "error": "Registration failed. Please try again."
+    },
+    "download": {
+      "title": "Stay Connected",
+      "description": "Download our event calendar or subscribe to stay updated with all our activities.",
+      "calendar": "Download Calendar",
+      "notify": "Get Notifications",
+      "share": "Share Calendar"
+    }
+  }

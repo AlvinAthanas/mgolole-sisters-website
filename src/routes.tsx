@@ -26,7 +26,13 @@ const MediaLibrary = lazy(() => import("./pages/admin/MediaLibrary.tsx"));
 const AppearanceSettings = lazy(
   () => import("./pages/admin/AppearanceSettings.tsx"),
 );
+const Support = lazy(() => import("./pages/Support.tsx"));
+const Media = lazy(() => import("./pages/Media.tsx"));
+const Events = lazy(() => import("./pages/Events.tsx"));
 const Vocations = lazy(() => import("./pages/Vocations.tsx"));
+const Ministries = lazy(() => import("./pages/Ministries.tsx"));
+const Projects = lazy(() => import("./pages/Projects.tsx"));
+
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<AppWrapper />}>
@@ -55,15 +61,24 @@ export const routes = createRoutesFromElements(
         </Suspense>
       }
     />
-
     <Route
-      path="/services"
+      path="/ministries"
       element={
         <Suspense fallback={<ProgressLoader />}>
-          <Services />
+          <Ministries />
         </Suspense>
       }
     />
+
+    <Route
+      path="/projects"
+      element={
+        <Suspense fallback={<ProgressLoader />}>
+          <Projects />
+        </Suspense>
+      }
+    />
+
     <Route
       path="/contact"
       element={
@@ -72,6 +87,34 @@ export const routes = createRoutesFromElements(
         </Suspense>
       }
     />
+
+    <Route
+      path="/support"
+      element={
+        <Suspense fallback={<ProgressLoader />}>
+          <Support />
+        </Suspense>
+      }
+    />
+
+    <Route
+      path="/media"
+      element={
+        <Suspense fallback={<ProgressLoader />}>
+          <Media />
+        </Suspense>
+      }
+    />
+
+    <Route
+      path="/events"
+      element={
+        <Suspense fallback={<ProgressLoader />}>
+          <Events />
+        </Suspense>
+      }
+    />
+
     <Route
       path="/blog"
       element={

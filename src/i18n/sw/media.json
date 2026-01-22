@@ -1,0 +1,295 @@
+{
+    "hero": {
+      "title": "Media na Rasilimali",
+      "subtitle": "Gundua Jikumbusi Yetu ya Picha, Video, Machapisho, na Rasilimali za Sala",
+      "tag1": "Jikumbusi ya Picha",
+      "tag2": "Jikumbusi ya Video",
+      "tag3": "Machapisho",
+      "tag4": "Rasilimali za Sala"
+    },
+    "tabs": {
+      "photos": "Picha",
+      "videos": "Video",
+      "publications": "Machapisho",
+      "prayer": "Rasilimali za Sala"
+    },
+    "photos": {
+      "categories": {
+        "title": "Aina za Picha",
+        "all": "Picha Zote",
+        "events": "Matukio",
+        "ministry": "Huduma",
+        "community": "Maisha ya Jamii",
+        "projects": "Miradi",
+        "nature": "Asili",
+        "schools": "Shule",
+        "healthcare": "Afya"
+      },
+      "count": "picha",
+      "filter": "Chaguzi za Kuchuja",
+      "sort": "Panga Kulingana na",
+      "sortNewest": "Mpya Kwanza",
+      "sortOldest": "Kale Kwanza",
+      "sortPopular": "Iliyotazamwa Zaidi",
+      "sortFeatured": "Iliyobainishwa",
+      "search": "Tafuta picha...",
+      "stats": {
+        "title": "Takwimu za Jikumbusi",
+        "total": "Picha Zote",
+        "categories": "Aina",
+        "views": "Jumla ya Maonyesho",
+        "updated": "Iliyosasishwa Mwisho"
+      },
+      "gallery": "Jikumbusi ya Picha",
+      "downloadAll": "Pakua Zote",
+      "share": "Shiriki",
+      "featured": "Picha Zilizobainishwa",
+      "view": "Tazama Albamu",
+      "download": "Pakua",
+      "all": "Picha Zote",
+      "samples": {
+        "vows": {
+          "title": "Sherehe ya Viapo vya Kwanza 2024",
+          "location": "Nyumba ya Mama Mgolole",
+          "description": "Sherehe ya viapo vya kwanza kwa masista wapya wanaoingia maisha ya kidini"
+        },
+        "orphanage": {
+          "title": "Sherehe ya Krismasi ya Yatima",
+          "location": "Kituo cha Yatima cha Mgolole",
+          "description": "Sherehe ya Krismasi na watoto katika yatima yetu"
+        },
+        "farm": {
+          "title": "Msimu wa Mavuno 2024",
+          "location": "Mashamba ya Mgolole",
+          "description": "Kuvuna mahindi katika miradi yetu ya kilimo"
+        },
+        "school": {
+          "title": "Siku ya Uhitimu wa Shule",
+          "location": "Shule ya Sekondari Bernard Hilhorst",
+          "description": "Sherehe ya uhitimu kwa wanafunzi wa Kidato cha 6"
+        },
+        "retreat": {
+          "title": "Fungo la Mwaka la Masista",
+          "location": "Kituo cha Mkutano cha Amabilis",
+          "description": "Fungo la kiroho kwa masista wote wa shirika"
+        },
+        "health": {
+          "title": "Ufunguzi wa Kituo cha Afya",
+          "location": "Kituo cha Afya cha St. Peter Clavery",
+          "description": "Uzinduzi wa kituo kipya cha afya huko Mwanza"
+        },
+        "nature": {
+          "title": "Mazingira ya Mgolole",
+          "location": "Milima ya Mgolole",
+          "description": "Michekebuke mizuri ya mazingira karibu na nyumba yetu ya mama"
+        },
+        "construction": {
+          "title": "Ujenzi wa Shule",
+          "location": "Eneo la Shule ya St. Theresa",
+          "description": "Maendeleo ya ujenzi wa darasa jipya"
+        }
+      }
+    },
+    "videos": {
+      "categories": {
+        "title": "Aina za Video",
+        "all": "Video Zote",
+        "testimonies": "Ushahidi",
+        "documentary": "Makala",
+        "events": "Matukio",
+        "ministry": "Huduma",
+        "education": "Elimu",
+        "music": "Muziki na Kwaya"
+      },
+      "count": "video",
+      "filter": "Chaguzi za Kuchuja",
+      "sort": "Panga Kulingana na",
+      "sortNewest": "Mpya Kwanza",
+      "sortOldest": "Kale Kwanza",
+      "sortViews": "Iliyotazamwa Zaidi",
+      "sortDuration": "Muda",
+      "search": "Tafuta video...",
+      "youtube": {
+        "title": "Kituo cha YouTube",
+        "description": "Jiandikishe kwenye kituo chetu cha YouTube kwa video za hivi karibuni na visasisho.",
+        "subscribe": "Jiandikishe"
+      },
+      "gallery": "Jikumbusi ya Video",
+      "channel": "Tazama Kituo",
+      "podcast": "Podcast ya Sauti",
+      "featured": "Video Zilizobainishwa",
+      "watch": "Tazama Sasa",
+      "share": "Shiriki",
+      "all": "Video Zote",
+      "views": "maonyesho",
+      "samples": {
+        "founding": {
+          "title": "Hadithi Yetu ya Kuanzishwa",
+          "description": "Makala kuhusu kuanzishwa kwa shirika letu mwaka 1937"
+        },
+        "vocation": {
+          "title": "Siku Moja Katika Maisha ya Kidini",
+          "description": "Ushahidi wa kibinafsi kutoka kwa dada kuhusu safari yake ya wito"
+        },
+        "retreat": {
+          "title": "Viashiria vya Fungo la Mwaka",
+          "description": "Viashiria kutoka kwa fungo letu la kiroho la mwaka"
+        },
+        "orphanage": {
+          "title": "Matumaini kwa Yatima",
+          "description": "Makala kuhusu huduma yetu ya yatima"
+        },
+        "choir": {
+          "title": "Uchezaji wa Kwaya wa Pasaka",
+          "description": "Uchezaji maalum wa kwaya wakati wa sherehe za Pasaka"
+        },
+        "school": {
+          "title": "Elimu Inayobadilisha Maisha",
+          "description": "Ushawishi wa huduma yetu ya elimu katika jamii za vijijini Tanzania"
+        }
+      }
+    },
+    "publications": {
+      "categories": {
+        "title": "Aina za Machapisho",
+        "all": "Machapisho Yote",
+        "newsletter": "Majarida",
+        "annual": "Ripoti za Mwaka",
+        "spiritual": "Rasilimali za Kiroho",
+        "research": "Makala za Utafiti"
+      },
+      "count": "vitu",
+      "filter": "Chaguzi za Kuchuja",
+      "sort": "Panga Kulingana na",
+      "sortNewest": "Mpya Kwanza",
+      "sortOldest": "Kale Kwanza",
+      "sortPopular": "Iliyopakuliwa Zaidi",
+      "sortTitle": "Kichwa A-Z",
+      "search": "Tafuta machapisho...",
+      "stats": {
+        "title": "Takwimu za Upakuaji",
+        "total": "Upakuaji Wote",
+        "monthly": "Wastani wa Kila Mwezi",
+        "popular": "Iliyopendwa Zaidi",
+        "popularFile": "Mwongozo wa Sala ya Kilikuwa"
+      },
+      "library": "Maktaba ya Machapisho",
+      "bulk": "Pakua Kwingi",
+      "print": "Print Orodha",
+      "featured": "Machapisho Yaliyobainishwa",
+      "download": "Pakua",
+      "all": "Machapisho Yote",
+      "pages": "kurasa",
+      "downloads": "upakuaji",
+      "samples": {
+        "annual2023": {
+          "title": "Ripoti ya Mwaka 2023",
+          "description": "Ripoti kamili juu ya shughuli zetu, fedha, na ushawishi wa 2023"
+        },
+        "newsletter": {
+          "title": "Jarida la CICM - Juni 2024",
+          "description": "Habari za hivi karibuni na visasisho kutoka kwa shirika letu"
+        },
+        "prayer": {
+          "title": "Mwongozo wa Sala ya Kilikuwa",
+          "description": "Mwongozo wa sala za kilikuwa na tafakari"
+        },
+        "research": {
+          "title": "Ushawishi wa Elimu ya Kikatoliki",
+          "description": "Utafiti kuhusu uhawilishi wa elimu ya Kikatoliki katika jamii za vijijini Tanzania"
+        },
+        "vocations": {
+          "title": "Mwongozo wa Kugundua Wito",
+          "description": "Mwongozo kwa wasichana wadogo wanaogundua maisha ya kidini"
+        },
+        "financial": {
+          "title": "Ripoti ya Uwazi wa Fedha 2023",
+          "description": "Ripoti ya kina ya fedha na matokeo ya ukaguzi"
+        }
+      }
+    },
+    "prayer": {
+      "types": {
+        "title": "Aina za Sala",
+        "all": "Sala Zote",
+        "daily": "Sala za Kilikuwa",
+        "rosary": "Rosari",
+        "novena": "Novena",
+        "liturgy": "Liturujia",
+        "audio": "Sala za Sauti"
+      },
+      "count": "rasilimali",
+      "filter": "Chaguzi za Kuchuja",
+      "format": "Umbizo",
+      "formatAll": "Umbizo Lote",
+      "search": "Tafuta sala...",
+      "dailyPrayer": {
+        "title": "Sala ya Leo",
+        "content": "Sala ya amani na uongozi katika kazi yetu ya kilikuwa.",
+        "view": "Tazama Sala Kamili"
+      },
+      "library": "Rasilimali za Sala",
+      "audio": "Sala za Sauti",
+      "printable": "Toleo la Kupigwa Chapa",
+      "popular": "Rasilimali Zilizopendwa Zaidi",
+      "download": "Pakua",
+      "listen": "Sikiliza",
+      "save": "Hifadhi",
+      "all": "Rasilimali Zote za Sala",
+      "downloads": "upakuaji",
+      "request": {
+        "title": "Wasilisha Ombi la Sala",
+        "description": "Tunaomba kwa ajili yako. Shiriki nia zako za sala na jamii yetu.",
+        "button": "Wasilisha Ombi la Sala"
+      },
+      "daily": {
+        "title": "Sala za Kilikuwa",
+        "description": "Mkusanyiko wa sala za kilikuwa kwa asubuhi, adhuhuri, na jioni"
+      },
+      "rosary": {
+        "title": "Mwongozo wa Rosari",
+        "description": "Mwongozo kamili wa kuomba rosari pamoja na kutafakari"
+      },
+      "novena": {
+        "title": "Novena kwa Bikira Maria",
+        "description": "Sala ya siku tisa kwa Moyo Safi wa Maria"
+      },
+      "liturgy": {
+        "title": "Liturujia ya Masaa",
+        "description": "Toleo rahisi kwa ajili ya sala ya kibinafsi au ya jamii"
+      },
+      "reflections": {
+        "title": "Tafakari za Injili ya Kilikuwa",
+        "description": "Tafakari juu ya usomaji wa Injili ya kilikuwa"
+      },
+      "songs": {
+        "title": "Nyimbo za Sala na Tenzi",
+        "description": "Mkusanyiko wa nyimbo za jadi na za kisasa za sala"
+      }
+    },
+    "dialog": {
+      "description": "Maelezo",
+      "date": "Tarehe",
+      "location": "Eneo",
+      "views": "Maonyesho",
+      "likes": "Vipendwa",
+      "size": "Ukubwa wa Faili",
+      "downloads": "Upakuaji",
+      "close": "Funga",
+      "download": "Pakua",
+      "downloading": "Inapakuliwa...",
+      "share": "Shiriki",
+      "watch": "Tazama kwenye YouTube",
+      "print": "Print"
+    },
+    "download": {
+      "success": "Upakuaji umeanza kwa mafanikio!",
+      "error": "Upakuaji umeshindwa. Tafadhali jaribu tena."
+    },
+    "newsletter": {
+      "title": "Endelea Kupata Habari",
+      "description": "Jiandikishe kwenye jarida letu kupata picha za hivi karibuni, video, machapisho, na rasilimali za sala moja kwa moja kwenye sanduku lako la barua pepe.",
+      "placeholder": "Weka anwani yako ya barua pepe",
+      "subscribe": "Jiandikishe"
+    }
+  }

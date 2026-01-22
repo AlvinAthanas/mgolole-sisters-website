@@ -204,7 +204,7 @@ const WebsiteHeader = () => {
           bgcolor: 'background.paper', 
           color: 'text.primary', 
           boxShadow: 2,
-          zIndex: 1300
+          zIndex: 1300,
         }}
       >
         <Toolbar>

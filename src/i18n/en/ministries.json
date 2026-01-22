@@ -1,0 +1,226 @@
+{
+    "hero": {
+      "title": "Our Ministries",
+      "subtitle": "Serving God and His People Through Education, Healthcare, and Evangelization",
+      "tag1": "4 Schools",
+      "tag2": "6 Health Facilities",
+      "tag3": "Orphan Care",
+      "tag4": "Evangelization"
+    },
+    "tabs": {
+      "evangelization": "Evangelization",
+      "orphanage": "Orphanage",
+      "education": "Education",
+      "healthcare": "Healthcare"
+    },
+    "evangelization": {
+      "title": "Evangelization Ministry",
+      "description": "Our evangelization ministry focuses on spreading the Gospel through teaching, sacramental preparation, and community outreach. We serve parishes and schools across Tanzania, bringing the light of Christ to all we encounter.",
+      "stats": {
+        "parishes": "15+ Parishes",
+        "students": "2000+ Students",
+        "since": "Since 1937"
+      },
+      "activities": {
+        "catechism": {
+          "title": "Catechism Teaching",
+          "description": "Teaching Catholic catechism to primary and secondary school students in various schools across our service areas.",
+          "detail1": "Age-appropriate curriculum",
+          "detail2": "Interactive teaching methods",
+          "detail3": "Preparation for sacraments"
+        },
+        "baptism": {
+          "title": "Baptism Preparation",
+          "description": "Providing comprehensive baptism teachings for catechumens in parishes, preparing them for the sacrament of initiation.",
+          "detail1": "Scripture-based instruction",
+          "detail2": "Sacramental theology",
+          "detail3": "Practical guidance for godparents"
+        },
+        "sacraments": {
+          "title": "Sacramental Preparation",
+          "description": "Teaching first communion and confirmation preparation in parishes, guiding candidates through their spiritual journey.",
+          "detail1": "First Communion classes",
+          "detail2": "Confirmation retreats",
+          "detail3": "Ongoing spiritual formation"
+        }
+      }
+    },
+    "orphanage": {
+      "title": "Mgolole Orphanage Centre",
+      "description": "Our orphanage in Mgolole provides a loving home, education, healthcare, and spiritual guidance to orphaned and vulnerable children. We believe every child deserves a chance to thrive in a nurturing Christian environment.",
+      "services": "Our Services:",
+      "service1": "Residential Care",
+      "service2": "Education Support",
+      "service3": "Healthcare & Nutrition",
+      "service4": "Counseling & Trauma Care",
+      "service5": "Spiritual Formation",
+      "service6": "Life Skills Training",
+      "contact": "Contact the Orphanage:",
+      "location": "Mgolole Orphanage Centre, Mgolole, Morogoro",
+      "stats": "Orphanage Statistics",
+      "stat1": {
+        "label": "Children Currently",
+        "value": "45"
+      },
+      "stat2": {
+        "label": "Years of Service",
+        "value": "40+"
+      },
+      "stat3": {
+        "label": "Staff Members",
+        "value": "12"
+      },
+      "stat4": {
+        "label": "Volunteers",
+        "value": "25+"
+      },
+      "supportButton": "Support Our Orphanage"
+    },
+    "education": {
+      "title": "Education Services",
+      "description": "We operate four educational institutions that provide quality Catholic education from pre-school through secondary school. Our schools focus on academic excellence, moral formation, and holistic development.",
+      "schools": {
+        "bernardHilhorst": {
+          "name": "Bernard Hilhorst Secondary School",
+          "location": "Mgolole, Morogoro",
+          "level": "Secondary School",
+          "program1": "Form 1-6 Education",
+          "program2": "Science & Arts Streams",
+          "program3": "Vocational Training"
+        },
+        "stPeterClavery": {
+          "name": "St. Peter Clavery Pre and Primary School",
+          "location": "Mikumi, Morogoro",
+          "level": "Pre & Primary School",
+          "program1": "Nursery Education",
+          "program2": "Standard 1-7",
+          "program3": "After-school Programs"
+        },
+        "stTheresa": {
+          "name": "St. Theresa of the Child Jesus Secondary School",
+          "location": "Mgolole, Morogoro",
+          "level": "Girls Secondary School",
+          "program1": "All-girls Education",
+          "program2": "STEM Focus",
+          "program3": "Leadership Development"
+        },
+        "stAnthony": {
+          "name": "St. Anthonio De Padova Pre and Primary School",
+          "location": "Mzumbe, Morogoro",
+          "level": "Pre & Primary School",
+          "program1": "Early Childhood Education",
+          "program2": "Primary Education",
+          "program3": "Special Needs Support"
+        }
+      },
+      "founded": "Founded",
+      "students": "Students",
+      "programs": "Programs Offered:",
+      "philosophy": "Our Educational Philosophy",
+      "philosophyText": "We believe in educating the whole person - mind, body, and spirit. Our schools integrate faith formation with academic excellence, character development, and service to the community. We aim to form future leaders who are academically competent, morally upright, and spiritually grounded.",
+      "values": {
+        "faith": "Faith-Based",
+        "excellence": "Academic Excellence",
+        "character": "Character Formation",
+        "service": "Service Learning",
+        "inclusion": "Inclusive Education"
+      }
+    },
+    "healthcare": {
+      "title": "Healthcare Services",
+      "description": "Our six healthcare facilities serve communities across Tanzania, providing affordable, quality medical care with compassion and dignity. We serve all people regardless of their ability to pay, following Christ's example of healing and mercy.",
+      "facilities": {
+        "mgolole": {
+          "name": "Mgolole Health Centre",
+          "location": "Mgolole, Morogoro",
+          "type": "Health Centre",
+          "service1": "Outpatient Services",
+          "service2": "Maternal & Child Health",
+          "service3": "Laboratory Services",
+          "service4": "Pharmacy",
+          "hours": "24/7 Emergency Services"
+        },
+        "milama": {
+          "name": "Milama Health Centre",
+          "location": "Mvomero, Morogoro",
+          "type": "Health Centre",
+          "service1": "General Medicine",
+          "service2": "HIV/AIDS Care",
+          "service3": "Nutrition Services",
+          "hours": "Mon-Sat: 8AM-6PM"
+        },
+        "stCarol": {
+          "name": "St. Carol Lwanga Dispensary",
+          "location": "Area 5 Kichangani, Morogoro",
+          "type": "Dispensary",
+          "service1": "Primary Healthcare",
+          "service2": "Immunization",
+          "service3": "Health Education",
+          "hours": "Mon-Fri: 8AM-4PM"
+        },
+        "stMathias": {
+          "name": "St. Mathias Dispensary",
+          "location": "Kiloka, Morogoro",
+          "type": "Dispensary",
+          "service1": "Basic Medical Care",
+          "service2": "Antenatal Care",
+          "service3": "TB Treatment",
+          "hours": "Mon-Fri: 8AM-4PM"
+        },
+        "stAgnes": {
+          "name": "St. Agnes Dispensary",
+          "location": "Lugono, Morogoro",
+          "type": "Dispensary",
+          "service1": "Outpatient Care",
+          "service2": "Family Planning",
+          "service3": "Malaria Treatment",
+          "hours": "Mon-Fri: 8AM-4PM"
+        },
+        "stPeterClaveryHC": {
+          "name": "St. Peter Clavery Health Centre",
+          "location": "Kisesa, Magu, Mwanza",
+          "type": "Health Centre",
+          "service1": "Comprehensive Healthcare",
+          "service2": "Minor Surgery",
+          "service3": "Community Outreach",
+          "hours": "24/7 Services"
+        }
+      },
+      "services": "Services Offered:",
+      "mission": "Our Healthcare Mission",
+      "missionText": "We provide compassionate healthcare services that respect the dignity of every person. Our facilities serve as centers of healing where physical, emotional, and spiritual needs are addressed in the spirit of Christian love and service.",
+      "mission1": "Serve all people regardless of faith or financial status",
+      "mission2": "Provide affordable, quality medical care",
+      "mission3": "Engage in community health education and prevention",
+      "stats": "Healthcare Impact",
+      "stat1": {
+        "label": "Patients Annually",
+        "value": "50,000+"
+      },
+      "stat2": {
+        "label": "Health Facilities",
+        "value": "6"
+      },
+      "stat3": {
+        "label": "Medical Staff",
+        "value": "85+"
+      },
+      "stat4": {
+        "label": "Communities Served",
+        "value": "25+"
+      },
+      "supportButton": "Support Healthcare Ministry"
+    },
+    "cta": {
+      "title": "Partner With Our Ministries",
+      "description": "Join us in serving God's people through education, healthcare, orphan care, and evangelization. Your support makes a difference in countless lives.",
+      "button1": "Volunteer",
+      "button2": "Donate",
+      "button3": "Contact Us"
+    },
+  "common": {
+    "call": "Call",
+    "directions": "Directions",
+    "callNow": "Call Now"
+  }
+}

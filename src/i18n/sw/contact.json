@@ -1,0 +1,104 @@
+{
+    "hero": {
+      "title": "Wasiliana Nasi",
+      "subtitle": "Wasiliana na Masista wa Moyo Safi wa Maria",
+      "tag1": "Usaidizi 24/7",
+      "tag2": "Maeneo Mengi",
+      "tag3": "Jibu Haraka"
+    },
+    "main": {
+      "title": "Maswali ya Jumla",
+      "description": "Kwa maswali yote ya jumla na habari",
+      "address": "Anwani",
+      "email": "Barua Pepe",
+      "phone": "Simu",
+      "mobile": "Simu ya Mkononi",
+      "hours": "Masaa ya Ofisi"
+    },
+    "info": {
+      "address": "Masista wa Moyo Safi wa Maria, S. L. 1049, Morogoro, Tanzania",
+      "email": "info@cicm.or.tz",
+      "phone": "+255 23 261 0000",
+      "mobile": "+255 754 123 456",
+      "hours": "Jumatatu - Ijumaa: 8:00 AM - 5:00 PM",
+      "emergency": "Usaidizi wa Dharura 24/7 Unapatikana"
+    },
+    "form": {
+      "title": "Tutumie Ujumbe",
+      "name": "Jina Kamili",
+      "email": "Anwani ya Barua Pepe",
+      "phone": "Nambari ya Simu",
+      "subject": "Mada",
+      "message": "Ujumbe Wako",
+      "send": "Tuma Ujumbe",
+      "sending": "Inatumwa...",
+      "success": "Ujumbe umetumwa kwa mafanikio! Tutajibu hivi karibuni.",
+      "error": "Imeshindwa kutuma ujumbe. Tafadhali jaribu tena.",
+      "privacy": "Kwa kutumia fomu hii, unakubali sera yetu ya faragha. Hatutawahi kushiriki taarifa zako na watu wengine."
+    },
+    "departments": {
+      "title": "Mawasiliano ya Idara",
+      "vocations": {
+        "title": "Ofisi ya Wito",
+        "contact": "Sr. Flora Chuma",
+        "description": "Kwa maswali kuhusu maisha ya kidini na mchakato wa malezi"
+      },
+      "donations": {
+        "title": "Michango & Usaidizi",
+        "contact": "Sr. Caroline Nguzo",
+        "description": "Kwa michango ya kifedha na usaidizi wa vifaa"
+      },
+      "volunteer": {
+        "title": "Programu ya Kujitolea",
+        "contact": "Sr. Queenbeth Berege",
+        "description": "Kwa fursa za kujitolea na programu za huduma"
+      },
+      "projects": {
+        "title": "Miradi na Biashara",
+        "contact": "Sr. Julieth Makonde",
+        "description": "Kwa maswali ya biashara na ushirikiano wa miradi"
+      },
+      "contactPerson": "Mwathirika:",
+      "email": "Barua Pepe:",
+      "phone": "Simu:",
+      "emailButton": "Barua Pepe",
+      "callButton": "Piga Simu"
+    },
+    "location": {
+      "title": "Tutafute",
+      "description": "Nyumba yetu ya Mama iko Mgolole, Morogoro. Pia tunahudumia katika dayosisi nyingi kote Tanzania na Verona, Italia.",
+      "mainAddress": "Anwani Kuu:",
+      "motherHouse": "Nyumba ya Mama ya Masista wa Moyo Safi wa Maria",
+      "fullAddress": "Kijiji cha Mgolole, Wilaya ya Morogoro, Mkoa wa Morogoro, Tanzania",
+      "openMaps": "Fungua katika Google Maps",
+      "getDirections": "Pata Maelekezo",
+      "otherLocations": "Maeneo Mengine Tunayohudumia:",
+      "dar": "Dar es Salaam",
+      "bagamoyo": "Bagamoyo",
+      "mwanza": "Mwanza",
+      "mbeya": "Mbeya",
+      "mtwara": "Mtwara",
+      "arusha": "Arusha",
+      "verona": "Verona, Italia",
+      "mapTitle": "Mgolole, Morogoro",
+      "mapDescription": "Ramani inayoonyesha eneo letu katika Morogoro, Tanzania",
+      "viewMap": "Tazama kwenye Google Maps"
+    },
+    "social": {
+      "title": "Ungana Nasi",
+      "description": "Tufuate kwenye mitandao ya kijamii kwa habari mpya, taarifa, na msukumo wa kiroho."
+    },
+    "newsletter": {
+      "title": "Jiandikishe kwa Jarida",
+      "description": "Endelea kupata habari mpya, matukio, na tafakari za kiroho.",
+      "placeholder": "Weka anwani yako ya barua pepe",
+      "subscribe": "Jiandikishe",
+      "privacy": "Tunaheshimu faragha yako. Jiondoe wakati wowote."
+    },
+    "banner": {
+      "title": "Unahitaji Usaidizi wa Haraka?",
+      "description": "Kwa mambo ya dharura, tafadhali piga simu ya dharura yetu. Tupo hapa kukusaidia 24/7.",
+      "callButton": "Piga Simu ya Dharura",
+      "whatsappButton": "Tuma Ujumbe kwenye WhatsApp"
+    }
+}

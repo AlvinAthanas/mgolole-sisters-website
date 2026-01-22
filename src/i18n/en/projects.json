@@ -1,0 +1,304 @@
+{
+    "hero": {
+      "title": "Our Projects",
+      "subtitle": "Sustainable Projects Supporting Our Mission and Local Communities",
+      "tag1": "10 Farms",
+      "tag2": "Livestock",
+      "tag3": "Conference Centre",
+      "tag4": "Printing Press",
+      "tag5": "Carpentry",
+      "tag6": "Candle Making"
+    },
+    "tabs": {
+      "farming": "Farming",
+      "livestock": "Livestock",
+      "conference": "Conference Centre",
+      "printing": "Printing Press",
+      "carpentry": "Carpentry",
+      "candles": "Candle Making"
+    },
+    "farming": {
+      "title": "Agricultural Projects",
+      "description": "We operate 10 farms across Morogoro region, producing various crops to support our mission and local communities. Our farms employ sustainable agricultural practices while providing food security and economic opportunities.",
+      "production": "Main Crops Produced:",
+      "crops": {
+        "crop1": "Maize",
+        "crop2": "Rice",
+        "crop3": "Bananas",
+        "crop4": "Beans",
+        "crop5": "Cornflower",
+        "crop6": "Sweet Potatoes",
+        "crop7": "Vegetables"
+      },
+      "impact": "Agricultural Impact",
+      "impact1": "Hectares Cultivated",
+      "impact2": "Farm Workers",
+      "impact3": "Farm Locations",
+      "impact4": "Years Experience",
+      "locationsTitle": "Farm Locations",
+      "cropsLabel": "Crops:",
+      "established": "Est.",
+      "locations": {
+        "mgolole": {
+          "name": "Mgolole",
+          "crop1": "Maize",
+          "crop2": "Beans",
+          "crop3": "Sweet Potatoes",
+          "size": "50 hectares"
+        },
+        "milama": {
+          "name": "Milama",
+          "crop1": "Rice",
+          "crop2": "Cornflower",
+          "size": "30 hectares"
+        },
+        "msowero": {
+          "name": "Msowero",
+          "crop1": "Bananas",
+          "crop2": "Maize",
+          "size": "25 hectares"
+        },
+        "lugono": {
+          "name": "Lugono",
+          "crop1": "Beans",
+          "crop2": "Sweet Potatoes",
+          "size": "20 hectares"
+        },
+        "kiroka": {
+          "name": "Kiroka",
+          "crop1": "Maize",
+          "crop2": "Vegetables",
+          "size": "15 hectares"
+        },
+        "mululu": {
+          "name": "Mululu",
+          "crop1": "Beans",
+          "crop2": "Maize",
+          "size": "18 hectares"
+        },
+        "pangawe": {
+          "name": "Pangawe",
+          "crop1": "Rice",
+          "crop2": "Vegetables",
+          "size": "22 hectares"
+        },
+        "matambiko": {
+          "name": "Matambiko",
+          "crop1": "Bananas",
+          "crop2": "Sweet Potatoes",
+          "size": "12 hectares"
+        },
+        "luhindo": {
+          "name": "Luhindo",
+          "crop1": "Maize",
+          "crop2": "Beans",
+          "size": "16 hectares"
+        },
+        "vituli": {
+          "name": "Vituli",
+          "crop1": "Vegetables",
+          "crop2": "Cornflower",
+          "size": "10 hectares"
+        }
+      }
+    },
+    "livestock": {
+      "title": "Livestock Keeping",
+      "description": "Our livestock projects at four strategic locations provide dairy products, meat, and other animal products. We practice modern animal husbandry techniques while maintaining traditional, sustainable approaches.",
+      "benefits": "Project Benefits",
+      "benefit1": "Provides food for our institutions",
+      "benefit2": "Generates income for mission support",
+      "benefit3": "Creates employment opportunities",
+      "benefit4": "Supports agricultural training",
+      "benefit5": "Produces organic manure for farms",
+      "stats": {
+        "animals": "Total Animals:",
+        "production": "Daily Production:"
+      },
+      "locationsTitle": "Livestock Farms",
+      "established": "Est.",
+      "animals": "Animals:",
+      "products": "Products:",
+      "locations": {
+        "mgolole": {
+          "name": "Mgolole",
+          "animal1": "Dairy Cows",
+          "animal2": "Chicken",
+          "animal3": "Rabbits",
+          "product1": "Milk",
+          "product2": "Eggs",
+          "product3": "Meat"
+        },
+        "melela": {
+          "name": "Melela",
+          "animal1": "Goats",
+          "animal2": "Pigs",
+          "product1": "Meat",
+          "product2": "Manure"
+        },
+        "milama": {
+          "name": "Milama",
+          "animal1": "Dairy Cows",
+          "animal2": "Chicken",
+          "product1": "Milk",
+          "product2": "Eggs"
+        },
+        "msowero": {
+          "name": "Msowero",
+          "animal1": "Pigs",
+          "animal2": "Rabbits",
+          "product1": "Meat",
+          "product2": "Breeding Stock"
+        }
+      }
+    },
+    "conference": {
+      "title": "Amabilis Conference Centre",
+      "description": "Located in Morogoro, our modern conference centre provides excellent facilities for conferences, seminars, workshops, and retreats. We host organizations from both public and private sectors, as well as religious groups.",
+      "features": "Key Features:",
+      "services": {
+        "service1": "Conference Rooms (50-300 capacity)",
+        "service2": "Seminar & Workshop Facilities",
+        "service3": "Accommodation (Single & Double Rooms)",
+        "service4": "Catering Services",
+        "service5": "Audio-Visual Equipment",
+        "service6": "Transport Services",
+        "service7": "Prayer & Meditation Spaces",
+        "service8": "Sports & Recreation Facilities"
+      },
+      "contact": "Booking & Contact:",
+      "address": "Amabilis Conference Centre, Morogoro, Tanzania",
+      "bookButton": "Book Now",
+      "capacity": "Facility Capacity",
+      "capacity1": "Main Hall",
+      "capacity2": "Meeting Rooms",
+      "capacity3": "Guest Rooms",
+      "capacity4": "Dining Capacity",
+      "availability": "Available for both religious and corporate events"
+    },
+    "printing": {
+      "title": "Mgolole Printing Press",
+      "description": "Our modern printing press provides high-quality printing services for educational materials, office supplies, and custom printing needs. We serve schools, churches, businesses, and individuals with reliable and affordable printing solutions.",
+      "productsTitle": "Products & Services",
+      "products": {
+        "product1": "Exercise Books",
+        "product2": "Receipt Books",
+        "product3": "Envelopes",
+        "product4": "BIM Cards",
+        "product5": "MTUA Books",
+        "product6": "Register Books",
+        "product7": "Book Binding Services",
+        "product8": "Custom Printing",
+        "product9": "Stationery Supplies"
+      },
+      "contact": "Contact & Ordering",
+      "address": "Mgolole Printing Press, Mgolole, Morogoro",
+      "hours": "Mon-Fri: 8:00 AM - 5:00 PM, Sat: 8:00 AM - 1:00 PM",
+      "clientele": "Our Clientele",
+      "clients": {
+        "client1": "Schools",
+        "client2": "Churches",
+        "client3": "Businesses",
+        "client4": "Government",
+        "client5": "NGOs",
+        "client6": "Individuals"
+      },
+      "orderButton": "Request Quote"
+    },
+    "carpentry": {
+      "title": "Mgolole Carpentry",
+      "description": "Our carpentry workshop specializes in hardwood furniture and custom wood products. We combine traditional craftsmanship with modern techniques to create durable, beautiful furniture for homes, offices, and churches.",
+      "specialties": "Our Specialties:",
+      "products": {
+        "product1": "Wooden Doors & Windows",
+        "product2": "Wooden Cupboards",
+        "product3": "Wooden Sofa Sets",
+        "product4": "Wooden Chairs",
+        "product5": "Office Tables",
+        "product6": "Coffee Tables",
+        "product7": "Bed Frames",
+        "product8": "Custom Furniture",
+        "product9": "Church Furnishings"
+      },
+      "woodTypes": "Wood Types We Use:",
+      "woods": {
+        "wood1": "Mvule (Iroko)",
+        "wood2": "Mninga (African Teak)",
+        "wood3": "Mkongo",
+        "wood4": "Mpingo (African Blackwood)",
+        "wood5": "Mahogany"
+      },
+      "workshop": "Our Workshop",
+      "stats": {
+        "stat1": "Years Experience",
+        "stat2": "Craftsmen",
+        "stat3": "Apprentices",
+        "stat4": "Projects/Year"
+      },
+      "services": "Additional Services:",
+      "service1": "Custom Furniture Design",
+      "service2": "Furniture Repair & Restoration",
+      "service3": "Church Altar & Pew Making",
+      "service4": "Wood Carving & Decoration",
+      "service5": "Installation Services",
+      "orderButton": "Request Custom Work",
+      "catalogButton": "View Product Catalog"
+    },
+    "candles": {
+      "title": "Mgolole Candle Making Factory",
+      "description": "Our candle factory produces high-quality candles for various purposes, including church use, home decoration, and special occasions. We use natural materials and traditional methods to create beautiful, long-lasting candles.",
+      "productsTitle": "Our Candle Products:",
+      "products": {
+        "product1": "Church Candles",
+        "product2": "Decorative Candles",
+        "product3": "Scented Candles",
+        "product4": "Emergency Candles",
+        "product5": "Special Occasion Candles",
+        "product6": "Bulk Orders"
+      },
+      "contact": "Ordering Information:",
+      "address": "Mgolole Candle Factory, Mgolole, Morogoro",
+      "orderButton": "Place Order",
+      "catalogButton": "View Catalog",
+      "production": "Production Details",
+      "stats": {
+        "stat1": "Daily Production",
+        "stat2": "Candle Types",
+        "stat3": "Workers",
+        "stat4": "Years Operating"
+      },
+      "materials": "Materials We Use:",
+      "material1": "Beeswax",
+      "material2": "Paraffin Wax",
+      "material3": "Soy Wax",
+      "material4": "Natural Scents",
+      "material5": "Cotton Wicks",
+      "material6": "Natural Dyes",
+      "customization": "Customization Options:",
+      "custom1": "Custom Sizes & Shapes",
+      "custom2": "Church & Parish Logos",
+      "custom3": "Special Event Colors",
+      "custom4": "Bulk Order Discounts",
+      "custom5": "Delivery Services"
+    },
+    "impact": {
+      "title": "Our Projects Impact",
+      "impact1": "Jobs Created",
+      "impact2": "Project Locations",
+      "impact3": "Years of Operation",
+      "impact4": "Clients Served",
+      "description": "Our projects not only support our religious mission but also contribute to local economic development, provide employment, and serve communities across Tanzania."
+    },
+    "cta": {
+      "title": "Support Our Projects",
+      "description": "Your partnership helps us sustain these important projects that support our mission and serve local communities. Consider investing in our work or purchasing our products.",
+      "button1": "Buy Our Products",
+      "button2": "Partner With Us",
+      "button3": "Contact Sales"
+  },
+  "common": {
+    "viewMap": "View Map",
+    "visit": "Visit Farm",
+    "products": "View Products"
+  }
+}

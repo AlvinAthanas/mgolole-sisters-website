@@ -1,0 +1,295 @@
+{
+    "hero": {
+      "title": "Media & Resources",
+      "subtitle": "Explore Our Photo Gallery, Videos, Publications, and Prayer Resources",
+      "tag1": "Photo Gallery",
+      "tag2": "Video Gallery",
+      "tag3": "Publications",
+      "tag4": "Prayer Resources"
+    },
+    "tabs": {
+      "photos": "Photos",
+      "videos": "Videos",
+      "publications": "Publications",
+      "prayer": "Prayer Resources"
+    },
+    "photos": {
+      "categories": {
+        "title": "Photo Categories",
+        "all": "All Photos",
+        "events": "Events",
+        "ministry": "Ministry",
+        "community": "Community Life",
+        "projects": "Projects",
+        "nature": "Nature",
+        "schools": "Schools",
+        "healthcare": "Healthcare"
+      },
+      "count": "photos",
+      "filter": "Filter Options",
+      "sort": "Sort By",
+      "sortNewest": "Newest First",
+      "sortOldest": "Oldest First",
+      "sortPopular": "Most Viewed",
+      "sortFeatured": "Featured",
+      "search": "Search photos...",
+      "stats": {
+        "title": "Gallery Statistics",
+        "total": "Total Photos",
+        "categories": "Categories",
+        "views": "Total Views",
+        "updated": "Last Updated"
+      },
+      "gallery": "Photo Gallery",
+      "downloadAll": "Download All",
+      "share": "Share",
+      "featured": "Featured Photos",
+      "view": "View Album",
+      "download": "Download",
+      "all": "All Photos",
+      "samples": {
+        "vows": {
+          "title": "First Vows Ceremony 2024",
+          "location": "Mgolole Mother House",
+          "description": "Celebration of first vows for new sisters entering religious life"
+        },
+        "orphanage": {
+          "title": "Orphanage Christmas Party",
+          "location": "Mgolole Orphanage Centre",
+          "description": "Christmas celebration with children at our orphanage"
+        },
+        "farm": {
+          "title": "Harvest Season 2024",
+          "location": "Mgolole Farms",
+          "description": "Harvesting maize at our agricultural projects"
+        },
+        "school": {
+          "title": "School Graduation Day",
+          "location": "Bernard Hilhorst Secondary School",
+          "description": "Graduation ceremony for Form 6 students"
+        },
+        "retreat": {
+          "title": "Annual Sisters Retreat",
+          "location": "Amabilis Conference Centre",
+          "description": "Spiritual retreat for all sisters of the congregation"
+        },
+        "health": {
+          "title": "Health Centre Opening",
+          "location": "St. Peter Clavery Health Centre",
+          "description": "Inauguration of new health facility in Mwanza"
+        },
+        "nature": {
+          "title": "Mgolole Landscape",
+          "location": "Mgolole Mountains",
+          "description": "Beautiful landscape views around our mother house"
+        },
+        "construction": {
+          "title": "School Construction",
+          "location": "St. Theresa School Site",
+          "description": "Progress on new classroom construction"
+        }
+      }
+    },
+    "videos": {
+      "categories": {
+        "title": "Video Categories",
+        "all": "All Videos",
+        "testimonies": "Testimonies",
+        "documentary": "Documentaries",
+        "events": "Events",
+        "ministry": "Ministry",
+        "education": "Education",
+        "music": "Music & Choir"
+      },
+      "count": "videos",
+      "filter": "Filter Options",
+      "sort": "Sort By",
+      "sortNewest": "Newest First",
+      "sortOldest": "Oldest First",
+      "sortViews": "Most Viewed",
+      "sortDuration": "Duration",
+      "search": "Search videos...",
+      "youtube": {
+        "title": "YouTube Channel",
+        "description": "Subscribe to our YouTube channel for latest videos and updates.",
+        "subscribe": "Subscribe"
+      },
+      "gallery": "Video Gallery",
+      "channel": "View Channel",
+      "podcast": "Audio Podcast",
+      "featured": "Featured Videos",
+      "watch": "Watch Now",
+      "share": "Share",
+      "all": "All Videos",
+      "views": "views",
+      "samples": {
+        "founding": {
+          "title": "Our Founding Story",
+          "description": "Documentary about the founding of our congregation in 1937"
+        },
+        "vocation": {
+          "title": "A Day in Religious Life",
+          "description": "Personal testimony from a sister about her vocation journey"
+        },
+        "retreat": {
+          "title": "Annual Retreat Highlights",
+          "description": "Highlights from our annual spiritual retreat"
+        },
+        "orphanage": {
+          "title": "Hope for Orphans",
+          "description": "Documentary about our orphanage ministry"
+        },
+        "choir": {
+          "title": "Easter Choir Performance",
+          "description": "Special choir performance during Easter celebrations"
+        },
+        "school": {
+          "title": "Education Transforming Lives",
+          "description": "Impact of our education ministry in rural communities"
+        }
+      }
+    },
+    "publications": {
+      "categories": {
+        "title": "Publication Types",
+        "all": "All Publications",
+        "newsletter": "Newsletters",
+        "annual": "Annual Reports",
+        "spiritual": "Spiritual Resources",
+        "research": "Research Papers"
+      },
+      "count": "items",
+      "filter": "Filter Options",
+      "sort": "Sort By",
+      "sortNewest": "Newest First",
+      "sortOldest": "Oldest First",
+      "sortPopular": "Most Downloaded",
+      "sortTitle": "Title A-Z",
+      "search": "Search publications...",
+      "stats": {
+        "title": "Download Statistics",
+        "total": "Total Downloads",
+        "monthly": "Monthly Average",
+        "popular": "Most Popular",
+        "popularFile": "Daily Prayer Guide"
+      },
+      "library": "Publications Library",
+      "bulk": "Bulk Download",
+      "print": "Print Catalog",
+      "featured": "Featured Publications",
+      "download": "Download",
+      "all": "All Publications",
+      "pages": "pages",
+      "downloads": "downloads",
+      "samples": {
+        "annual2023": {
+          "title": "Annual Report 2023",
+          "description": "Comprehensive report on our activities, finances, and impact for 2023"
+        },
+        "newsletter": {
+          "title": "CICM Newsletter - June 2024",
+          "description": "Latest news and updates from our congregation"
+        },
+        "prayer": {
+          "title": "Daily Prayer Guide",
+          "description": "Guide for daily prayers and reflections"
+        },
+        "research": {
+          "title": "Impact of Catholic Education",
+          "description": "Research on the impact of Catholic education in rural Tanzania"
+        },
+        "vocations": {
+          "title": "Vocations Discernment Guide",
+          "description": "Guide for young women discerning religious life"
+        },
+        "financial": {
+          "title": "Financial Transparency Report 2023",
+          "description": "Detailed financial report and audit results"
+        }
+      }
+    },
+    "prayer": {
+      "types": {
+        "title": "Prayer Types",
+        "all": "All Prayers",
+        "daily": "Daily Prayers",
+        "rosary": "Rosary",
+        "novena": "Novenas",
+        "liturgy": "Liturgy",
+        "audio": "Audio Prayers"
+      },
+      "count": "resources",
+      "filter": "Filter Options",
+      "format": "Format",
+      "formatAll": "All Formats",
+      "search": "Search prayers...",
+      "dailyPrayer": {
+        "title": "Today's Prayer",
+        "content": "Prayer for peace and guidance in our daily work.",
+        "view": "View Full Prayer"
+      },
+      "library": "Prayer Resources",
+      "audio": "Audio Prayers",
+      "printable": "Printable Versions",
+      "popular": "Most Popular Resources",
+      "download": "Download",
+      "listen": "Listen",
+      "save": "Save",
+      "all": "All Prayer Resources",
+      "downloads": "downloads",
+      "request": {
+        "title": "Submit Prayer Request",
+        "description": "We are praying for you. Share your prayer intentions with our community.",
+        "button": "Submit Prayer Request"
+      },
+      "daily": {
+        "title": "Daily Prayers",
+        "description": "Collection of daily prayers for morning, noon, and evening"
+      },
+      "rosary": {
+        "title": "Rosary Guide",
+        "description": "Complete guide to praying the rosary with meditations"
+      },
+      "novena": {
+        "title": "Novena to Our Lady",
+        "description": "Nine-day prayer to the Immaculate Heart of Mary"
+      },
+      "liturgy": {
+        "title": "Liturgy of the Hours",
+        "description": "Simplified version for personal or community prayer"
+      },
+      "reflections": {
+        "title": "Daily Gospel Reflections",
+        "description": "Reflections on daily Gospel readings"
+      },
+      "songs": {
+        "title": "Prayer Songs & Hymns",
+        "description": "Collection of traditional and modern prayer songs"
+      }
+    },
+    "dialog": {
+      "description": "Description",
+      "date": "Date",
+      "location": "Location",
+      "views": "Views",
+      "likes": "Likes",
+      "size": "File Size",
+      "downloads": "Downloads",
+      "close": "Close",
+      "download": "Download",
+      "downloading": "Downloading...",
+      "share": "Share",
+      "watch": "Watch on YouTube",
+      "print": "Print"
+    },
+    "download": {
+      "success": "Download started successfully!",
+      "error": "Download failed. Please try again."
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Subscribe to our newsletter to receive latest photos, videos, publications, and prayer resources directly in your inbox.",
+      "placeholder": "Enter your email address",
+      "subscribe": "Subscribe"
+    }
+  }

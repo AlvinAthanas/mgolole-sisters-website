@@ -1,0 +1,245 @@
+{
+    "hero": {
+      "title": "Support Our Mission",
+      "subtitle": "Join Us in Serving God's People Through Your Generosity and Service",
+      "tag1": "Make a Donation",
+      "tag2": "Volunteer",
+      "tag3": "Prayer Support"
+    },
+    "tabs": {
+      "donate": "Donate",
+      "volunteer": "Volunteer",
+      "prayer": "Prayer Support"
+    },
+    "donation": {
+      "title": "Make a Donation",
+      "amount": {
+        "title": "Select Donation Amount",
+        "quick": "Quick Select:",
+        "custom": "Custom Amount"
+      },
+      "type": {
+        "title": "Donation Type",
+        "oneTime": "One-time Donation",
+        "monthly": "Monthly Recurring"
+      },
+      "processing": "Processing...",
+      "donateNow": "Donate Now",
+      "success": "Thank you for your generous donation!",
+      "error": "Failed to process donation. Please try again.",
+      "impact": {
+        "title": "Where Your Donation Goes"
+      },
+      "areas": {
+        "education": {
+          "title": "Education",
+          "description": "Support our 4 schools serving 2000+ students"
+        },
+        "healthcare": {
+          "title": "Healthcare",
+          "description": "Fund medical care at our 6 health facilities"
+        },
+        "orphanage": {
+          "title": "Orphanage",
+          "description": "Care for 45+ orphaned children at Mgolole"
+        },
+        "food": {
+          "title": "Food Security",
+          "description": "Provide meals through our farming projects"
+        },
+        "projects": {
+          "title": "Community Projects",
+          "description": "Support sustainable development initiatives"
+        },
+        "formation": {
+          "title": "Sister Formation",
+          "description": "Train future sisters for ministry"
+        }
+      },
+      "bank": {
+        "title": "Bank Transfer",
+        "description": "Transfer directly to our bank accounts:",
+        "bank": "Bank",
+        "account": "Account",
+        "download": "Download Bank Details",
+        "banks": {
+          "crdb": {
+            "name": "CRDB Bank",
+            "accountName": "IMMACULATE HEART OF MARY SISTERS",
+            "accountNumber": "01J1078505900",
+            "branch": "Morogoro Branch"
+          },
+          "nmb": {
+            "name": "National Microfinance Bank (NMB)",
+            "accountName": "IMMACULATE HEART OF MARY SISTERS",
+            "accountNumber": "22110037715",
+            "branch": "Morogoro Branch"
+          }
+        }
+      },
+      "mobile": {
+        "title": "Mobile Money",
+        "note": "Send payment and email receipt to donations@cicm.or.tz",
+        "mpesa": {
+          "name": "M-Pesa",
+          "number": "0754 123 456",
+          "accountName": "CICM Sisters"
+        },
+        "airtel": {
+          "name": "Airtel Money",
+          "number": "0684 123 456",
+          "accountName": "CICM Sisters"
+        },
+        "tigo": {
+          "name": "Tigo Pesa",
+          "number": "0713 123 456",
+          "accountName": "CICM Sisters"
+        }
+      },
+      "security": {
+        "title": "Secure & Transparent",
+        "secure": "Secure SSL Encryption",
+        "receipt": "Instant Tax Receipt",
+        "report": "Annual Impact Reports"
+      }
+    },
+    "volunteer": {
+      "title": "Volunteer With Us",
+      "form": {
+        "title": "Volunteer Application Form",
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "availability": "Availability (Months)",
+        "skills": "Skills & Qualifications",
+        "interests": "Areas of Interest",
+        "message": "Why do you want to volunteer with us?",
+        "submit": "Submit Application",
+        "submitting": "Submitting...",
+        "success": "Thank you for your interest! We will contact you soon.",
+        "error": "Failed to submit form. Please try again."
+      },
+      "process": {
+        "title": "Volunteer Process",
+        "step1": "Submit Application",
+        "step2": "Interview & Screening",
+        "step3": "Background Check",
+        "step4": "Orientation & Training",
+        "step5": "Begin Service"
+      },
+      "opportunities": {
+        "title": "Current Opportunities",
+        "commitment": "Commitment:",
+        "skills": "Skills:",
+        "apply": "Apply Now",
+        "teaching": {
+          "title": "Teaching Assistant",
+          "location": "Our Schools",
+          "commitment": "3-6 months",
+          "skills": "Education background, Patience, Creativity"
+        },
+        "medical": {
+          "title": "Medical Volunteer",
+          "location": "Health Centers",
+          "commitment": "1-12 months",
+          "skills": "Medical training, Compassion, Teamwork"
+        },
+        "orphanage": {
+          "title": "Orphanage Caregiver",
+          "location": "Mgolole Orphanage",
+          "commitment": "2-6 months",
+          "skills": "Childcare experience, Empathy, Energy"
+        },
+        "farming": {
+          "title": "Agricultural Volunteer",
+          "location": "Our Farms",
+          "commitment": "1-3 months",
+          "skills": "Farming knowledge, Physical stamina, Teamwork"
+        },
+        "construction": {
+          "title": "Construction Volunteer",
+          "location": "Various Projects",
+          "commitment": "2-8 weeks",
+          "skills": "Construction skills, Safety awareness, Physical fitness"
+        },
+        "admin": {
+          "title": "Administrative Support",
+          "location": "Main Office",
+          "commitment": "Flexible",
+          "skills": "Computer skills, Organization, Communication"
+        }
+      },
+      "benefits": {
+        "title": "Volunteer Benefits",
+        "meaningful": "Meaningful Service Experience",
+        "training": "Professional Training & Skills",
+        "certificate": "Certificate of Service",
+        "community": "Community Living Experience",
+        "accommodation": "Accommodation & Meals Provided"
+      }
+    },
+    "prayer": {
+      "title": "Prayer Support",
+      "form": {
+        "title": "Submit Prayer Request",
+        "name": "Your Name (Optional)",
+        "anonymous": "Submit anonymously",
+        "request": "Prayer Request",
+        "placeholder": "Please share your prayer intention...",
+        "submit": "Submit Prayer Request",
+        "submitting": "Submitting...",
+        "success": "Your prayer request has been received. We will pray for you.",
+        "error": "Failed to submit prayer request. Please try again."
+      },
+      "community": {
+        "title": "Join Our Prayer Community",
+        "weekly": "Weekly Prayer Partners",
+        "adoration": "Adoration Chapel",
+        "sisters": "Sisters Praying Daily",
+        "tradition": "Years of Prayer Tradition"
+      },
+      "schedule": {
+        "title": "Daily Prayer Schedule",
+        "morning": "Morning Prayer & Meditation",
+        "mass": "Holy Mass",
+        "angelus": "Angelus & Midday Prayer",
+        "divine": "Divine Mercy Chaplet",
+        "evening": "Evening Prayer & Rosary",
+        "night": "Night Prayer",
+        "download": "Download Prayer Schedule"
+      },
+      "intentions": {
+        "title": "Current Prayer Intentions",
+        "intention1": "For our students preparing for exams",
+        "intention2": "For the sick in our health centers",
+        "intention3": "For vocations to religious life",
+        "intention4": "For peace in our communities",
+        "intention5": "For our benefactors and donors",
+        "viewAll": "View All Prayer Intentions"
+      },
+      "partner": {
+        "title": "Become a Prayer Partner",
+        "description": "Join our community of prayer partners who commit to pray for our mission regularly.",
+        "join": "Join Prayer Partners"
+      }
+    },
+    "impact": {
+      "title": "Your Support Makes a Difference",
+      "description": "Last year, with the help of generous supporters like you, we were able to:",
+      "stat1": "Students Educated",
+      "stat2": "Patients Treated",
+      "stat3": "Orphans Cared For",
+      "stat4": "Jobs Created",
+      "report": "Download Annual Report",
+      "reportDescription": "See how your contributions are transforming lives through our detailed annual impact report.",
+      "download": "Download Report",
+      "share": "Share"
+    },
+    "contact": {
+      "title": "Have Questions?",
+      "description": "Contact our support team for more information about donations, volunteering, or prayer support.",
+      "email": "Email Support",
+      "call": "Call Support",
+      "whatsapp": "WhatsApp"
+  }
+}

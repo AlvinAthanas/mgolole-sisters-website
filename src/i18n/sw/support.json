@@ -1,0 +1,245 @@
+{
+    "hero": {
+      "title": "Tusaidie Misheni Yetu",
+      "subtitle": "Jiunge Nasi Katika Kumtumikia Mungu Kupitia Ukarimu Wako na Huduma",
+      "tag1": "Toa Mchango",
+      "tag2": "Jitolee",
+      "tag3": "Msaada wa Sala"
+    },
+    "tabs": {
+      "donate": "Changia",
+      "volunteer": "Jitolee",
+      "prayer": "Msaada wa Sala"
+    },
+    "donation": {
+      "title": "Toa Mchango",
+      "amount": {
+        "title": "Chagua Kiasi cha Mchango",
+        "quick": "Chagua Haraka:",
+        "custom": "Kiasi Maalum"
+      },
+      "type": {
+        "title": "Aina ya Mchango",
+        "oneTime": "Mchango wa Mara Moja",
+        "monthly": "Mchango wa Kila Mwezi"
+      },
+      "processing": "Inachakata...",
+      "donateNow": "Changia Sasa",
+      "success": "Asante kwa mchango wako mkarimu!",
+      "error": "Imeshindwa kuchakata mchango. Tafadhali jaribu tena.",
+      "impact": {
+        "title": "Mchango Wako Unakwenda Wapi"
+      },
+      "areas": {
+        "education": {
+          "title": "Elimu",
+          "description": "Tusaidie shule zetu 4 zinazohudumia wanafunzi 2000+"
+        },
+        "healthcare": {
+          "title": "Afya",
+          "description": "Fadhili matibabu katika vituo vyetu 6 vya afya"
+        },
+        "orphanage": {
+          "title": "Yatima",
+          "description": "Tunza watoto yatima 45+ huko Mgolole"
+        },
+        "food": {
+          "title": "Usalama wa Chakula",
+          "description": "Toa mlo kupitia miradi yetu ya kilimo"
+        },
+        "projects": {
+          "title": "Miradi ya Jamii",
+          "description": "Tusaidie mipango endelevu ya maendeleo"
+        },
+        "formation": {
+          "title": "Malezi ya Masista",
+          "description": "Wafundishe masista wa baadaye kwa ajili ya huduma"
+        }
+      },
+      "bank": {
+        "title": "Hamisho ya Benki",
+        "description": "Hamisha moja kwa moja kwenye akaunti zetu za benki:",
+        "bank": "Benki",
+        "account": "Akaunti",
+        "download": "Pakua Maelezo ya Benki",
+        "banks": {
+          "crdb": {
+            "name": "Benki ya CRDB",
+            "accountName": "MASISTA WA MOYO SAFI WA MARIA",
+            "accountNumber": "01J1078505900",
+            "branch": "Tawi la Morogoro"
+          },
+          "nmb": {
+            "name": "Benki ya Taifa ya Mikopo (NMB)",
+            "accountName": "MASISTA WA MOYO SAFI WA MARIA",
+            "accountNumber": "22110037715",
+            "branch": "Tawi la Morogoro"
+          }
+        }
+      },
+      "mobile": {
+        "title": "Pesa za Mkononi",
+        "note": "Tuma malipo na risiti ya barua pepe kwa donations@cicm.or.tz",
+        "mpesa": {
+          "name": "M-Pesa",
+          "number": "0754 123 456",
+          "accountName": "Masista wa CICM"
+        },
+        "airtel": {
+          "name": "Airtel Money",
+          "number": "0684 123 456",
+          "accountName": "Masista wa CICM"
+        },
+        "tigo": {
+          "name": "Tigo Pesa",
+          "number": "0713 123 456",
+          "accountName": "Masista wa CICM"
+        }
+      },
+      "security": {
+        "title": "Salama na Wazi",
+        "secure": "Usimbaji Salama wa SSL",
+        "receipt": "Risiti ya Ushuru Papo hapo",
+        "report": "Ripoti za Ushawishi wa Kila Mwaka"
+      }
+    },
+    "volunteer": {
+      "title": "Jitolee Nasi",
+      "form": {
+        "title": "Fomu ya Maombi ya Kujitolea",
+        "name": "Jina Kamili",
+        "email": "Anwani ya Barua Pepe",
+        "phone": "Nambari ya Simu",
+        "availability": "Upatikanaji (Miezi)",
+        "skills": "Ujuzi na Sifa",
+        "interests": "Maeneo ya Kuvutiwa",
+        "message": "Kwa nini unataka kujitolea nasi?",
+        "submit": "Wasilisha Maombi",
+        "submitting": "Inawasilishwa...",
+        "success": "Asante kwa nia yako! Tutawasiliana nawe hivi karibuni.",
+        "error": "Imeshindwa kutuma fomu. Tafadhali jaribu tena."
+      },
+      "process": {
+        "title": "Mchakato wa Kujitolea",
+        "step1": "Wasilisha Maombi",
+        "step2": "Mahojiano na Uchunguzi",
+        "step3": "Uchunguzi wa Nyuma",
+        "step4": "Maelekezo na Mafunzo",
+        "step5": "Anza Huduma"
+      },
+      "opportunities": {
+        "title": "Fursa za Sasa",
+        "commitment": "Ahadi:",
+        "skills": "Ujuzi:",
+        "apply": "Omba Sasa",
+        "teaching": {
+          "title": "Msaidizi wa Kufundisha",
+          "location": "Shule Zetu",
+          "commitment": "Miezi 3-6",
+          "skills": "Background ya elimu, Uvumilivu, Ubunifu"
+        },
+        "medical": {
+          "title": "Mjitolea wa Matibabu",
+          "location": "Vituo vya Afya",
+          "commitment": "Miezi 1-12",
+          "skills": "Mafunzo ya matibabu, Huruma, Ushirikiano"
+        },
+        "orphanage": {
+          "title": "Mlezi wa Yatima",
+          "location": "Yatima ya Mgolole",
+          "commitment": "Miezi 2-6",
+          "skills": "Uzoefu wa utunzaji wa watoto, Uelewa, Nishati"
+        },
+        "farming": {
+          "title": "Mjitolea wa Kilimo",
+          "location": "Mashamba Yetu",
+          "commitment": "Miezi 1-3",
+          "skills": "Ujuzi wa kilimo, Uwezo wa kimwili, Ushirikiano"
+        },
+        "construction": {
+          "title": "Mjitolea wa Ujenzi",
+          "location": "Miradi Mbalimbali",
+          "commitment": "Wiki 2-8",
+          "skills": "Ujuzi wa ujenzi, Ufahamu wa usalama, Afya ya kimwili"
+        },
+        "admin": {
+          "title": "Msaada wa Utawala",
+          "location": "Ofisi Kuu",
+          "commitment": "Kubadilika",
+          "skills": "Ujuzi wa kompyuta, Uandaa, Mawasiliano"
+        }
+      },
+      "benefits": {
+        "title": "Faida za Kujitolea",
+        "meaningful": "Uzoefu wa Huduma Yenye Maana",
+        "training": "Mafunzo ya Kitaaluma na Ujuzi",
+        "certificate": "Cheti cha Huduma",
+        "community": "Uzoefu wa Kuishi Katika Jamii",
+        "accommodation": "Makazi na Chakula Vinatolewa"
+      }
+    },
+    "prayer": {
+      "title": "Msaada wa Sala",
+      "form": {
+        "title": "Wasilisha Ombi la Sala",
+        "name": "Jina Lako (Hiari)",
+        "anonymous": "Wasilisha bila kujulikana",
+        "request": "Ombi la Sala",
+        "placeholder": "Tafadhali shiriki nia yako ya sala...",
+        "submit": "Wasilisha Ombi la Sala",
+        "submitting": "Inawasilishwa...",
+        "success": "Ombi lako la sala limepokelewa. Tutakuombea.",
+        "error": "Imeshindwa kutuma ombi la sala. Tafadhali jaribu tena."
+      },
+      "community": {
+        "title": "Jiunge na Jamii Yetu ya Sala",
+        "weekly": "Washirika wa Sala Kila Wiki",
+        "adoration": "Kanisa la Abluti",
+        "sisters": "Masista Wanaoomba Kila Siku",
+        "tradition": "Miaka ya Mila ya Sala"
+      },
+      "schedule": {
+        "title": "Ratiba ya Kila Siku ya Sala",
+        "morning": "Sala ya Asubuhi na Kutafakari",
+        "mass": "Misa Takatifu",
+        "angelus": "Angelus na Sala ya Adhuhuri",
+        "divine": "Tasbihi ya Rehema ya Mungu",
+        "evening": "Sala ya Jioni na Rosari",
+        "night": "Sala ya Usiku",
+        "download": "Pakua Ratiba ya Sala"
+      },
+      "intentions": {
+        "title": "Nia za Sasa za Sala",
+        "intention1": "Kwa wanafunzi wetu wanaojiandaa kwa mitihani",
+        "intention2": "Kwa wagonjwa katika vituo vyetu vya afya",
+        "intention3": "Kwa wito wa maisha ya kidini",
+        "intention4": "Kwa amani katika jamii zetu",
+        "intention5": "Kwa wafadhili wetu na wachangiaji",
+        "viewAll": "Tazama Nia Zote za Sala"
+      },
+      "partner": {
+        "title": "Kuwa Mshirika wa Sala",
+        "description": "Jiunge na jamii yetu ya washirika wa sala wanaoahidi kuomba kwa misheni yetu mara kwa mara.",
+        "join": "Jiunge na Washirika wa Sala"
+      }
+    },
+    "impact": {
+      "title": "Msaada Wako Unaleta Tofauti",
+      "description": "Mwaka jana, kwa msaada wa wanaunga mkono wakarimu kama wewe, tuliweza:",
+      "stat1": "Wanafunzi Waliofundishwa",
+      "stat2": "Wagonjwa Waliotibiwa",
+      "stat3": "Yatima Waliotunzwa",
+      "stat4": "Ajira Zilizotengenezwa",
+      "report": "Pakua Ripoti ya Mwaka",
+      "reportDescription": "Angalia jinsi michango yako inavyobadilisha maisha kupitia ripoti yetu ya kina ya ushawishi wa mwaka.",
+      "download": "Pakua Ripoti",
+      "share": "Shiriki"
+    },
+    "contact": {
+      "title": "Una Maswali?",
+      "description": "Wasiliana na timu yetu ya msaada kwa maelezo zaidi kuhusu michango, kujitolea, au msaada wa sala.",
+      "email": "Barua Pepe ya Msaada",
+      "call": "Piga Simu ya Msaada",
+      "whatsapp": "WhatsApp"
+    }
+}

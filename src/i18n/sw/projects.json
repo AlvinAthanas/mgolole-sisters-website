@@ -1,0 +1,304 @@
+{
+    "hero": {
+      "title": "Miradi Yetu",
+      "subtitle": "Miradi Endelevu Inayounga Mkono Dhamira Yetu na Jamii za Mitaa",
+      "tag1": "Mashamba 10",
+      "tag2": "Mifugo",
+      "tag3": "Kituo cha Mkutano",
+      "tag4": "Mashine ya Uchapaji",
+      "tag5": "Ufundi wa Mbao",
+      "tag6": "Utengenezaji wa Mishumaa"
+    },
+    "tabs": {
+      "farming": "Kilimo",
+      "livestock": "Ufugaji",
+      "conference": "Kituo cha Mkutano",
+      "printing": "Mashine ya Uchapaji",
+      "carpentry": "Ufundi wa Mbao",
+      "candles": "Utengenezaji wa Mishumaa"
+    },
+    "farming": {
+      "title": "Miradi ya Kilimo",
+      "description": "Tunaendesha mashamba 10 kote Mkoa wa Morogoro, tukizalisha mazao mbalimbali kusaidia dhamira yetu na jamii za mitaa. Mashamba yetu yanatumia mbinu endelevu za kilimo huku yakitoa usalama wa chakula na fursa za kiuchumi.",
+      "production": "Mazao Makuu Tunayozalisha:",
+      "crops": {
+        "crop1": "Mahindi",
+        "crop2": "Mpunga",
+        "crop3": "Ndizi",
+        "crop4": "Maharage",
+        "crop5": "Ulezi",
+        "crop6": "Viazi Vitamu",
+        "crop7": "Mboga Mboga"
+      },
+      "impact": "Ushawishi wa Kilimo",
+      "impact1": "Hektari Zilizolimwa",
+      "impact2": "Wafanyakazi wa Shamba",
+      "impact3": "Maeneo ya Mashamba",
+      "impact4": "Miaka ya Uzoefu",
+      "locationsTitle": "Maeneo ya Mashamba",
+      "cropsLabel": "Mazao:",
+      "established": "Imeanzishwa",
+      "locations": {
+        "mgolole": {
+          "name": "Mgolole",
+          "crop1": "Mahindi",
+          "crop2": "Maharage",
+          "crop3": "Viazi Vitamu",
+          "size": "Hektari 50"
+        },
+        "milama": {
+          "name": "Milama",
+          "crop1": "Mpunga",
+          "crop2": "Ulezi",
+          "size": "Hektari 30"
+        },
+        "msowero": {
+          "name": "Msowero",
+          "crop1": "Ndizi",
+          "crop2": "Mahindi",
+          "size": "Hektari 25"
+        },
+        "lugono": {
+          "name": "Lugono",
+          "crop1": "Maharage",
+          "crop2": "Viazi Vitamu",
+          "size": "Hektari 20"
+        },
+        "kiroka": {
+          "name": "Kiroka",
+          "crop1": "Mahindi",
+          "crop2": "Mboga Mboga",
+          "size": "Hektari 15"
+        },
+        "mululu": {
+          "name": "Mululu",
+          "crop1": "Maharage",
+          "crop2": "Mahindi",
+          "size": "Hektari 18"
+        },
+        "pangawe": {
+          "name": "Pangawe",
+          "crop1": "Mpunga",
+          "crop2": "Mboga Mboga",
+          "size": "Hektari 22"
+        },
+        "matambiko": {
+          "name": "Matambiko",
+          "crop1": "Ndizi",
+          "crop2": "Viazi Vitamu",
+          "size": "Hektari 12"
+        },
+        "luhindo": {
+          "name": "Luhindo",
+          "crop1": "Mahindi",
+          "crop2": "Maharage",
+          "size": "Hektari 16"
+        },
+        "vituli": {
+          "name": "Vituli",
+          "crop1": "Mboga Mboga",
+          "crop2": "Ulezi",
+          "size": "Hektari 10"
+        }
+      }
+    },
+    "livestock": {
+      "title": "Ufugaji",
+      "description": "Miradi yetu ya ufugaji katika maeneo manne ya kimkakati inatoa bidhaa za maziwa, nyama, na bidhaa zingine za wanyama. Tunatumia mbinu za kisasa za ufugaji huku tukidumia mbinu za jadi na endelevu.",
+      "benefits": "Faida za Mradi",
+      "benefit1": "Hutoa chakula kwa taasisi zetu",
+      "benefit2": "Hutoa mapato ya kusaidia misheni",
+      "benefit3": "Hutengeneza fursa za ajira",
+      "benefit4": "Husaidia mafunzo ya kilimo",
+      "benefit5": "Huzalisha mbolea ya asili kwa mashamba",
+      "stats": {
+        "animals": "Wanyama Wote:",
+        "production": "Uzalishaji wa Kilikuwa:"
+      },
+      "locationsTitle": "Mashamba ya Mifugo",
+      "established": "Imeanzishwa",
+      "animals": "Wanyama:",
+      "products": "Bidhaa:",
+      "locations": {
+        "mgolole": {
+          "name": "Mgolole",
+          "animal1": "Ng'ombe wa Maziwa",
+          "animal2": "Kuku",
+          "animal3": "Sungura",
+          "product1": "Maziwa",
+          "product2": "Mayai",
+          "product3": "Nyama"
+        },
+        "melela": {
+          "name": "Melela",
+          "animal1": "Mbuzi",
+          "animal2": "Nguruwe",
+          "product1": "Nyama",
+          "product2": "Mbolea"
+        },
+        "milama": {
+          "name": "Milama",
+          "animal1": "Ng'ombe wa Maziwa",
+          "animal2": "Kuku",
+          "product1": "Maziwa",
+          "product2": "Mayai"
+        },
+        "msowero": {
+          "name": "Msowero",
+          "animal1": "Nguruwe",
+          "animal2": "Sungura",
+          "product1": "Nyama",
+          "product2": "Wanyama wa Uzazi"
+        }
+      }
+    },
+    "conference": {
+      "title": "Kituo cha Mkutano cha Amabilis",
+      "description": "Kilichoko Morogoro, kituo chetu cha kisasa cha mkutano kinatoa vivanda bora kwa ajili ya mikutano, semina, warsha, na mafungo. Tunakaribisha mashirika kutoka sekta za umma na binafsi, pamoja na vikundi vya kidini.",
+      "features": "Vipengele Muhimu:",
+      "services": {
+        "service1": "Vyumba vya Mkutano (Uwezo wa watu 50-300)",
+        "service2": "Vifaa vya Semina na Warsha",
+        "service3": "Makazi (Vyumba vya Mmoja na Wawili)",
+        "service4": "Huduma za Chakula",
+        "service5": "Vifaa vya Sauti na Muonekano",
+        "service6": "Huduma za Usafiri",
+        "service7": "Maeneo ya Sala na Kutafakari",
+        "service8": "Vifaa vya Michezo na Burudani"
+      },
+      "contact": "Uhifadhi na Mawasiliano:",
+      "address": "Kituo cha Mkutano cha Amabilis, Morogoro, Tanzania",
+      "bookButton": "Hifadhi Sasa",
+      "capacity": "Uwezo wa Kituo",
+      "capacity1": "Ukumbi Mkuu",
+      "capacity2": "Vyumba vya Mkutano",
+      "capacity3": "Vyumba vya Wageni",
+      "capacity4": "Uwezo wa Kulia",
+      "availability": "Inapatikana kwa matukio ya kidini na ya kibiashara"
+    },
+    "printing": {
+      "title": "Mashine ya Uchapaji ya Mgolole",
+      "description": "Mashine yetu ya kisasa ya uchapaji inatoa huduma bora ya uchapaji kwa vifaa vya elimu, vifaa vya ofisi, na mahitaji ya uchapaji maalum. Tunahudumia shule, makanisa, biashara, na watu binafsi kwa uchapaji thabiti na wa bei nafuu.",
+      "productsTitle": "Bidhaa na Huduma",
+      "products": {
+        "product1": "Vitabu vya Mazoezi",
+        "product2": "Vitabu vya Risiti",
+        "product3": "Bahasha",
+        "product4": "Kadi za BIM",
+        "product5": "Vitabu vya MTUA",
+        "product6": "Vitabu vya Rejista",
+        "product7": "Huduma za Kufunga Vitabu",
+        "product8": "Uchapaji Maalum",
+        "product9": "Vifaa vya Ofisi"
+      },
+      "contact": "Mawasiliano na Kuagiza",
+      "address": "Mashine ya Uchapaji ya Mgolole, Mgolole, Morogoro",
+      "hours": "Jumatatu-Ijumaa: 8:00 AM - 5:00 PM, Jumamosi: 8:00 AM - 1:00 PM",
+      "clientele": "Wateja Wetu",
+      "clients": {
+        "client1": "Shule",
+        "client2": "Makanisa",
+        "client3": "Biashara",
+        "client4": "Serikali",
+        "client5": "ASAs",
+        "client6": "Watu Binafsi"
+      },
+      "orderButton": "Omba Bei"
+    },
+    "carpentry": {
+      "title": "Ufundi wa Mbao wa Mgolole",
+      "description": "Karakana yetu ya ufundi wa mbao inatengeneza fanicha ngumu na bidhaa za mbao maalum. Tunachanganya ufundi wa jadi na mbinu za kisasa kuunda fanicha thabiti na nzuri kwa nyumba, ofisi, na makanisa.",
+      "specialties": "Maalum Yetu:",
+      "products": {
+        "product1": "Milango na Madirisha ya Mbao",
+        "product2": "Kabati za Mbao",
+        "product3": "Seti za Sofa za Mbao",
+        "product4": "Viti vya Mbao",
+        "product5": "Meza za Ofisi",
+        "product6": "Meza za Kahawa",
+        "product7": "Miundo ya Vitanda",
+        "product8": "Fanicha Maalum",
+        "product9": "Vifaa vya Kanisa"
+      },
+      "woodTypes": "Aina za Mbao Tunazotumia:",
+      "woods": {
+        "wood1": "Mvule (Iroko)",
+        "wood2": "Mninga (Mti wa Teak wa Kiafrika)",
+        "wood3": "Mkongo",
+        "wood4": "Mpingo (Mti Mweusi wa Kiafrika)",
+        "wood5": "Mahogany"
+      },
+      "workshop": "Karakana Yetu",
+      "stats": {
+        "stat1": "Miaka ya Uzoefu",
+        "stat2": "Wafundi",
+        "stat3": "Wanafunzi wa Ufundi",
+        "stat4": "Miradi/Kwa Mwaka"
+      },
+      "services": "Huduma Zaidi:",
+      "service1": "Ubunifu wa Fanicha Maalum",
+      "service2": "Ukarabati na Urejeshaji wa Fanicha",
+      "service3": "Kutengeneza Altare na Vitalu vya Kanisa",
+      "service4": "Uchongaji na Mapambo ya Mbao",
+      "service5": "Huduma za Usakinishaji",
+      "orderButton": "Omba Kazi Maalum",
+      "catalogButton": "Tazama Katalogi ya Bidhaa"
+    },
+    "candles": {
+      "title": "Kiwanda cha Mishumaa cha Mgolole",
+      "description": "Kiwanda chetu cha mishumaa kinazalisha mishumaa ya ubora wa juu kwa madhumuni mbalimbali, ikijumuisha matumizi ya kanisa, mapambo ya nyumbani, na matukio maalum. Tunatumia vifaa vya asili na mbinu za jadi kuunda mishumaa mizuri na ya kudumu.",
+      "productsTitle": "Bidhaa zetu za Mishumaa:",
+      "products": {
+        "product1": "Mishumaa ya Kanisa",
+        "product2": "Mishumaa ya Mapambo",
+        "product3": "Mishumaa yenye Harufu",
+        "product4": "Mishumaa ya Dharura",
+        "product5": "Mishumaa ya Tukio Maalum",
+        "product6": "Maagizo Makubwa"
+      },
+      "contact": "Taarifa ya Kuagiza:",
+      "address": "Kiwanda cha Mishumaa cha Mgolole, Mgolole, Morogoro",
+      "orderButton": "Weka Agizo",
+      "catalogButton": "Tazama Katalogi",
+      "production": "Maelezo ya Uzalishaji",
+      "stats": {
+        "stat1": "Uzalishaji wa Kilikuwa",
+        "stat2": "Aina za Mishumaa",
+        "stat3": "Wafanyakazi",
+        "stat4": "Miaka ya Uendeshaji"
+      },
+      "materials": "Vifaa Tunavyotumia:",
+      "material1": "Nta ya Asali",
+      "material2": "Nta ya Parafini",
+      "material3": "Nta ya Soya",
+      "material4": "Harufu za Asili",
+      "material5": "Uzi wa Pamba",
+      "material6": "Rangi za Asili",
+      "customization": "Chaguzi za Kubinafsisha:",
+      "custom1": "Ukubwa na Maumbo Maalum",
+      "custom2": "Nembo za Kanisa na Parokia",
+      "custom3": "Rangi za Tukio Maalum",
+      "custom4": "Punguzo la Maagizo Makubwa",
+      "custom5": "Huduma za Uwasilishaji"
+    },
+    "impact": {
+      "title": "Ushawishi wa Miradi Yetu",
+      "impact1": "Ajira Zilizotengenezwa",
+      "impact2": "Maeneo ya Miradi",
+      "impact3": "Miaka ya Uendeshaji",
+      "impact4": "Wateja Waliohudumiwa",
+      "description": "Miradi yetu haiiungii mkono tu misheni yetu ya kidini bali pia inachangia maendeleo ya kiuchumi ya mitaa, hutoa ajira, na inahudumia jamii kote Tanzania."
+    },
+    "cta": {
+      "title": "Tusaidie Miradi Yetu",
+      "description": "Ushirikiano wako unatusaidia kuendeleza miradi hii muhimu inayounga mkono misheni yetu na kuhudumia jamii za mitaa. Zingatia kuwekeza kwenye kazi yetu au kununua bidhaa zetu.",
+      "button1": "Nunua Bidhaa Zetu",
+      "button2": "Shirikiana Nasi",
+      "button3": "Wasiliana na Mauzo"
+  },
+  "common": {
+    "viewMap": "Tazama Ramani",
+    "visit": "Tembelea Shamba",
+    "products": "Tazama Bidhaa"
+  }
+}

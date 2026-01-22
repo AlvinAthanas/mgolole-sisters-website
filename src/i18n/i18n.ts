@@ -10,7 +10,18 @@ import enCommon from "./en/common.json";
 import swCommon from "./sw/common.json";
 import enVocations from "./en/vocations.json";
 import swVocations from "./sw/vocations.json";
-// import other page translations similarly
+import enMinistries from "./en/ministries.json";
+import swMinistries from "./sw/ministries.json";
+import enProjects from "./en/projects.json";
+import swProjects from "./sw/projects.json";
+import enContact from "./en/contact.json";
+import swContact from "./sw/contact.json";
+import enSupport from "./en/support.json";
+import swSupport from "./sw/support.json";
+import enMedia from "./en/media.json";
+import swMedia from "./sw/media.json";
+import enEvents from "./en/events.json";
+import swEvents from "./sw/events.json";
 
 // Define translations for each language
 const resources = {
@@ -18,11 +29,14 @@ const resources = {
     translation: {
       about: enAbout,
       common: enCommon,
-      Vocations: enVocations,
-      // Add other pages here as you create them
-      // home: enHome,
-      // vocations: enVocations,
-      // ministries: enMinistries,
+      vocations: enVocations,
+      ministries: enMinistries,
+      projects: enProjects,
+      contact: enContact,
+      support: enSupport,
+      media: enMedia,
+      events: enEvents,
+
     }
   },
   sw: {
@@ -30,9 +44,13 @@ const resources = {
       about: swAbout,
       common: swCommon,
       vocations: swVocations,
-      // home: swHome,
-      // vocations: swVocations,
-      // ministries: swMinistries,
+      ministries: swMinistries,
+      projects: swProjects,
+      contact: swContact,
+      support: swSupport,
+      media: swMedia,
+      events: swEvents,
+
     }
   },
 };

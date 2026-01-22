@@ -1,806 +1,798 @@
+import React, { useState } from 'react';
 import {
   Box,
   Container,
   Typography,
   Grid,
-  Card,
-  CardContent,
+  Paper,
   TextField,
   Button,
-  Stack,
-  IconButton,
-  Divider,
-  alpha,
-  Alert,
-  Snackbar,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Select,
+  Card,
+  CardContent,
+  CardActions,
   Chip,
-} from "@mui/material";
-import { useTheme } from "../contexts/ThemeContext.tsx";
-import { useState } from "react";
+  Avatar,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  alpha,
+  useTheme,
+  Divider,
+  IconButton,
+  Snackbar,
+  Alert,
+  Stack,
+  InputAdornment,
+  CircularProgress,
+} from '@mui/material';
 import {
-  Mail,
+  LocationOn,
   Phone,
-  MapPin,
-  Clock,
+  Email,
+  AccessTime,
   Send,
-  MessageSquare,
-  User,
-  Building,
-  Globe,
-  CheckCircle,
-  Award,
+  Map,
   Facebook,
   Twitter,
   Instagram,
-  Linkedin,
-  ArrowRight,
-} from "lucide-react";
+  YouTube,
+  WhatsApp,
+  Schedule,
+  Language,
+  MailOutline,
+  PhoneInTalk,
+  CheckCircle,
+  Error,
+} from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
-  const { muiTheme } = useTheme();
-  const primaryColor = muiTheme.palette.primary.main;
-  const secondaryColor = muiTheme.palette.secondary.main;
-  const backgroundColor = muiTheme.palette.background.default;
-  const paperColor = muiTheme.palette.background.paper;
-  const textPrimary = muiTheme.palette.text.primary;
-  const textSecondary = muiTheme.palette.text.secondary;
-
+  const theme = useTheme();
+  const { t } = useTranslation();
+  
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: "",
-    budget: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
   });
 
+  const [loading, setLoading] = useState(false);
   const [snackbar, setSnackbar] = useState({
     open: false,
-    message: "",
-    severity: "success" as "success" | "error",
+    message: '',
+    severity: 'success' as 'success' | 'error',
   });
 
-  const contactInfo = [
-    {
-      icon: <Mail size={24} />,
-      title: "Email",
-      details: ["hello@prismpr.com", "careers@prismpr.com"],
-      color: primaryColor,
-    },
-    {
-      icon: <Phone size={24} />,
-      title: "Phone",
-      details: ["+1 (555) 789-0123", "+1 (555) 789-4567"],
-      color: secondaryColor,
-    },
-    {
-      icon: <MapPin size={24} />,
-      title: "Office",
-      details: ["123 Madison Ave", "New York, NY 10016"],
-      color: primaryColor,
-    },
-    {
-      icon: <Clock size={24} />,
-      title: "Hours",
-      details: ["Mon-Fri: 9am-6pm EST", "24/7 Crisis Support"],
-      color: secondaryColor,
-    },
-  ];
-
-  const services = [
-    "Media Relations",
-    "Crisis Management",
-    "Digital PR",
-    "Brand Strategy",
-    "Content Creation",
-    "Executive Positioning",
-    "Other",
-  ];
-
-  const budgetRanges = [
-    "$5,000 - $15,000",
-    "$15,000 - $30,000",
-    "$30,000 - $50,000",
-    "$50,000 - $100,000",
-    "$100,000+",
-    "Not Sure",
-  ];
-
-  const socialLinks = [
-    {
-      icon: <Facebook size={20} />,
-      label: "Facebook",
-      href: "https://facebook.com",
-    },
-    {
-      icon: <Twitter size={20} />,
-      label: "Twitter",
-      href: "https://twitter.com",
-    },
-    {
-      icon: <Instagram size={20} />,
-      label: "Instagram",
-      href: "https://instagram.com",
-    },
-    {
-      icon: <Linkedin size={20} />,
-      label: "LinkedIn",
-      href: "https://linkedin.com",
-    },
-  ];
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (e: any) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would handle form submission here
-    console.log("Form submitted:", formData);
-
-    setSnackbar({
-      open: true,
-      message: "Thank you for your inquiry! We'll contact you within 24 hours.",
-      severity: "success",
-    });
-
-    // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      budget: "",
-      message: "",
-    });
+    setLoading(true);
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      console.log('Form submitted:', formData);
+      
+      setSnackbar({
+        open: true,
+        message: t('contact.form.success', 'Message sent successfully! We will respond soon.'),
+        severity: 'success',
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+      });
+    } catch (error) {
+      setSnackbar({
+        open: true,
+        message: t('contact.form.error', 'Failed to send message. Please try again.'),
+        severity: 'error',
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCloseSnackbar = () => {
     setSnackbar({ ...snackbar, open: false });
   };
 
-  return (
-    <Box
-      sx={{
-        pt: 10,
-        pb: 8,
-        bgcolor: backgroundColor,
-      }}
-    >
-      <Container maxWidth="lg">
-        {/* Hero Section */}
-        <Box sx={{ textAlign: "center", mb: 8 }}>
-          <Chip
-            icon={<MessageSquare size={16} />}
-            label="Get in Touch"
-            sx={{
-              backgroundColor: alpha(primaryColor, 0.1),
-              color: primaryColor,
-              fontWeight: 600,
-              mb: 3,
-            }}
-          />
+  // Contact information
+  const contactInfo = {
+    address: t('contact.info.address', 'Immaculate Heart of Mary Sisters, P. O. Box 1049, Morogoro, Tanzania'),
+    email: t('contact.info.email', 'info@cicm.or.tz'),
+    phone: t('contact.info.phone', '+255 23 261 0000'),
+    mobile: t('contact.info.mobile', '+255 754 123 456'),
+    hours: t('contact.info.hours', 'Monday - Friday: 8:00 AM - 5:00 PM'),
+    emergency: t('contact.info.emergency', '24/7 Emergency Contact Available'),
+  };
 
+  // Department contacts
+  const departments = [
+    {
+      title: t('contact.departments.vocations.title', 'Vocations Office'),
+      contact: t('contact.departments.vocations.contact', 'Sr. Flora Chuma'),
+      email: 'vocations@cicm.or.tz',
+      phone: '+255 754 123 457',
+      description: t('contact.departments.vocations.description', 'For inquiries about religious life and formation process'),
+    },
+    {
+      title: t('contact.departments.donations.title', 'Donations & Support'),
+      contact: t('contact.departments.donations.contact', 'Sr. Caroline Nguzo'),
+      email: 'donations@cicm.or.tz',
+      phone: '+255 754 123 458',
+      description: t('contact.departments.donations.description', 'For financial contributions and material support'),
+    },
+    {
+      title: t('contact.departments.volunteer.title', 'Volunteer Program'),
+      contact: t('contact.departments.volunteer.contact', 'Sr. Queenbeth Berege'),
+      email: 'volunteer@cicm.or.tz',
+      phone: '+255 754 123 459',
+      description: t('contact.departments.volunteer.description', 'For volunteering opportunities and service programs'),
+    },
+    {
+      title: t('contact.departments.projects.title', 'Projects & Business'),
+      contact: t('contact.departments.projects.contact', 'Sr. Julieth Makonde'),
+      email: 'projects@cicm.or.tz',
+      phone: '+255 754 123 460',
+      description: t('contact.departments.projects.description', 'For business inquiries and project partnerships'),
+    },
+  ];
+
+  // Social media links
+  const socialMedia = [
+    { platform: 'Facebook', icon: <Facebook />, color: '#1877F2', link: 'https://facebook.com/cicm' },
+    { platform: 'Twitter', icon: <Twitter />, color: '#1DA1F2', link: 'https://twitter.com/cicm' },
+    { platform: 'Instagram', icon: <Instagram />, color: '#E4405F', link: 'https://instagram.com/cicm' },
+    { platform: 'YouTube', icon: <YouTube />, color: '#FF0000', link: 'https://youtube.com/cicm' },
+    { platform: 'WhatsApp', icon: <WhatsApp />, color: '#25D366', link: 'https://wa.me/255754123456' },
+  ];
+
+  return (
+    <Box sx={{ bgcolor: 'background.default', minHeight: '100vh'}}>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          bgcolor: 'primary.main',
+          color: 'white',
+          py: { xs: 6, md: 10 },
+          position: 'relative',
+          overflow: 'hidden',
+          mb: 6
+        }}
+      >
+        <Container maxWidth="lg">
           <Typography
             variant="h1"
-            fontWeight={800}
             sx={{
-              mb: 3,
-              color: textPrimary,
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
+              fontWeight: 900,
+              fontSize: { xs: '2.5rem', md: '4rem' },
+              mb: 2,
+              textAlign: 'center'
             }}
           >
-            Let's{" "}
-            <Box component="span" sx={{ color: primaryColor }}>
-              Connect
-            </Box>{" "}
-            and Create Something{" "}
-            <Box component="span" sx={{ color: secondaryColor }}>
-              Remarkable
-            </Box>
+            {t('contact.hero.title', 'Contact Us')}
           </Typography>
-
           <Typography
-            variant="h6"
+            variant="h5"
             sx={{
-              color: textSecondary,
-              maxWidth: 700,
-              mx: "auto",
               fontWeight: 400,
-              lineHeight: 1.6,
+              textAlign: 'center',
+              maxWidth: '800px',
+              mx: 'auto',
+              opacity: 0.9,
+              mb: 4
             }}
           >
-            Ready to elevate your brand? Schedule a free consultation with our
-            team to discuss your PR goals and discover how we can help you
-            achieve extraordinary results.
+            {t('contact.hero.subtitle', 'Get in Touch with the Immaculate Heart of Mary Sisters')}
           </Typography>
-        </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+            <Chip
+              label={t('contact.hero.tag1', '24/7 Support')}
+              icon={<Phone />}
+              sx={{ bgcolor: 'white', color: 'primary.main', fontWeight: 600 }}
+            />
+            <Chip
+              label={t('contact.hero.tag2', 'Multiple Locations')}
+              icon={<LocationOn />}
+              sx={{ bgcolor: 'white', color: 'primary.main', fontWeight: 600 }}
+            />
+            <Chip
+              label={t('contact.hero.tag3', 'Quick Response')}
+              icon={<Send />}
+              sx={{ bgcolor: 'white', color: 'primary.main', fontWeight: 600 }}
+            />
+          </Box>
+        </Container>
+      </Box>
 
-        <Grid container spacing={6}>
-          {/* Contact Form Column */}
-          <Grid size={{ xs: 12, lg: 7 }}>
-            <Card
-              sx={{
-                borderRadius: 4,
-                backgroundColor: paperColor,
-                border: `1px solid ${alpha(primaryColor, 0.1)}`,
-                boxShadow: `0 20px 60px ${alpha(primaryColor, 0.1)}`,
-              }}
-            >
-              <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                  <Send size={28} color={primaryColor} />
-                  <Typography
-                    variant="h5"
-                    sx={{ ml: 2, fontWeight: 700, color: textPrimary }}
+      <Container maxWidth="lg">
+        {/* Contact Information Grid */}
+        <Grid container spacing={4} sx={{ mb: 8 }}>
+          {/* Main Contact Card */}
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Card elevation={3} sx={{ height: '100%' }}>
+              <CardContent sx={{ p: 4 }}>
+                <Box sx={{ textAlign: 'center', mb: 4 }}>
+                  <Avatar
+                    sx={{
+                      width: 80,
+                      height: 80,
+                      bgcolor: 'primary.main',
+                      color: 'white',
+                      mx: 'auto',
+                      mb: 2
+                    }}
                   >
-                    Send us a Message
+                    <MailOutline sx={{ fontSize: 40 }} />
+                  </Avatar>
+                  <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+                    {t('contact.main.title', 'General Inquiries')}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {t('contact.main.description', 'For all general questions and information')}
                   </Typography>
                 </Box>
 
-                <Typography
-                  variant="body1"
-                  color={textSecondary}
-                  sx={{ mb: 4 }}
-                >
-                  Fill out the form below and one of our PR specialists will
-                  contact you within 24 hours to discuss your project.
-                </Typography>
+                <Divider sx={{ my: 3 }} />
 
-                <Box component="form" onSubmit={handleSubmit}>
-                  <Grid container spacing={3}>
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        fullWidth
-                        required
-                        name="firstName"
-                        label="First Name"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        InputProps={{
-                          startAdornment: (
-                            <User
-                              size={20}
-                              style={{ marginRight: 8, color: textSecondary }}
-                            />
-                          ),
-                        }}
-                        sx={{
-                          "& .MuiOutlinedInput-root": {
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                          },
-                        }}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        fullWidth
-                        required
-                        name="lastName"
-                        label="Last Name"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        sx={{
-                          "& .MuiOutlinedInput-root": {
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                          },
-                        }}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        fullWidth
-                        required
-                        name="email"
-                        type="email"
-                        label="Email Address"
-                        value={formData.email}
-                        onChange={handleChange}
-                        InputProps={{
-                          startAdornment: (
-                            <Mail
-                              size={20}
-                              style={{ marginRight: 8, color: textSecondary }}
-                            />
-                          ),
-                        }}
-                        sx={{
-                          "& .MuiOutlinedInput-root": {
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                          },
-                        }}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        fullWidth
-                        name="phone"
-                        label="Phone Number"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        InputProps={{
-                          startAdornment: (
-                            <Phone
-                              size={20}
-                              style={{ marginRight: 8, color: textSecondary }}
-                            />
-                          ),
-                        }}
-                        sx={{
-                          "& .MuiOutlinedInput-root": {
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                          },
-                        }}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12 }}>
-                      <TextField
-                        fullWidth
-                        name="company"
-                        label="Company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        InputProps={{
-                          startAdornment: (
-                            <Building
-                              size={20}
-                              style={{ marginRight: 8, color: textSecondary }}
-                            />
-                          ),
-                        }}
-                        sx={{
-                          "& .MuiOutlinedInput-root": {
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                          },
-                        }}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <FormControl fullWidth>
-                        <InputLabel>Service Interest</InputLabel>
-                        <Select
-                          name="service"
-                          value={formData.service}
-                          label="Service Interest"
-                          onChange={handleSelectChange}
-                          sx={{
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                            "& .MuiOutlinedInput-notchedOutline": {
-                              borderColor: alpha(primaryColor, 0.2),
-                            },
-                          }}
+                <List>
+                  <ListItem sx={{ px: 0 }}>
+                    <ListItemIcon sx={{ minWidth: 40 }}>
+                      <LocationOn sx={{ color: 'primary.main' }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={t('contact.main.address', 'Address')}
+                      secondary={contactInfo.address}
+                      secondaryTypographyProps={{ sx: { wordBreak: 'break-word' } }}
+                    />
+                  </ListItem>
+                  
+                  <ListItem sx={{ px: 0 }}>
+                    <ListItemIcon sx={{ minWidth: 40 }}>
+                      <Email sx={{ color: 'primary.main' }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={t('contact.main.email', 'Email')}
+                      secondary={
+                        <a 
+                          href={`mailto:${contactInfo.email}`} 
+                          style={{ color: theme.palette.primary.main, textDecoration: 'none' }}
                         >
-                          <MenuItem value="">
-                            <em>Select a service</em>
-                          </MenuItem>
-                          {services.map((service, index) => (
-                            <MenuItem key={index} value={service}>
-                              {service}
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </FormControl>
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <FormControl fullWidth>
-                        <InputLabel>Estimated Budget</InputLabel>
-                        <Select
-                          name="budget"
-                          value={formData.budget}
-                          label="Estimated Budget"
-                          onChange={handleSelectChange}
-                          sx={{
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                            "& .MuiOutlinedInput-notchedOutline": {
-                              borderColor: alpha(primaryColor, 0.2),
-                            },
-                          }}
+                          {contactInfo.email}
+                        </a>
+                      }
+                    />
+                  </ListItem>
+                  
+                  <ListItem sx={{ px: 0 }}>
+                    <ListItemIcon sx={{ minWidth: 40 }}>
+                      <Phone sx={{ color: 'primary.main' }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={t('contact.main.phone', 'Phone')}
+                      secondary={
+                        <a 
+                          href={`tel:${contactInfo.phone}`} 
+                          style={{ color: theme.palette.primary.main, textDecoration: 'none' }}
                         >
-                          <MenuItem value="">
-                            <em>Select budget range</em>
-                          </MenuItem>
-                          {budgetRanges.map((range, index) => (
-                            <MenuItem key={index} value={range}>
-                              {range}
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </FormControl>
-                    </Grid>
+                          {contactInfo.phone}
+                        </a>
+                      }
+                    />
+                  </ListItem>
+                  
+                  <ListItem sx={{ px: 0 }}>
+                    <ListItemIcon sx={{ minWidth: 40 }}>
+                      <PhoneInTalk sx={{ color: 'primary.main' }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={t('contact.main.mobile', 'Mobile')}
+                      secondary={
+                        <a 
+                          href={`tel:${contactInfo.mobile}`} 
+                          style={{ color: theme.palette.primary.main, textDecoration: 'none' }}
+                        >
+                          {contactInfo.mobile}
+                        </a>
+                      }
+                    />
+                  </ListItem>
+                  
+                  <ListItem sx={{ px: 0 }}>
+                    <ListItemIcon sx={{ minWidth: 40 }}>
+                      <Schedule sx={{ color: 'primary.main' }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={t('contact.main.hours', 'Office Hours')}
+                      secondary={contactInfo.hours}
+                    />
+                  </ListItem>
+                </List>
 
-                    <Grid size={{ xs: 12 }}>
-                      <TextField
-                        fullWidth
-                        multiline
-                        rows={4}
-                        name="message"
-                        label="Tell us about your project"
-                        value={formData.message}
-                        onChange={handleChange}
-                        sx={{
-                          "& .MuiOutlinedInput-root": {
-                            borderRadius: 2,
-                            backgroundColor: alpha(primaryColor, 0.03),
-                          },
-                        }}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12 }}>
-                      <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        size="large"
-                        endIcon={<ArrowRight />}
-                        sx={{
-                          background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                          color: "white",
-                          py: 1.8,
-                          borderRadius: 2,
-                          textTransform: "none",
-                          fontSize: "1.1rem",
-                          fontWeight: 600,
-                          boxShadow: `0 8px 25px ${alpha(primaryColor, 0.3)}`,
-                          "&:hover": {
-                            boxShadow: `0 12px 35px ${alpha(primaryColor, 0.4)}`,
-                            transform: "translateY(-2px)",
-                          },
-                        }}
-                      >
-                        Submit Request
-                      </Button>
-                    </Grid>
-                  </Grid>
+                <Box sx={{ mt: 4, p: 2, bgcolor: alpha(theme.palette.warning.main, 0.1), borderRadius: 2 }}>
+                  <Typography variant="body2" sx={{ color: 'warning.dark', textAlign: 'center' }}>
+                    {contactInfo.emergency}
+                  </Typography>
                 </Box>
               </CardContent>
             </Card>
           </Grid>
 
-          {/* Contact Info Column */}
-          <Grid size={{ xs: 12, lg: 5 }}>
-            <Stack spacing={4}>
-              {/* Contact Cards */}
-              {contactInfo.map((info, index) => (
-                <Card
-                  key={index}
-                  sx={{
-                    borderRadius: 3,
-                    backgroundColor: paperColor,
-                    border: `1px solid ${alpha(info.color, 0.1)}`,
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      borderColor: info.color,
-                      transform: "translateY(-4px)",
-                    },
-                  }}
-                >
-                  <CardContent sx={{ p: 3 }}>
-                    <Box
-                      sx={{ display: "flex", alignItems: "flex-start", gap: 2 }}
+          {/* Contact Form */}
+          <Grid size={{ xs: 12, md: 8 }}>
+            <Paper elevation={3} sx={{ p: 4, height: '100%' }}>
+              <Typography variant="h4" sx={{ fontWeight: 700, mb: 3, color: 'primary.main' }}>
+                {t('contact.form.title', 'Send Us a Message')}
+              </Typography>
+              
+              <form onSubmit={handleSubmit}>
+                <Grid container spacing={3}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
+                    <TextField
+                      fullWidth
+                      label={t('contact.form.name', 'Full Name')}
+                      name="name"
+                      value={formData.name}
+                      onChange={handleFormChange}
+                      required
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <MailOutline color="action" />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  
+                  <Grid size={{ xs: 12, sm: 6 }}>
+                    <TextField
+                      fullWidth
+                      label={t('contact.form.email', 'Email Address')}
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleFormChange}
+                      required
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <Email color="action" />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  
+                  <Grid size={{ xs: 12, sm: 6 }}>
+                    <TextField
+                      fullWidth
+                      label={t('contact.form.phone', 'Phone Number')}
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleFormChange}
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <Phone color="action" />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  
+                  <Grid size={{ xs: 12, sm: 6 }}>
+                    <TextField
+                      fullWidth
+                      label={t('contact.form.subject', 'Subject')}
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleFormChange}
+                      required
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <Language color="action" />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  
+                  <Grid size={{ xs: 12 }}>
+                    <TextField
+                      fullWidth
+                      label={t('contact.form.message', 'Your Message')}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleFormChange}
+                      multiline
+                      rows={6}
+                      required
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start" sx={{ alignSelf: 'flex-start', mt: 1 }}>
+                            <Send color="action" />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  
+                  <Grid size={{ xs: 12 }}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      size="large"
+                      fullWidth
+                      disabled={loading}
+                      startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <Send />}
+                      sx={{ py: 1.5 }}
                     >
-                      <Box
-                        sx={{
-                          width: 56,
-                          height: 56,
-                          borderRadius: "16px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          backgroundColor: alpha(info.color, 0.1),
-                          color: info.color,
-                          flexShrink: 0,
-                        }}
-                      >
-                        {info.icon}
-                      </Box>
-                      <Box>
-                        <Typography
-                          variant="h6"
-                          fontWeight={600}
-                          sx={{ mb: 1, color: textPrimary }}
-                        >
-                          {info.title}
-                        </Typography>
-                        {info.details.map((detail, idx) => (
-                          <Typography
-                            key={idx}
-                            variant="body2"
-                            color={textSecondary}
-                            sx={{ mb: 0.5 }}
-                          >
-                            {detail}
-                          </Typography>
-                        ))}
-                      </Box>
-                    </Box>
-                  </CardContent>
-                </Card>
-              ))}
-
-              {/* Social Media */}
-              <Card
-                sx={{
-                  borderRadius: 3,
-                  backgroundColor: paperColor,
-                  border: `1px solid ${alpha(primaryColor, 0.1)}`,
-                }}
-              >
-                <CardContent sx={{ p: 3 }}>
-                  <Typography
-                    variant="h6"
-                    fontWeight={600}
-                    sx={{ mb: 2, color: textPrimary }}
-                  >
-                    Connect With Us
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color={textSecondary}
-                    sx={{ mb: 3 }}
-                  >
-                    Follow us for the latest PR insights, case studies, and
-                    industry news.
-                  </Typography>
-                  <Stack direction="row" spacing={1}>
-                    {socialLinks.map((social, index) => (
-                      <IconButton
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                          backgroundColor: alpha(primaryColor, 0.1),
-                          color: primaryColor,
-                          "&:hover": {
-                            backgroundColor: primaryColor,
-                            color: "white",
-                            transform: "translateY(-2px)",
-                          },
-                          transition: "all 0.3s ease",
-                        }}
-                      >
-                        {social.icon}
-                      </IconButton>
-                    ))}
-                  </Stack>
-                </CardContent>
-              </Card>
-
-              {/* Why Choose Us */}
-              <Card
-                sx={{
-                  borderRadius: 3,
-                  background: `linear-gradient(135deg, ${alpha(primaryColor, 0.1)} 0%, ${alpha(secondaryColor, 0.1)} 100%)`,
-                  border: `1px solid ${alpha(primaryColor, 0.2)}`,
-                }}
-              >
-                <CardContent sx={{ p: 3 }}>
-                  <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    <Award size={24} color={primaryColor} />
-                    <Typography
-                      variant="h6"
-                      fontWeight={600}
-                      sx={{ ml: 1.5, color: textPrimary }}
-                    >
-                      Why Choose mezos
+                      {loading ? t('contact.form.sending', 'Sending...') : t('contact.form.send', 'Send Message')}
+                    </Button>
+                  </Grid>
+                  
+                  <Grid size={{ xs: 12 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
+                      {t('contact.form.privacy', 'By submitting this form, you agree to our privacy policy. We will never share your information with third parties.')}
                     </Typography>
-                  </Box>
-
-                  <Stack spacing={1.5}>
-                    {[
-                      "24-Hour Response Time",
-                      "Industry-Leading Expertise",
-                      "Transparent Pricing",
-                      "Customized Strategies",
-                      "Measurable Results",
-                    ].map((item, index) => (
-                      <Box
-                        key={index}
-                        sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
-                      >
-                        <CheckCircle size={18} color={primaryColor} />
-                        <Typography variant="body2" color={textSecondary}>
-                          {item}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Stack>
-
-                  <Divider
-                    sx={{ my: 2, borderColor: alpha(primaryColor, 0.1) }}
-                  />
-
-                  <Typography
-                    variant="body2"
-                    color={textSecondary}
-                    sx={{ fontStyle: "italic" }}
-                  >
-                    "98% of our clients achieve their PR goals within the first
-                    6 months."
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Stack>
+                  </Grid>
+                </Grid>
+              </form>
+            </Paper>
           </Grid>
         </Grid>
 
-        {/* Map/CTA Section */}
-        <Box sx={{ mt: 8 }}>
-          <Card
-            sx={{
-              borderRadius: 4,
-              backgroundColor: paperColor,
-              border: `1px solid ${alpha(primaryColor, 0.1)}`,
-              overflow: "hidden",
-            }}
-          >
-            <Grid container>
-              <Grid size={{ xs: 12, md: 7 }}>
-                <Box sx={{ p: { xs: 3, md: 4 } }}>
-                  <Typography
-                    variant="h5"
-                    fontWeight={700}
-                    sx={{ mb: 2, color: textPrimary }}
-                  >
-                    Visit Our Headquarters
+        {/* Department Contacts */}
+        <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, color: 'text.primary', textAlign: 'center' }}>
+          {t('contact.departments.title', 'Department Contacts')}
+        </Typography>
+        
+        <Grid container spacing={4} sx={{ mb: 8 }}>
+          {departments.map((dept, index) => (
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+              <Card 
+                elevation={2} 
+                sx={{ 
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 6,
+                  }
+                }}
+              >
+                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 2, color: 'primary.main' }}>
+                    {dept.title}
                   </Typography>
-                  <Typography variant="body1" color={textSecondary} paragraph>
-                    Our New York office is located in the heart of Manhattan's
-                    business district. Schedule an in-person meeting to discuss
-                    your PR strategy face-to-face.
+                  
+                  <Typography variant="body2" sx={{ mb: 3, color: 'text.secondary', minHeight: '40px' }}>
+                    {dept.description}
                   </Typography>
-
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 2,
-                      mb: 3,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: "12px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        backgroundColor: alpha(primaryColor, 0.1),
-                        color: primaryColor,
+                  
+                  <Divider sx={{ my: 2 }} />
+                  
+                  <Box sx={{ mb: 2 }}>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                      {t('contact.departments.contactPerson', 'Contact Person:')}
+                    </Typography>
+                    <Typography variant="body2" color="text.primary">
+                      {dept.contact}
+                    </Typography>
+                  </Box>
+                  
+                  <Box sx={{ mb: 2 }}>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                      {t('contact.departments.email', 'Email:')}
+                    </Typography>
+                    <a 
+                      href={`mailto:${dept.email}`} 
+                      style={{ 
+                        color: theme.palette.primary.main, 
+                        textDecoration: 'none',
+                        fontSize: '0.875rem'
                       }}
                     >
-                      <Globe size={24} />
-                    </Box>
+                      {dept.email}
+                    </a>
+                  </Box>
+                  
+                  <Box>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                      {t('contact.departments.phone', 'Phone:')}
+                    </Typography>
+                    <a 
+                      href={`tel:${dept.phone}`} 
+                      style={{ 
+                        color: theme.palette.primary.main, 
+                        textDecoration: 'none',
+                        fontSize: '0.875rem'
+                      }}
+                    >
+                      {dept.phone}
+                    </a>
+                  </Box>
+                </CardContent>
+                <CardActions sx={{ p: 2, pt: 0 }}>
+                  <Button 
+                    size="small" 
+                    color="primary" 
+                    fullWidth
+                    startIcon={<Email />}
+                    onClick={() => window.location.href = `mailto:${dept.email}`}
+                  >
+                    {t('contact.departments.emailButton', 'Email')}
+                  </Button>
+                  <Button 
+                    size="small" 
+                    color="secondary" 
+                    fullWidth
+                    startIcon={<Phone />}
+                    onClick={() => window.location.href = `tel:${dept.phone}`}
+                  >
+                    {t('contact.departments.callButton', 'Call')}
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+
+        {/* Map & Location Section */}
+        <Paper elevation={2} sx={{ p: 4, borderRadius: 3, mb: 8 }}>
+          <Grid container spacing={4} alignItems="center">
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Typography variant="h4" sx={{ fontWeight: 700, mb: 3, color: 'primary.main' }}>
+                {t('contact.location.title', 'Find Us')}
+              </Typography>
+              
+              <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
+                {t('contact.location.description', 'Our Mother House is located in Mgolole, Morogoro. We also serve in multiple dioceses across Tanzania and in Verona, Italy.')}
+              </Typography>
+              
+              <Box sx={{ mb: 4 }}>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, color: 'text.primary' }}>
+                  {t('contact.location.mainAddress', 'Main Address:')}
+                </Typography>
+                <Paper sx={{ p: 3, bgcolor: alpha(theme.palette.primary.main, 0.05), borderRadius: 2 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                    <LocationOn sx={{ color: 'primary.main', mt: 0.5, mr: 2 }} />
                     <Box>
-                      <Typography variant="body2" color={textSecondary}>
-                        123 Madison Ave, Floor 15
+                      <Typography variant="body1" fontWeight={600}>
+                        {t('contact.location.motherHouse', 'Immaculate Heart of Mary Sisters Mother House')}
                       </Typography>
-                      <Typography variant="body2" color={textSecondary}>
-                        New York, NY 10016
+                      <Typography variant="body2" color="text.secondary">
+                        {t('contact.location.fullAddress', 'Mgolole Village, Morogoro District, Morogoro Region, Tanzania')}
                       </Typography>
                     </Box>
                   </Box>
-
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    startIcon={<MapPin />}
+                  
+                  <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                    <Button 
+                      variant="outlined" 
+                      size="small" 
+                      startIcon={<Map />}
+                      onClick={() => window.open('https://maps.google.com/?q=Mgolole+Morogoro+Tanzania', '_blank')}
+                    >
+                      {t('contact.location.openMaps', 'Open in Google Maps')}
+                    </Button>
+                    <Button 
+                      variant="outlined" 
+                      size="small" 
+                      startIcon={<Directions />}
+                      onClick={() => window.open('https://maps.google.com/?daddr=Mgolole+Morogoro+Tanzania', '_blank')}
+                    >
+                      {t('contact.location.getDirections', 'Get Directions')}
+                    </Button>
+                  </Box>
+                </Paper>
+              </Box>
+              
+              <Box>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, color: 'text.primary' }}>
+                  {t('contact.location.otherLocations', 'Other Service Areas:')}
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                  {[
+                    t('contact.location.dar', 'Dar es Salaam'),
+                    t('contact.location.bagamoyo', 'Bagamoyo'),
+                    t('contact.location.mwanza', 'Mwanza'),
+                    t('contact.location.mbeya', 'Mbeya'),
+                    t('contact.location.mtwara', 'Mtwara'),
+                    t('contact.location.arusha', 'Arusha'),
+                    t('contact.location.verona', 'Verona, Italy'),
+                  ].map((location, index) => (
+                    <Chip 
+                      key={index}
+                      label={location}
+                      sx={{ 
+                        bgcolor: alpha(theme.palette.primary.main, 0.1),
+                        color: 'primary.main'
+                      }}
+                    />
+                  ))}
+                </Box>
+              </Box>
+            </Grid>
+            
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Card elevation={3}>
+                <CardContent sx={{ p: 0, position: 'relative', height: '400px' }}>
+                  {/* Map Placeholder */}
+                  <Box
                     sx={{
-                      borderColor: primaryColor,
-                      color: primaryColor,
-                      borderRadius: 2,
-                      textTransform: "none",
-                      fontWeight: 600,
-                      "&:hover": {
-                        backgroundColor: alpha(primaryColor, 0.08),
-                        borderColor: secondaryColor,
-                      },
+                      width: '100%',
+                      height: '100%',
+                      bgcolor: alpha(theme.palette.primary.main, 0.1),
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
                     }}
                   >
-                    Get Directions
-                  </Button>
-                </Box>
-              </Grid>
-
-              <Grid size={{ xs: 12, md: 5 }}>
-                <Box
-                  sx={{
-                    height: "100%",
-                    minHeight: 300,
-                    backgroundColor: alpha(primaryColor, 0.05),
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: textSecondary,
-                  }}
-                >
-                  <Stack spacing={2} alignItems="center">
-                    <Box
-                      sx={{
-                        width: 60,
-                        height: 60,
-                        borderRadius: "50%",
-                        backgroundColor: alpha(primaryColor, 0.1),
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: primaryColor,
-                      }}
-                    >
-                      <MapPin size={32} />
-                    </Box>
-                    <Typography variant="body1" fontWeight={500}>
-                      Interactive Map
+                    <Map sx={{ fontSize: 80, color: 'primary.main', mb: 2 }} />
+                    <Typography variant="h6" color="primary.main" sx={{ mb: 1 }}>
+                      {t('contact.location.mapTitle', 'Mgolole, Morogoro')}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      textAlign="center"
-                      sx={{ maxWidth: 200 }}
-                    >
-                      (In production, this would display a Google Maps embed)
+                    <Typography variant="body2" color="text.secondary" align="center" sx={{ px: 4 }}>
+                      {t('contact.location.mapDescription', 'Interactive map showing our location in Morogoro, Tanzania')}
                     </Typography>
-                  </Stack>
-                </Box>
-              </Grid>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      sx={{ mt: 3 }}
+                      startIcon={<Map />}
+                      onClick={() => window.open('https://maps.google.com/?q=Mgolole+Morogoro+Tanzania', '_blank')}
+                    >
+                      {t('contact.location.viewMap', 'View on Google Maps')}
+                    </Button>
+                  </Box>
+                </CardContent>
+              </Card>
             </Grid>
-          </Card>
-        </Box>
+          </Grid>
+        </Paper>
+
+        {/* Social Media & Newsletter */}
+        <Grid container spacing={4} sx={{ mb: 8 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Paper elevation={2} sx={{ p: 4, borderRadius: 3, height: '100%' }}>
+              <Typography variant="h4" sx={{ fontWeight: 700, mb: 3, color: 'primary.main' }}>
+                {t('contact.social.title', 'Connect With Us')}
+              </Typography>
+              
+              <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
+                {t('contact.social.description', 'Follow us on social media for updates, news, and spiritual inspiration.')}
+              </Typography>
+              
+              <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+                {socialMedia.map((social, index) => (
+                  <IconButton
+                    key={index}
+                    sx={{
+                      width: 56,
+                      height: 56,
+                      bgcolor: social.color,
+                      color: 'white',
+                      '&:hover': {
+                        bgcolor: social.color,
+                        opacity: 0.9,
+                      }
+                    }}
+                    onClick={() => window.open(social.link, '_blank')}
+                  >
+                    {social.icon}
+                  </IconButton>
+                ))}
+              </Box>
+            </Paper>
+          </Grid>
+          
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Paper elevation={2} sx={{ p: 4, borderRadius: 3, height: '100%' }}>
+              <Typography variant="h4" sx={{ fontWeight: 700, mb: 3, color: 'primary.main' }}>
+                {t('contact.newsletter.title', 'Subscribe to Newsletter')}
+              </Typography>
+              
+              <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
+                {t('contact.newsletter.description', 'Stay updated with our latest news, events, and spiritual reflections.')}
+              </Typography>
+              
+              <Box sx={{ display: 'flex', gap: 2 }}>
+                <TextField
+                  fullWidth
+                  placeholder={t('contact.newsletter.placeholder', 'Enter your email address')}
+                  variant="outlined"
+                  size="small"
+                />
+                <Button variant="contained" color="primary">
+                  {t('contact.newsletter.subscribe', 'Subscribe')}
+                </Button>
+              </Box>
+              
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 2 }}>
+                {t('contact.newsletter.privacy', 'We respect your privacy. Unsubscribe at any time.')}
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+
+        {/* Quick Contact Banner */}
+        <Paper
+          sx={{
+            p: 4,
+            borderRadius: 3,
+            bgcolor: 'primary.main',
+            color: 'white',
+            textAlign: 'center',
+            mb: 8
+          }}
+        >
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+            {t('contact.banner.title', 'Need Immediate Assistance?')}
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 4, opacity: 0.9, maxWidth: '800px', mx: 'auto' }}>
+            {t('contact.banner.description', 'For urgent matters, please call our emergency line. We are here to help you 24/7.')}
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 4, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              startIcon={<Phone />}
+              onClick={() => window.location.href = 'tel:+255754123456'}
+              sx={{ minWidth: '200px' }}
+            >
+              {t('contact.banner.callButton', 'Call Emergency Line')}
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{ 
+                color: 'white', 
+                borderColor: 'white',
+                minWidth: '200px'
+              }}
+              size="large"
+              startIcon={<WhatsApp />}
+              onClick={() => window.open('https://wa.me/255754123456', '_blank')}
+            >
+              {t('contact.banner.whatsappButton', 'Message on WhatsApp')}
+            </Button>
+          </Box>
+        </Paper>
       </Container>
 
-      {/* Success Snackbar */}
+      {/* Snackbar for notifications */}
       <Snackbar
         open={snackbar.open}
         autoHideDuration={6000}
         onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
-        <Alert
-          onClose={handleCloseSnackbar}
+        <Alert 
+          onClose={handleCloseSnackbar} 
           severity={snackbar.severity}
-          sx={{
-            width: "100%",
-            backgroundColor:
-              snackbar.severity === "success"
-                ? alpha(primaryColor, 0.1)
-                : alpha(muiTheme.palette.error.main, 0.1),
-            color: textPrimary,
-            border: `1px solid ${snackbar.severity === "success" ? primaryColor : muiTheme.palette.error.main}`,
-          }}
+          sx={{ width: '100%' }}
+          icon={snackbar.severity === 'success' ? <CheckCircle /> : <Error />}
         >
           {snackbar.message}
         </Alert>
@@ -808,5 +800,23 @@ const Contact = () => {
     </Box>
   );
 };
+
+// Directions icon component
+const Directions = (props: any) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+  </svg>
+);
 
 export default Contact;

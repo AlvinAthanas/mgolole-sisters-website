@@ -1,0 +1,104 @@
+{
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Get in Touch with the Immaculate Heart of Mary Sisters",
+      "tag1": "24/7 Support",
+      "tag2": "Multiple Locations",
+      "tag3": "Quick Response"
+    },
+    "main": {
+      "title": "General Inquiries",
+      "description": "For all general questions and information",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
+      "mobile": "Mobile",
+      "hours": "Office Hours"
+    },
+    "info": {
+      "address": "Immaculate Heart of Mary Sisters, P. O. Box 1049, Morogoro, Tanzania",
+      "email": "info@cicm.or.tz",
+      "phone": "+255 23 261 0000",
+      "mobile": "+255 754 123 456",
+      "hours": "Monday - Friday: 8:00 AM - 5:00 PM",
+      "emergency": "24/7 Emergency Contact Available"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We will respond soon.",
+      "error": "Failed to send message. Please try again.",
+      "privacy": "By submitting this form, you agree to our privacy policy. We will never share your information with third parties."
+    },
+    "departments": {
+      "title": "Department Contacts",
+      "vocations": {
+        "title": "Vocations Office",
+        "contact": "Sr. Flora Chuma",
+        "description": "For inquiries about religious life and formation process"
+      },
+      "donations": {
+        "title": "Donations & Support",
+        "contact": "Sr. Caroline Nguzo",
+        "description": "For financial contributions and material support"
+      },
+      "volunteer": {
+        "title": "Volunteer Program",
+        "contact": "Sr. Queenbeth Berege",
+        "description": "For volunteering opportunities and service programs"
+      },
+      "projects": {
+        "title": "Projects & Business",
+        "contact": "Sr. Julieth Makonde",
+        "description": "For business inquiries and project partnerships"
+      },
+      "contactPerson": "Contact Person:",
+      "email": "Email:",
+      "phone": "Phone:",
+      "emailButton": "Email",
+      "callButton": "Call"
+    },
+    "location": {
+      "title": "Find Us",
+      "description": "Our Mother House is located in Mgolole, Morogoro. We also serve in multiple dioceses across Tanzania and in Verona, Italy.",
+      "mainAddress": "Main Address:",
+      "motherHouse": "Immaculate Heart of Mary Sisters Mother House",
+      "fullAddress": "Mgolole Village, Morogoro District, Morogoro Region, Tanzania",
+      "openMaps": "Open in Google Maps",
+      "getDirections": "Get Directions",
+      "otherLocations": "Other Service Areas:",
+      "dar": "Dar es Salaam",
+      "bagamoyo": "Bagamoyo",
+      "mwanza": "Mwanza",
+      "mbeya": "Mbeya",
+      "mtwara": "Mtwara",
+      "arusha": "Arusha",
+      "verona": "Verona, Italy",
+      "mapTitle": "Mgolole, Morogoro",
+      "mapDescription": "Interactive map showing our location in Morogoro, Tanzania",
+      "viewMap": "View on Google Maps"
+    },
+    "social": {
+      "title": "Connect With Us",
+      "description": "Follow us on social media for updates, news, and spiritual inspiration."
+    },
+    "newsletter": {
+      "title": "Subscribe to Newsletter",
+      "description": "Stay updated with our latest news, events, and spiritual reflections.",
+      "placeholder": "Enter your email address",
+      "subscribe": "Subscribe",
+      "privacy": "We respect your privacy. Unsubscribe at any time."
+    },
+    "banner": {
+      "title": "Need Immediate Assistance?",
+      "description": "For urgent matters, please call our emergency line. We are here to help you 24/7.",
+      "callButton": "Call Emergency Line",
+      "whatsappButton": "Message on WhatsApp"
+  }
+}

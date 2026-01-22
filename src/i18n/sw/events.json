@@ -1,0 +1,296 @@
+{
+    "hero": {
+      "title": "Matukio na Kalenda",
+      "subtitle": "Jiunge Nasi Katika Sherehe, Sala, na Kujenga Jamii",
+      "tag1": "Matukio Yanayokuja",
+      "tag2": "Mafungo na Warsha",
+      "tag3": "Maadhimisho",
+      "tag4": "Matukio ya Jamii"
+    },
+    "tabs": {
+      "calendar": "Kalenda",
+      "upcoming": "Yanayokuja",
+      "retreats": "Mafungo",
+      "anniversaries": "Maadhimisho",
+      "community": "Jamii"
+    },
+    "filter": {
+      "title": "Chuja Matukio",
+      "search": "Tafuta matukio...",
+      "eventType": "Aina ya Tukio",
+      "status": "Hali ya Tukio",
+      "upcoming": "Yanayokuja",
+      "past": "Matukio ya Zamani",
+      "allEvents": "Matukio Yote",
+      "apply": "Tumia Michujo",
+      "all": "Matukio Yote",
+      "spiritual": "Kiroho",
+      "celebration": "Sherehe",
+      "formation": "Malezi",
+      "liturgical": "Liturgical",
+      "community": "Jamii",
+      "education": "Elimu",
+      "healthcare": "Afya"
+    },
+    "calendar": {
+      "months": {
+        "june": "Juni 2025"
+      },
+      "days": {
+        "sun": "Jumapili",
+        "mon": "Jumatatu",
+        "tue": "Jumanne",
+        "wed": "Jumatano",
+        "thu": "Alhamisi",
+        "fri": "Ijumaa",
+        "sat": "Jumamosi"
+      },
+      "today": "Leo",
+      "month": "Mwezi",
+      "week": "Wiki",
+      "upcoming": "Matukio Yanayokuja Mwezi Huu",
+      "viewDetails": "Tazama Maelezo",
+      "juneRetreat": {
+        "title": "Fungo la Mwaka",
+        "date": "Juni 2-27, 2025",
+        "type": "Kiroho",
+        "location": "Nyumba ya Mama Mgolole",
+        "description": "Fungo la kiroho la mwaka kwa masista wote likilenga sala, kutafakari, na kufanywa upya.",
+        "capacity": "Masista 85",
+        "organizer": "Ofisi ya Malezi ya Kiroho"
+      },
+      "augustVows": {
+        "title": "Viapo vya Daima na Jubilei",
+        "date": "Agosti 22, 2025",
+        "type": "Sherehe",
+        "location": "Kanisa Kuu St. Joseph, Morogoro",
+        "description": "Sherehe ya viapo vya daima na maadhimisho ya miaka ya jubilei ya masista wetu.",
+        "capacity": "Wageni 300",
+        "organizer": "Ofisi ya Wito"
+      },
+      "septemberVows": {
+        "title": "Sherehe ya Viapo vya Kwanza",
+        "date": "Septemba 12, 2025",
+        "type": "Malezi",
+        "location": "Nyumba ya Mama Mgolole",
+        "description": "Kukiri kwanza kwa viapo kwa masista wapya wanaoingia maisha ya kidini.",
+        "capacity": "Wageni 200",
+        "organizer": "Timu ya Malezi"
+      },
+      "octoberMemorial": {
+        "title": "Siku ya Kumbukumbu ya St. Theresa",
+        "date": "Oktoba 1, 2025",
+        "type": "Kumbukumbu",
+        "location": "Shule ya St. Theresa, Mgolole",
+        "description": "Sherehe ya kumbukumbu ya St. Theresa wa Mtoto Yesu, mlinzi wa shule yetu.",
+        "capacity": "500+",
+        "organizer": "Wizara ya Elimu"
+      },
+      "decemberChristmas": {
+        "title": "Sherehe ya Krismasi",
+        "date": "Desemba 25, 2025",
+        "type": "Likizo",
+        "location": "Jamii Zote",
+        "description": "Sherehe za Krismasi katika jamii zetu zote pamoja na yatima na wazee.",
+        "capacity": "Karibuni Wote",
+        "organizer": "Maisha ya Jamii"
+      },
+      "aprilEaster": {
+        "title": "Triduum ya Pasaka",
+        "date": "Aprili 17-20, 2025",
+        "type": "Liturgical",
+        "location": "Parokia Zote",
+        "description": "Huduma za Wiki Takatifu na sherehe za Pasaka katika parokia zetu.",
+        "capacity": "Karibuni Wote",
+        "organizer": "Ofisi ya Liturujia"
+      },
+      "day2": "Fungo Linaanza",
+      "day22": "Viapo na Jubilei",
+      "day27": "Fungo Linamalizika"
+    },
+    "subscribe": {
+      "title": "Endelea Kupata Habari",
+      "description": "Jiandikishe kwenye kalenda yetu kupata visasisho na ukumbusho wa matukio.",
+      "google": "Ongeza kwenye Kalenda ya Google",
+      "ical": "Pakua Faili ya iCal",
+      "notify": "Pata Arifa"
+    },
+    "upcoming": {
+      "title": "Matukio Yanayokuja",
+      "registrationOpen": "Usajili Ufunguliwa",
+      "organizedBy": "Imeandaliwa na",
+      "register": "Jisajili Sasa",
+      "past": {
+        "title": "Matukio ya Zamani",
+        "viewPhotos": "Tazama Picha"
+      }
+    },
+    "retreats": {
+      "title": "Mafungo na Warsha",
+      "deadline": "Mwisho wa Usajili",
+      "register": "Jisajili Sasa",
+      "youth": {
+        "title": "Fungo la Uongozi wa Vijana",
+        "date": "Julai 15-20, 2025",
+        "location": "Kituo cha Mkutano cha Amabilis",
+        "fee": "TZS 50,000",
+        "description": "Fungo la ukuzaji wa uongozi kwa viongozi wa vijana wa Kikatoliki wenye umri wa miaka 18-30.",
+        "capacity": "Washiriki 50",
+        "deadline": "Julai 1, 2025"
+      },
+      "marriage": {
+        "title": "Warsha ya Ustawi wa Ndoa",
+        "date": "Agosti 5-7, 2025",
+        "location": "Nyumba ya Mama Mgolole",
+        "fee": "TZS 30,000/jozi",
+        "description": "Warsha kwa wanandoa waliookoka inayolenga mawasiliano na ukuaji wa kiroho.",
+        "capacity": "Jozi 25",
+        "deadline": "Julai 25, 2025"
+      },
+      "teachers": {
+        "title": "Fungo la Kiroho la Walimu",
+        "date": "Septemba 20-22, 2025",
+        "location": "Shule ya St. Theresa",
+        "fee": "TZS 20,000",
+        "description": "Fungo kwa walimu kutoka shule za Kikatoliki likilenga wito na huduma.",
+        "capacity": "Walimu 40",
+        "deadline": "Septemba 10, 2025"
+      },
+      "facilities": {
+        "title": "Vifaa Vyetu vya Mafungo",
+        "description": "Tunatoa vifaa bora vya mafungo, warsha, na mikutano katika Kituo chetu cha Mkutano cha Amabilis na maeneo mengine.",
+        "accommodation": "Makazi Mapatikana",
+        "accommodationDesc": "Vyumba vya moja na wawili vyenye bafu za kibinafsi",
+        "catering": "Huduma Kamili za Chakula",
+        "cateringDesc": "Mlo mzuri na chaguzi za lishe zinazopatikana",
+        "amenities": "Vifaa vya Kisasa",
+        "amenitiesDesc": "WiFi, vifaa vya sauti na muonekano, usafiri",
+        "booking": "Hifadhi Fungo",
+        "bookingDesc": "Una nia ya kuhifadhi vifaa vyetu kwa kikundi chako cha mafungo au warsha? Wasiliana nasi kwa upatikanaji na bei.",
+        "email": "Barua Pepe kwa Ajili ya Kuhifadhi",
+        "call": "Piga Simu kwa Habari"
+      }
+    },
+    "anniversaries": {
+      "title": "Maadhimisho na Sherehe",
+      "sendGreeting": "Tuma Salamu",
+      "share": "Shiriki",
+      "type": {
+        "congregation": "Shirika",
+        "personal": "Kibinafsi",
+        "institution": "Taasisi"
+      },
+      "foundation": {
+        "title": "Maadhimisho ya Miaka 88 ya Kuanzishwa",
+        "date": "Desemba 8, 2025",
+        "years": "88",
+        "description": "Kuadhimisha miaka 88 tangu shirika letu lilianzishwa mwaka 1937."
+      },
+      "motherGeneral": {
+        "title": "Jubilei ya Mama Mkuu",
+        "date": "Agosti 22, 2025",
+        "years": "25",
+        "description": "Miaka 25 ya maisha ya kidini kwa Mama Mkuu wetu, Sr. Pudensiana Kibena."
+      },
+      "school": {
+        "title": "Maadhimisho ya Miaka 50 ya Shule",
+        "date": "Oktoba 15, 2025",
+        "years": "50",
+        "description": "Miaka 50 ya Shule ya Sekondari Bernard Hilhorst kuhudumia jamii."
+      },
+      "healthcentre": {
+        "title": "Maadhimisho ya Miaka 40 ya Kituo cha Afya",
+        "date": "Novemba 3, 2025",
+        "years": "40",
+        "description": "Miaka 40 ya Kituo cha Afya cha Mgolole kutoa huduma za afya."
+      },
+      "timeline": {
+        "title": "Vipindi vya Shirika",
+        "founding": "Shirika Lilianzishwa",
+        "firstVows": "Viapo vya Kwanza Vilikiriwa",
+        "firstSchool": "Shule ya Kwanza Ilifunguliwa",
+        "healthCentre": "Kituo cha Kwanza cha Afya",
+        "secondarySchool": "Shule ya Sekondari Ilianzishwa",
+        "expansion": "Kupanua hadi Dayosisi Nyingine",
+        "conference": "Kituo cha Mkutano Kilijengwa",
+        "current": "Mwaka wa Sasa",
+        "year": "Mwaka"
+      }
+    },
+    "community": {
+      "title": "Matukio ya Jamii",
+      "regular": {
+        "title": "Shughuli za Kawaida"
+      },
+      "days": {
+        "sunday": "Jumapili",
+        "monday": "Jumatatu",
+        "tuesday": "Jumanne",
+        "wednesday": "Jumatano",
+        "thursday": "Alhamisi",
+        "friday": "Ijumaa",
+        "saturday": "Jumamosi"
+      },
+      "activities": {
+        "mass": "Misa ya Jamii na Ushirikiano",
+        "prayer": "Kikundi cha Sala cha Jioni",
+        "bible": "Kikao cha Kusoma Biblia",
+        "youth": "Mkutano wa Vijana",
+        "charity": "Ukarabati wa Hisani",
+        "adoration": "Abluti ya Ekaristi",
+        "family": "Shughuli za Siku ya Familia"
+      },
+      "volunteer": {
+        "title": "Matukio ya Kujitolea",
+        "orphanage": "Siku ya Kutembelea Yatima",
+        "orphanageDate": "Kila Jumamosi ya Pili",
+        "orphanageDesc": "Tumia wakati na watoto katika yatima yetu",
+        "elderly": "Siku ya Utunzaji wa Wazee",
+        "elderlyDate": "Kila Mwezi",
+        "elderlyDesc": "Tembelea na saidia wazee katika nyumba zetu za wazee",
+        "farming": "Kilimo cha Jamii",
+        "farmingDate": "Kila Msimu",
+        "farmingDesc": "Saidia na shughuli za kilimo katika miradi yetu",
+        "cleanup": "Usafishaji wa Mazingira",
+        "cleanupDate": "Kila Robo Mwaka",
+        "cleanupDesc": "Shughuli za uhifadhi wa mazingira za jamii",
+        "join": "Jiunge"
+      },
+      "impact": {
+        "title": "Ushawishi wa Jamii",
+        "monthly": "Washiriki wa Kila Mwezi",
+        "events": "Matukio ya Mwaka",
+        "communities": "Jamii Zinazohudumiwa",
+        "volunteers": "Wajitoleaji Wenye Ushughulikiaji"
+      }
+    },
+    "registration": {
+      "details": "Maelezo ya Tukio",
+      "capacity": "Uwezo",
+      "fee": "Ada",
+      "contact": "Mawasiliano",
+      "getDirections": "Pata Maelekezo",
+      "form": "Fomu ya Usajili",
+      "name": "Jina Kamili",
+      "email": "Barua Pepe",
+      "phone": "Simu",
+      "attendees": "Idadi ya Wahudhuriaji",
+      "dietary": "Mahitaji ya Lishe (ikiwapo)",
+      "accommodation": "Unahitaji Makazi?",
+      "yes": "Ndio",
+      "no": "Hapana",
+      "comments": "Maoni Zaidi",
+      "cancel": "Ghairi",
+      "processing": "Inachakata...",
+      "submit": "Wasilisha Usajili",
+      "success": "Usajili umefanikiwa! Barua pepe ya uthibitisho imetumwa.",
+      "error": "Usajili umeshindwa. Tafadhali jaribu tena."
+    },
+    "download": {
+      "title": "Endelea Kuwa na Uhusiano",
+      "description": "Pakua kalenda yetu ya matukio au jiandikishe ili uendelee kupata habari juu ya shughuli zetu zote.",
+      "calendar": "Pakua Kalenda",
+      "notify": "Pata Arifa",
+      "share": "Shiriki Kalenda"
+    }
+  }

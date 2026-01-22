@@ -166,7 +166,7 @@ const Vocations = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pt: 2 }}>
+    <Box sx={{ bgcolor: 'background.default', minHeight: '100vh'}}>
       {/* Hero Section */}
       <Box
         sx={{
