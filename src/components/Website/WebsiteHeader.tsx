@@ -24,7 +24,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
-import { Church } from 'lucide-react';
+import { Church, ChevronDown } from 'lucide-react';
 import { useTheme } from "../../contexts/ThemeContext";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -129,6 +129,7 @@ const WebsiteHeader = () => {
   const [anchorEl, setAnchorEl] = useState<null | {
     el: HTMLElement;
     menu: string;
+    href: string;
     submenu?: string[];
   }>(null);
   const [mobileMenuAnchor, setMobileMenuAnchor] = useState<null | HTMLElement>(null);
@@ -178,6 +179,23 @@ const WebsiteHeader = () => {
     navigate(href);
     setMobileMenuAnchor(null);
     setAnchorEl(null);
+  };
+
+  // Handle nav item click - for items with submenu
+  const handleNavItemClick = (item: NavItem, event: React.MouseEvent<HTMLElement>) => {
+    if (item.submenu) {
+      // Show dropdown and navigate to main page
+      setAnchorEl({ 
+        el: event.currentTarget, 
+        menu: item.label,
+        href: item.href,
+        submenu: item.submenu 
+      });
+      navigate(item.href); // Navigate to main page
+    } else {
+      // Regular navigation for items without submenu
+      handleNavigation(item.href);
+    }
   };
 
   // Active style for buttons
@@ -280,12 +298,10 @@ const WebsiteHeader = () => {
             mr: 2,
             gap: 1 
           }}>
-
             <LanguageSwitch
               checked={language === "sw"}
               onChange={handleLanguageToggle}
             />
-
           </Box>
 
           {/* Theme Toggle */}
@@ -303,39 +319,23 @@ const WebsiteHeader = () => {
           {/* Desktop Menu */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
             {navItems.map((item: NavItem) => (
-              item.submenu ? (
+              <Box key={item.label} sx={{ position: 'relative' }}>
                 <Button
-                  key={item.label}
-                  onClick={(e) => setAnchorEl({ 
-                    el: e.currentTarget, 
-                    menu: item.label,
-                    submenu: item.submenu 
-                  })}
-                  sx={getButtonStyle(item)}
+                  onClick={(e) => handleNavItemClick(item, e)}
+                  sx={{
+                    ...getButtonStyle(item),
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: item.submenu ? 0.5 : 0,
+                  }}
                 >
                   {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
-                  {isActive(item.href) && (
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '60%',
-                        height: '3px',
-                        bgcolor: 'primary.main',
-                        borderRadius: '3px 3px 0 0',
-                      }}
-                    />
+                  {item.submenu && (
+                    <ChevronDown size={16} style={{ 
+                      transition: 'transform 0.2s',
+                      transform: anchorEl?.menu === item.label ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }} />
                   )}
-                </Button>
-              ) : (
-                <Button 
-                  key={item.label} 
-                  onClick={() => handleNavigation(item.href)}
-                  sx={getButtonStyle(item)}
-                >
-                  {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
                   {isActive(item.href, item.exact) && (
                     <Box
                       sx={{
@@ -351,7 +351,7 @@ const WebsiteHeader = () => {
                     />
                   )}
                 </Button>
-              )
+              </Box>
             ))}
             <Button 
               variant="contained" 
@@ -396,59 +396,95 @@ const WebsiteHeader = () => {
         </Toolbar>
 
         {/* Dropdown Menu for Desktop */}
-        <Menu
-          anchorEl={anchorEl?.el}
-          open={Boolean(anchorEl)}
-          onClose={() => setAnchorEl(null)}
-          PaperProps={{
-            sx: {
-              mt: 1.5,
-              minWidth: 200,
-              bgcolor: 'background.paper',
-              boxShadow: 3
-            }
-          }}
-        >
-          {anchorEl?.submenu?.map((subItem: string, index: number) => {
-            const isSubActive = location.pathname === `/${anchorEl.menu}/${subItem}`;
-            
-            return (
-              <MenuItem 
-                key={index}
-                onClick={() => {
-                  handleNavigation(`/${anchorEl.menu}/${subItem}`);
-                  setAnchorEl(null);
-                }}
-                selected={isSubActive}
-                sx={{
+        {anchorEl && (
+          <Menu
+            anchorEl={anchorEl.el}
+            open={Boolean(anchorEl)}
+            onClose={() => setAnchorEl(null)}
+            PaperProps={{
+              sx: {
+                mt: 1.5,
+                minWidth: 200,
+                bgcolor: 'background.paper',
+                boxShadow: 3,
+                border: '1px solid',
+                borderColor: 'divider'
+              }
+            }}
+          >
+            {/* Main page link */}
+            <MenuItem 
+              onClick={() => {
+                handleNavigation(anchorEl.href);
+                setAnchorEl(null);
+              }}
+              selected={location.pathname === anchorEl.href}
+              sx={{
+                fontWeight: 600,
+                '&:hover': {
+                  bgcolor: 'action.hover'
+                },
+                '&.Mui-selected': {
+                  bgcolor: 'primary.light',
+                  color: 'primary.contrastText',
                   '&:hover': {
-                    bgcolor: 'action.hover'
-                  },
-                  '&.Mui-selected': {
-                    bgcolor: 'primary.light',
-                    color: 'primary.contrastText',
-                    '&:hover': {
-                      bgcolor: 'primary.main',
-                    }
+                    bgcolor: 'primary.main',
                   }
-                }}
-              >
-                {subItem.charAt(0).toUpperCase() + subItem.slice(1)}
-                {isSubActive && (
-                  <Box
-                    sx={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: '50%',
-                      bgcolor: 'primary.main',
-                      ml: 1
-                    }}
-                  />
-                )}
-              </MenuItem>
-            );
-          })}
-        </Menu>
+                }
+              }}
+            >
+              {anchorEl.menu.charAt(0).toUpperCase() + anchorEl.menu.slice(1)} Overview
+            </MenuItem>
+            
+            <Divider />
+            
+            {/* Submenu items */}
+            {anchorEl.submenu?.map((subItem: string, index: number) => {
+              const subHref = `${anchorEl.href}/${subItem}`;
+              const isSubActive = location.pathname === subHref;
+              
+              return (
+                <MenuItem 
+                  key={index}
+                  onClick={() => {
+                    handleNavigation(subHref);
+                    setAnchorEl(null);
+                  }}
+                  selected={isSubActive}
+                  sx={{
+                    '&:hover': {
+                      bgcolor: 'action.hover'
+                    },
+                    '&.Mui-selected': {
+                      bgcolor: 'primary.light',
+                      color: 'primary.contrastText',
+                      '&:hover': {
+                        bgcolor: 'primary.main',
+                      }
+                    }
+                  }}
+                >
+                  <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                    <Box sx={{ flexGrow: 1 }}>
+                      {subItem.charAt(0).toUpperCase() + subItem.slice(1)}
+                    </Box>
+                    {isSubActive && (
+                      <Box
+                        sx={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: '50%',
+                          bgcolor: 'primary.main',
+                          ml: 1
+                        }}
+                      />
+                    )}
+                  </Box>
+                </MenuItem>
+              );
+            })}
+          </Menu>
+        )}
 
         {/* Mobile Menu */}
         <Menu
@@ -555,18 +591,22 @@ const WebsiteHeader = () => {
                         }}
                       />
                     )}
+                    {item.submenu && (
+                      <ChevronDown size={16} style={{ marginLeft: 8 }} />
+                    )}
                   </MenuItem>
                   
                   {/* Submenu items if active */}
                   {isItemActive && item.submenu && (
                     <Box sx={{ pl: 3, py: 0.5 }}>
                       {item.submenu.map((subItem: string, index: number) => {
-                        const isSubActive = location.pathname === `${item.href}/${subItem}`;
+                        const subHref = `${item.href}/${subItem}`;
+                        const isSubActive = location.pathname === subHref;
                         
                         return (
                           <MenuItem 
                             key={index}
-                            onClick={() => handleNavigation(`${item.href}/${subItem}`)}
+                            onClick={() => handleNavigation(subHref)}
                             selected={isSubActive}
                             sx={{
                               py: 1,
