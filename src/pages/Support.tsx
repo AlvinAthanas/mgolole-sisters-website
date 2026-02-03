@@ -10,15 +10,12 @@ import {
   Button,
   Paper,
   Chip,
-  Avatar,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
   alpha,
   useTheme,
-  Divider,
-  IconButton,
   Tab,
   Tabs,
   TextField,
@@ -48,11 +45,8 @@ import {
   Favorite as PrayerTimes,
   AccountBalance,
   PhoneAndroid,
-  QrCode2,
-  CreditCard,
   Share,
   Download,
-  Print,
   ArrowForward,
   CheckCircle,
   People,
@@ -61,7 +55,6 @@ import {
   Home,
   FoodBank,
   Build,
-  MonetizationOn,
   Schedule,
   LocationOn,
   Email,
@@ -78,7 +71,6 @@ import {
   AutoAwesome,
   Send,
   AttachMoney,
-  AccountBalanceWallet,
   ErrorOutline,
   WhatsApp,
 } from '@mui/icons-material';
@@ -134,7 +126,7 @@ const SupportPage = () => {
     severity: 'success' as 'success' | 'error',
   });
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
   };
 

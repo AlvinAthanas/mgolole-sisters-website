@@ -21,7 +21,6 @@ import {
   alpha,
   useTheme,
   Divider,
-  IconButton,
   Stack,
   Tab,
   Tabs,
@@ -77,11 +76,11 @@ const Ministries = () => {
   const [tabValue, setTabValue] = React.useState(0);
   const [expandedAccordion, setExpandedAccordion] = React.useState<string | false>(false);
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
   };
 
-  const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+  const handleAccordionChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
     setExpandedAccordion(isExpanded ? panel : false);
   };
 

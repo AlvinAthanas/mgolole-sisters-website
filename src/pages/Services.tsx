@@ -3,7 +3,7 @@ import { useTheme } from "../contexts/ThemeContext.tsx";
 import { CheckCircle, Target, BarChart, Users, Globe, MessageSquare } from "lucide-react";
 
 const Services = () => {
-    const { theme, muiTheme } = useTheme();
+    const {  muiTheme } = useTheme();
     const primaryColor = muiTheme.palette.primary.main;
     const secondaryColor = muiTheme.palette.secondary.main;
     const backgroundColor = muiTheme.palette.background.default;

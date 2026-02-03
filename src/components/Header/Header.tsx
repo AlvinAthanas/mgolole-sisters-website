@@ -25,7 +25,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import HelpIcon from "@mui/icons-material/Help";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MuiAppBar from "@mui/material/AppBar";
-import { ReactNode, useState } from "react";
+import { type ReactNode, useState } from "react";
 import { useUser } from "../../contexts/UserContext";
 import postData from "../../utils/AxioPost";
 import { useToken } from "../../contexts/TokenContext";
@@ -79,7 +79,7 @@ export const Header = ({
   const { theme, toggleTheme } = useCustomTheme();
 
   // Mock notifications for now since we don't have NotificationContext
-  const notifications = [];
+  const notifications:any = [];
   const unreadCount = 0;
 
   const handleNotifClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -278,7 +278,7 @@ export const Header = ({
           <Divider />
           <List>
             {notifications.length > 0 ? (
-              notifications.map((notification, index) => (
+              notifications.map((notification:any, index:number) => (
                 <ListItem key={index} sx={{ py: 1 }}>
                   <ListItemIcon>
                     <NotificationsIcon color="primary" />

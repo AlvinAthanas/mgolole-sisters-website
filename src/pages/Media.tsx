@@ -28,7 +28,6 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  MobileStepper,
   ImageList,
   ImageListItem,
   ImageListItemBar,
@@ -37,12 +36,6 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  Rating,
-  Breadcrumbs,
-  Link,
-  Stack,
-  LinearProgress,
-  CircularProgress,
   Alert,
   Snackbar,
 } from '@mui/material';
@@ -60,30 +53,17 @@ import {
   Bookmark,
   PlayCircle,
   ZoomIn,
-  Fullscreen,
   CalendarToday,
   Person,
-  Category,
   Search,
-  FilterList,
-  Sort,
-  ArrowForward,
-  ArrowBack,
   CloudDownload,
   Print,
   Email,
-  Facebook,
-  Twitter,
-  Instagram,
   YouTube,
-  WhatsApp,
   VolumeUp,
   Headphones,
-  PlaylistPlay,
-  AccessTime,
   Visibility,
   ThumbUp,
-  Chat,
   Collections,
   Slideshow,
   PictureAsPdf,
@@ -97,21 +77,10 @@ import {
   People,
   Nature,
   Architecture,
-  Public,
   LocationOn,
-  DateRange,
-  Timer,
-  MoreVert,
-  Add,
-  Remove,
-  KeyboardArrowLeft,
-  KeyboardArrowRight,
-  Close,
   CheckCircle,
   Error,
   GetApp,
-  Launch,
-  OpenInNew,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 
@@ -156,7 +125,7 @@ const Media = () => {
     severity: 'success' as 'success' | 'error',
   });
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
     setPage(1);
   };
@@ -191,11 +160,11 @@ const Media = () => {
     setSelectedPublication(null);
   };
 
-  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
+  const handlePageChange = (_event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
   };
 
-  const handleDownload = async (type: string, item: any) => {
+  const handleDownload = async (_type: string, _item: any) => {
     setLoading(true);
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -535,12 +504,7 @@ const Media = () => {
     },
   ];
 
-  // Get category icon
-  const getCategoryIcon = (categoryId: string) => {
-    const category = [...photoCategories, ...videoCategories, ...publicationCategories]
-      .find(cat => cat.id === categoryId);
-    return category?.icon || <Category />;
-  };
+
 
   // Get category color
   const getCategoryColor = (categoryId: string) => {

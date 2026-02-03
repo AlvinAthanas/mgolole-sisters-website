@@ -4,8 +4,6 @@ import {
   Container,
   Typography,
   Grid,
-  Card,
-  CardContent,
   Paper,
   Stepper,
   Step,
@@ -16,7 +14,6 @@ import {
   AccordionDetails,
   TextField,
   Button,
-  Divider,
   Chip,
   Avatar,
   List,
@@ -31,19 +28,15 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  IconButton,
 } from '@mui/material';
 import {
   ExpandMore,
-  School,
   Person,
-  Timeline,
   ContactMail,
   Phone,
   Mail,
   LocationOn,
   CalendarToday,
-  CheckCircle,
   QuestionAnswer,
   Send,
   AccessTime,
@@ -51,9 +44,6 @@ import {
   HistoryEdu,
   Favorite,
   Book,
-  ArrowRight,
-  Download,
-  Share,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 
@@ -140,7 +130,7 @@ const Vocations = () => {
     },
   ];
 
-  const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+  const handleAccordionChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
     setExpandedAccordion(isExpanded ? panel : false);
   };
 

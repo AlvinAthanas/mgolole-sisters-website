@@ -18,16 +18,11 @@ import {
   alpha,
   useTheme,
   Divider,
-  IconButton,
   Stack,
   Tab,
   Tabs,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
 } from '@mui/material';
 import {
-  ExpandMore,
   Agriculture,
   Pets,
   BusinessCenter,
@@ -47,9 +42,7 @@ import {
   Apartment,
   Map,
   Call,
-  Public,
   Star,
-  ArrowForward,
   Nature,
   Grass,
   Settings,
@@ -83,15 +76,12 @@ const Projects = () => {
   const theme = useTheme();
   const { t } = useTranslation();
   const [tabValue, setTabValue] = React.useState(0);
-  const [expandedAccordion, setExpandedAccordion] = React.useState<string | false>(false);
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
   };
 
-  const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-    setExpandedAccordion(isExpanded ? panel : false);
-  };
+
 
   // Farming projects data
   const farmLocations = [

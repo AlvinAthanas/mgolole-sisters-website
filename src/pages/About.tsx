@@ -38,7 +38,6 @@ import {
   AccountBalance,
   SupervisorAccount,
 } from '@mui/icons-material';
-import { useTheme as useAppTheme } from '../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
 // Type definitions
@@ -72,7 +71,6 @@ interface ServiceLocationRegion {
 
 const About = () => {
   const muiTheme = useTheme();
-  const { theme: appTheme } = useAppTheme();
   const { t } = useTranslation();
 
   // History data - using translations with fallback

@@ -7,7 +7,6 @@ import { AuthWrapper } from "./contexts/RequireAuth.tsx";
 // Public pages (website)
 const Home = lazy(() => import("./pages/Home.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
-const Services = lazy(() => import("./pages/Services.tsx"));
 const Contact = lazy(() => import("./pages/Contact.tsx"));
 const Blog = lazy(() => import("./pages/Blog.tsx"));
 

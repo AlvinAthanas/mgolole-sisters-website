@@ -20,7 +20,7 @@ interface ThemeProviderProps {
     variant?: "website" | "admin";
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, variant = "website" }) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [theme, setTheme] = useState<Theme>("light");
 
     const toggleTheme = () => {

@@ -21,7 +21,6 @@ import {
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
-import { useTheme as useAppTheme } from '../contexts/ThemeContext'; // Adjust import path
 
 export default function CICMHomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,7 +28,6 @@ export default function CICMHomePage() {
   const [mobileMenuAnchor, setMobileMenuAnchor] = useState<null | HTMLElement>(null);
   
   const muiTheme = useTheme();
-  const { theme: appTheme } = useAppTheme();
 
   const heroSlides = [
     {
