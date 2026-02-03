@@ -56,12 +56,14 @@ interface Charism {
 interface MotherGeneral {
   name: string;
   period: string;
+  image?: string;
 }
 
 interface CurrentLeader {
   role: string;
   name: string;
   icon: React.ReactElement;
+  image?: string;
 }
 
 interface ServiceLocationRegion {
@@ -72,6 +74,28 @@ interface ServiceLocationRegion {
 const About = () => {
   const muiTheme = useTheme();
   const { t } = useTranslation();
+
+  const normalizeNameKey = (value: string) =>
+    value.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+
+  const motherGeneralImages: Record<string, string> = {
+    'sr maria amabilis kern cps': '/sr.maria_amabilis_kern(1937-1948).jpg',
+    'sr maria majellina cps': '/sr.maria_majellina(1951-1966).jpg',
+    'sr maria nikoletha cicm': '/sr.maria_nikoletha(1967-1977).jpg',
+    'sr constansia nyagatwa cicm': '/sr.constansia_nyagatwa(1977-1987).jpg',
+    'sr flora chuma cicm': '/sr.flora_chuma(2012-2018).jpg',
+    'sr pudensiana kibena cicm': '/sr.pudensiana_kibena(2018-date).jpg'
+  };
+
+  const currentLeaderImages: Record<string, string> = {
+    'sr pudensiana kibena': '/sr.pudensiana_kibena_current.jpg',
+    'sr violet lengeju': '/sr.violet_lengeju.jpg',
+    'sr caroline nguzo': '/sr.caroline_nguzo.jpg',
+    'sr queenbeth berege': '/sr.queenbeth_berege.jpg'
+  };
+
+  const getImageByName = (name: string, map: Record<string, string>) =>
+    map[normalizeNameKey(name)];
 
   // History data - using translations with fallback
   const historyContent = {
@@ -136,18 +160,19 @@ const About = () => {
   const motherGenerals: MotherGeneral[] = Array.isArray(motherGeneralsData) 
     ? motherGeneralsData.map((general: any) => ({
         name: general.name || general,
-        period: general.period || ''
+        period: general.period || '',
+        image: general.image || getImageByName(general.name || general, motherGeneralImages)
       }))
     : [
-        { name: "Sr. Maria Amabilis Kern (CPS)", period: "1937-1948" },
+        { name: "Sr. Maria Amabilis Kern (CPS)", period: "1937-1948", image: '/sr.maria_amabilis_kern(1937-1948).jpg' },
         { name: "Sr. Maria Adjuta Neumar (CPS)", period: "1948-1951" },
-        { name: "Sr. Maria Majellina (CPS)", period: "1951-1966" },
-        { name: "Sr. Maria Nikoletha (CICM)", period: "1967-1977" },
-        { name: "Sr. Constansia Nyagatwa (CICM)", period: "1977-1987" },
+        { name: "Sr. Maria Majellina (CPS)", period: "1951-1966", image: '/sr.maria_majellina(1951-1966).jpg' },
+        { name: "Sr. Maria Nikoletha (CICM)", period: "1967-1977", image: '/sr.maria_nikoletha(1967-1977).jpg' },
+        { name: "Sr. Constansia Nyagatwa (CICM)", period: "1977-1987", image: '/sr.constansia_nyagatwa(1977-1987).jpg' },
         { name: "Sr. Veronica Petri (CICM)", period: "1987-2000" },
-        { name: "Sr. Pudensiana Kibena (CICM)", period: "2000-2012" },
-        { name: "Sr. Flora Chuma (CICM)", period: "2012-2018" },
-        { name: "Sr. Pudensiana Kibena (CICM)", period: "2018-present" }
+        { name: "Sr. Pudensiana Kibena (CICM)", period: "2000-2012", image: '/sr.pudensiana_kibena(2018-date).jpg' },
+        { name: "Sr. Flora Chuma (CICM)", period: "2012-2018", image: '/sr.flora_chuma(2012-2018).jpg' },
+        { name: "Sr. Pudensiana Kibena (CICM)", period: "2018-present", image: '/sr.pudensiana_kibena(2018-date).jpg' }
       ];
 
   // Current Leadership
@@ -156,16 +181,17 @@ const About = () => {
     ? currentLeadershipData.map((leader: any) => ({
         role: leader.role || '',
         name: leader.name || leader,
-        icon: leader.icon || <Star />
+        icon: leader.icon || <Star />,
+        image: leader.image || getImageByName(leader.name || leader, currentLeaderImages)
       }))
     : [
-        { role: "Mother General", name: "Sr. Pudensiana Kibena", icon: <Star /> },
+        { role: "Mother General", name: "Sr. Pudensiana Kibena", icon: <Star />, image: '/sr.pudensiana_kibena_current.jpg' },
         { role: "Deputy Mother General", name: "Sr. Genorosa Mkwama", icon: <SupervisorAccount /> },
         { role: "Counciler", name: "Sr. Julieth Makonde", icon: <Group /> },
         { role: "Counciler", name: "Sr. Florensia Mkwizu", icon: <Group /> },
-        { role: "Counciler", name: "Sr. Violet Lengeju", icon: <Group /> },
-        { role: "Accountant", name: "Sr. Caroline Nguzo", icon: <AccountBalance /> },
-        { role: "General Secretary", name: "Sr. Queenbeth Berege", icon: <Business /> }
+        { role: "Counciler", name: "Sr. Violet Lengeju", icon: <Group />, image: '/sr.violet_lengeju.jpg' },
+        { role: "Accountant", name: "Sr. Caroline Nguzo", icon: <AccountBalance />, image: '/sr.caroline_nguzo.jpg' },
+        { role: "General Secretary", name: "Sr. Queenbeth Berege", icon: <Business />, image: '/sr.queenbeth_berege.jpg' }
       ];
 
   // Administration Structure
@@ -457,10 +483,22 @@ const About = () => {
                         justifyContent: 'center',
                         mx: 'auto',
                         mb: 2,
-                        color: 'white'
+                        color: 'white',
+                        overflow: 'hidden',
+                        border: general.image ? '2px solid' : 'none',
+                        borderColor: general.image ? 'primary.light' : 'transparent'
                       }}
                     >
-                      <People sx={{ fontSize: 40 }} />
+                      {general.image ? (
+                        <Box
+                          component="img"
+                          src={general.image}
+                          alt={general.name}
+                          sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      ) : (
+                        <People sx={{ fontSize: 40 }} />
+                      )}
                     </Box>
                     <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                       {general.name}
@@ -511,10 +549,22 @@ const About = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    mb: 2
+                    mb: 2,
+                    overflow: 'hidden',
+                    border: leader.image ? '2px solid' : 'none',
+                    borderColor: leader.image ? 'primary.main' : 'transparent'
                   }}
                 >
-                  {React.cloneElement(leader.icon as React.ReactElement<any>, { sx: { fontSize: 35, color: 'primary.main' } })}
+                  {leader.image ? (
+                    <Box
+                      component="img"
+                      src={leader.image}
+                      alt={leader.name}
+                      sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    React.cloneElement(leader.icon as React.ReactElement<any>, { sx: { fontSize: 35, color: 'primary.main' } })
+                  )}
                 </Box>
                 {leader.role && (
                   <Typography variant="subtitle2" sx={{ color: 'text.secondary', mb: 1 }}>
