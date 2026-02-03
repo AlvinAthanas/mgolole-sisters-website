@@ -1,0 +1,43 @@
+{
+  "logo": {
+    "title": "CICM SISTERS",
+    "subtitle": "Mgolole, Morogoro"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "vocations": "Vocations",
+    "ministries": "Ministries",
+    "projects": "Projects",
+    "media": "Media",
+    "events": "Events",
+    "support": "Support",
+    "contact": "Contact",
+    "donate": "Donate",
+    "aboutOverview": "About Overview",
+    "history": "History",
+    "mission": "Mission",
+    "leadership": "Leadership",
+    "whereWeServe": "Where We Serve",
+    "mediaOverview": "Media Overview",
+    "photos": "Photos",
+    "videos": "Videos",
+    "publications": "Publications"
+  },
+  "language": {
+    "title": "Language",
+    "english": "English",
+    "swahili": "Swahili"
+  },
+  "theme": {
+    "title": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
+  },
+  "mobile": {
+    "currentPage": "Current Page",
+    "menu": "Menu"
+  }
+}

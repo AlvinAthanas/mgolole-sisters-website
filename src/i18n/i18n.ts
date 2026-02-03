@@ -22,6 +22,8 @@ import enMedia from "./en/media.json";
 import swMedia from "./sw/media.json";
 import enEvents from "./en/events.json";
 import swEvents from "./sw/events.json";
+import enHeader from "./en/header.json";
+import swHeader from "./sw/header.json";
 
 // Define translations for each language
 const resources = {
@@ -36,7 +38,7 @@ const resources = {
       support: enSupport,
       media: enMedia,
       events: enEvents,
-
+      header: enHeader,
     }
   },
   sw: {
@@ -50,7 +52,7 @@ const resources = {
       support: swSupport,
       media: swMedia,
       events: swEvents,
-
+      header: swHeader,
     }
   },
 };

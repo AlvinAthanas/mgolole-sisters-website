@@ -263,7 +263,7 @@ const About = () => {
 
       <Container maxWidth="lg">
         {/* History Section */}
-        <Card sx={{ mb: 6, borderRadius: 2, overflow: 'hidden' }}>
+        <Card id="history" sx={{ mb: 6, borderRadius: 2, overflow: 'hidden' }}>
           <CardContent sx={{ p: { xs: 3, md: 5 } }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
               <History sx={{ fontSize: 40, color: 'primary.main', mr: 2 }} />
@@ -307,7 +307,7 @@ const About = () => {
         </Card>
 
         {/* Vows Section */}
-        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
+        <Typography id="vows" variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
           {t('about.vows.title', 'Our Sacred Vows')}
         </Typography>
         <Grid container spacing={4} sx={{ mb: 8 }}>
@@ -355,7 +355,7 @@ const About = () => {
         </Grid>
 
         {/* Mission & Charisms Section */}
-        <Grid container spacing={6} sx={{ mb: 8 }}>
+        <Grid id="mission" container spacing={6} sx={{ mb: 8 }}>
           <Grid size={{ xs: 12, md: 8 }}>
             <Typography variant="h4" sx={{ fontWeight: 700, mb: 3, color: 'text.primary' }}>
               {t('about.mission.title', 'Our Mission')}
@@ -425,7 +425,7 @@ const About = () => {
         </Grid>
 
         {/* Leadership History */}
-        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
+        <Typography id="leadership" variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
           {t('about.leadershipHistory.title', 'Leadership History')}
         </Typography>
         <Typography variant="subtitle1" sx={{ mb: 4, color: 'text.secondary' }}>
@@ -574,7 +574,7 @@ const About = () => {
         </Accordion>
 
         {/* Where We Serve */}
-        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
+        <Typography id="where-we-serve" variant="h4" sx={{ fontWeight: 700, mb: 4, color: 'text.primary' }}>
           {t('about.serviceLocations.title', 'Where We Serve')}
         </Typography>
         <Paper

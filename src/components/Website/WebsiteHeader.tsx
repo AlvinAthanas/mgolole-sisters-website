@@ -10,17 +10,12 @@ import {
   Slide,
   Menu,
   MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
   Divider,
-  type SelectChangeEvent,
-  Switch,
-  styled,
-  Badge,
   Chip,
   alpha,
   useTheme as useMuiTheme,
+  Switch,
+  styled,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
@@ -30,32 +25,57 @@ import { useLanguage } from "../../contexts/LanguageContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import { useTranslation } from "react-i18next";
 
 // Navigation items for the header
 const navItems = [
   { label: "home", href: "/", exact: true },
-  { label: "about", href: "/about", submenu: ["history", "mission", "leadership", "where-we-serve"] },
+  { 
+    label: "about", 
+    href: "/about", 
+    submenu: [
+      { key: "overview", href: "/about" },
+      { key: "history", href: "/about#history" },
+      { key: "mission", href: "/about#mission" },
+      { key: "leadership", href: "/about#leadership" },
+      { key: "where-we-serve", href: "/about#where-we-serve" }
+    ] 
+  },
   { label: "vocations", href: "/vocations" },
   { label: "ministries", href: "/ministries" },
   { label: "projects", href: "/projects" },
-  { label: "media", href: "/media", submenu: ["photos", "videos", "publications"] },
+  { 
+    label: "media", 
+    href: "/media", 
+    submenu: [
+      { key: "overview", href: "/media" },
+      { key: "photos", href: "/media#photos" },
+      { key: "videos", href: "/media#videos" },
+      { key: "publications", href: "/media#publications" }
+    ] 
+  },
   { label: "events", href: "/events" },
   { label: "support", href: "/support" },
   { label: "contact", href: "/contact" },
 ];
 
 // Types for navigation
+interface SubMenuItem {
+  key: string;
+  href: string;
+}
+
 interface NavItem {
   label: string;
   href: string;
   exact?: boolean;
-  submenu?: string[];
+  submenu?: SubMenuItem[];
 }
 
 // Custom styled Switch for language toggle
 const LanguageSwitch = styled(Switch)(({ theme }) => ({
-  width: 62,
-  height: 32,
+      width: 62,
+      height: 32,
   padding: 0,
   margin: theme.spacing(0.5),
   "& .MuiSwitch-switchBase": {
@@ -81,8 +101,8 @@ const LanguageSwitch = styled(Switch)(({ theme }) => ({
     },
   },
   "& .MuiSwitch-thumb": {
-    width: 28,
-    height: 28,
+        width: 28,
+        height: 28,
     backgroundColor: "#fff",
     border: `1px solid ${theme.palette.grey[400]}`,
     boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
@@ -99,7 +119,7 @@ const LanguageSwitch = styled(Switch)(({ theme }) => ({
       top: "50%",
       transform: "translateY(-50%)",
       fontSize: 11,
-      fontWeight: 600,
+        fontWeight: 600,
       color: theme.palette.text.primary,
       letterSpacing: 0.5,
     },
@@ -130,12 +150,13 @@ const WebsiteHeader = () => {
     el: HTMLElement;
     menu: string;
     href: string;
-    submenu?: string[];
+    submenu?: SubMenuItem[];
   }>(null);
   const [mobileMenuAnchor, setMobileMenuAnchor] = useState<null | HTMLElement>(null);
   
-  const { theme, toggleTheme, muiTheme } = useTheme();
-  const { language, setLanguage, currentLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage } = useLanguage();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const themeMui = useMuiTheme();
@@ -145,7 +166,10 @@ const WebsiteHeader = () => {
     if (exact) {
       return location.pathname === path;
     }
-    return location.pathname.startsWith(path);
+    // Handle anchor links (remove hash for comparison)
+    const currentPath = location.pathname + location.hash;
+    const targetPath = path.includes('#') ? path : path;
+    return currentPath.startsWith(targetPath.replace(/#.*$/, ''));
   };
 
   // Get current page label for display in mobile menu
@@ -153,12 +177,12 @@ const WebsiteHeader = () => {
     const currentItem = navItems.find(item => 
       isActive(item.href, item.exact) || 
       (item.submenu && item.submenu.some(sub => 
-        location.pathname.startsWith(`${item.href}/${sub}`)
+        isActive(sub.href)
       ))
     );
     
     if (currentItem) {
-      return currentItem.label.charAt(0).toUpperCase() + currentItem.label.slice(1);
+      return t(`header.nav.${currentItem.label}`, currentItem.label.charAt(0).toUpperCase() + currentItem.label.slice(1));
     }
     
     // Fallback to parsing URL
@@ -167,7 +191,7 @@ const WebsiteHeader = () => {
       return pathParts[0].charAt(0).toUpperCase() + pathParts[0].slice(1);
     }
     
-    return "Home";
+    return t('header.nav.home', 'Home');
   };
 
   const handleLanguageToggle = () => {
@@ -176,7 +200,20 @@ const WebsiteHeader = () => {
   };
 
   const handleNavigation = (href: string) => {
-    navigate(href);
+    if (href.includes('#') && href.startsWith('/about')) {
+      // For anchor links on about page
+      const [path, hash] = href.split('#');
+      navigate(path);
+      // Scroll to section after navigation
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      navigate(href);
+    }
     setMobileMenuAnchor(null);
     setAnchorEl(null);
   };
@@ -191,7 +228,9 @@ const WebsiteHeader = () => {
         href: item.href,
         submenu: item.submenu 
       });
-      navigate(item.href); // Navigate to main page
+      if (!isActive(item.href, true)) {
+        navigate(item.href);
+      }
     } else {
       // Regular navigation for items without submenu
       handleNavigation(item.href);
@@ -277,7 +316,7 @@ const WebsiteHeader = () => {
                   color: 'primary.main' 
                 }}
               >
-                CICM SISTERS
+                {t('header.logo.title', 'CICM SISTERS')}
               </Typography>
               <Typography 
                 variant="caption" 
@@ -286,7 +325,7 @@ const WebsiteHeader = () => {
                   display: { xs: 'none', sm: 'block' }
                 }}
               >
-                Mgolole, Morogoro
+                {t('header.logo.subtitle', 'Mgolole, Morogoro')}
               </Typography>
             </Box>
           </Box>
@@ -313,7 +352,7 @@ const WebsiteHeader = () => {
               display: { xs: 'none', md: 'block' }
             }}
           >
-            {theme === 'dark' ? <LightModeIcon sx={{ fontSize: { xs: 20, sm: 24 }, }}/> : <DarkModeOutlinedIcon sx={{ fontSize: { xs: 20, sm: 24 } }}/>}
+            {theme === 'dark' ? <LightModeIcon sx={{ fontSize: { xs: 20, sm: 24 } }}/> : <DarkModeOutlinedIcon sx={{ fontSize: { xs: 20, sm: 24 } }}/>}
           </IconButton>
 
           {/* Desktop Menu */}
@@ -329,7 +368,7 @@ const WebsiteHeader = () => {
                     gap: item.submenu ? 0.5 : 0,
                   }}
                 >
-                  {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
+                  {t(`header.nav.${item.label}`, item.label.charAt(0).toUpperCase() + item.label.slice(1))}
                   {item.submenu && (
                     <ChevronDown size={16} style={{ 
                       transition: 'transform 0.2s',
@@ -362,8 +401,9 @@ const WebsiteHeader = () => {
                   backgroundColor: 'secondary.dark'
                 }
               }}
+              onClick={() => handleNavigation('/support')}
             >
-              Donate
+              {t('header.nav.donate', 'Donate')}
             </Button>
           </Box>
 
@@ -433,21 +473,24 @@ const WebsiteHeader = () => {
                 }
               }}
             >
-              {anchorEl.menu.charAt(0).toUpperCase() + anchorEl.menu.slice(1)} Overview
+              {anchorEl.menu === 'about' 
+                ? t('header.nav.aboutOverview', 'About Overview')
+                : t('header.nav.mediaOverview', 'Media Overview')}
             </MenuItem>
             
             <Divider />
             
             {/* Submenu items */}
-            {anchorEl.submenu?.map((subItem: string, index: number) => {
-              const subHref = `${anchorEl.href}/${subItem}`;
-              const isSubActive = location.pathname === subHref;
+            {anchorEl.submenu?.map((subItem: SubMenuItem, index: number) => {
+              if (subItem.key === 'overview') return null; // Skip overview since it's already shown
+              
+              const isSubActive = isActive(subItem.href);
               
               return (
                 <MenuItem 
                   key={index}
                   onClick={() => {
-                    handleNavigation(subHref);
+                    handleNavigation(subItem.href);
                     setAnchorEl(null);
                   }}
                   selected={isSubActive}
@@ -466,7 +509,7 @@ const WebsiteHeader = () => {
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
                     <Box sx={{ flexGrow: 1 }}>
-                      {subItem.charAt(0).toUpperCase() + subItem.slice(1)}
+                      {t(`header.nav.${subItem.key}`, subItem.key.charAt(0).toUpperCase() + subItem.key.slice(1))}
                     </Box>
                     {isSubActive && (
                       <Box
@@ -511,7 +554,7 @@ const WebsiteHeader = () => {
             color: 'primary.contrastText'
           }}>
             <Typography variant="subtitle1" fontWeight={600}>
-              Current Page: {getCurrentPageLabel()}
+              {t('header.mobile.currentPage', 'Current Page')}: {getCurrentPageLabel()}
             </Typography>
           </Box>
 
@@ -528,7 +571,9 @@ const WebsiteHeader = () => {
               {theme === 'dark' ? <Brightness7 /> : <Brightness4 />}
             </IconButton>
             <Typography sx={{ flexGrow: 1 }}>
-              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+              {theme === 'dark' 
+                ? t('header.theme.lightMode', 'Light Mode')
+                : t('header.theme.darkMode', 'Dark Mode')}
             </Typography>
           </MenuItem>
 
@@ -541,15 +586,21 @@ const WebsiteHeader = () => {
             }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', gap: 2 }}>
-              <Typography sx={{ flexGrow: 1 }}>Language</Typography>
+              <Typography sx={{ flexGrow: 1 }}>
+                {t('header.language.title', 'Language')}
+              </Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <Typography variant="caption">EN</Typography>
-                <Switch
+                <Typography variant="caption">
+                  {t('header.language.english', 'EN')}
+                </Typography>
+                <LanguageSwitch
                   checked={language === "sw"}
                   onChange={handleLanguageToggle}
                   size="small"
                 />
-                <Typography variant="caption">SW</Typography>
+                <Typography variant="caption">
+                  {t('header.language.swahili', 'SW')}
+                </Typography>
               </Box>
             </Box>
           </MenuItem>
@@ -578,7 +629,7 @@ const WebsiteHeader = () => {
                     }}
                   >
                     <Typography sx={{ flexGrow: 1 }}>
-                      {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
+                      {t(`header.nav.${item.label}`, item.label.charAt(0).toUpperCase() + item.label.slice(1))}
                     </Typography>
                     {isItemActive && (
                       <Box
@@ -599,14 +650,13 @@ const WebsiteHeader = () => {
                   {/* Submenu items if active */}
                   {isItemActive && item.submenu && (
                     <Box sx={{ pl: 3, py: 0.5 }}>
-                      {item.submenu.map((subItem: string, index: number) => {
-                        const subHref = `${item.href}/${subItem}`;
-                        const isSubActive = location.pathname === subHref;
+                      {item.submenu.map((subItem: SubMenuItem, index: number) => {
+                        const isSubActive = isActive(subItem.href);
                         
                         return (
                           <MenuItem 
                             key={index}
-                            onClick={() => handleNavigation(subHref)}
+                            onClick={() => handleNavigation(subItem.href)}
                             selected={isSubActive}
                             sx={{
                               py: 1,
@@ -619,7 +669,7 @@ const WebsiteHeader = () => {
                             }}
                           >
                             <Typography sx={{ flexGrow:1 }}>
-                              {subItem.charAt(0).toUpperCase() + subItem.slice(1)}
+                              {t(`header.nav.${subItem.key}`, subItem.key.charAt(0).toUpperCase() + subItem.key.slice(1))}
                             </Typography>
                             {isSubActive && (
                               <Box
@@ -655,8 +705,9 @@ const WebsiteHeader = () => {
                   backgroundColor: 'secondary.dark'
                 }
               }}
+              onClick={() => handleNavigation('/support')}
             >
-              Donate
+              {t('header.nav.donate', 'Donate')}
             </Button>
           </Box>
         </Menu>

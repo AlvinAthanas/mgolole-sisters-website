@@ -1,0 +1,43 @@
+{
+  "logo": {
+    "title": "CICM MASISTA",
+    "subtitle": "Mgolole, Morogoro"
+  },
+  "nav": {
+    "home": "Nyumbani",
+    "about": "Kuhusu Sisi",
+    "vocations": "Wito",
+    "ministries": "Huduma",
+    "projects": "Miradi",
+    "media": "Vyombo vya Habari",
+    "events": "Matukio",
+    "support": "Msaada",
+    "contact": "Mawasiliano",
+    "donate": "Toa Michango",
+    "aboutOverview": "Mapitio ya Kuhusu Sisi",
+    "history": "Historia",
+    "mission": "Ujumbe",
+    "leadership": "Uongozi",
+    "whereWeServe": "Tunahudumia Wapi",
+    "mediaOverview": "Mapitio ya Vyombo vya Habari",
+    "photos": "Picha",
+    "videos": "Video",
+    "publications": "Machapisho"
+  },
+  "language": {
+    "title": "Lugha",
+    "english": "Kiingereza",
+    "swahili": "Kiswahili"
+  },
+  "theme": {
+    "title": "Mandhari",
+    "light": "Mwanga",
+    "dark": "Giza",
+    "lightMode": "Hali ya Mwanga",
+    "darkMode": "Hali ya Giza"
+  },
+  "mobile": {
+    "currentPage": "Ukurasa wa Sasa",
+    "menu": "Menyu"
+  }
+}
